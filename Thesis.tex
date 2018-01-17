@@ -1,0 +1,566 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{graphicx}
+ \usepackage{subfigure} 
+\usepackage{german}
+\usepackage[format=default,font=footnotesize,labelfont=bf]{caption}
+\usepackage[ansinew]{inputenc} 		%Umlaute
+\usepackage[T1]{fontenc} 				%Umlaute		
+\usepackage[margin=1in]{geometry}		%Randabstand
+\usepackage[onehalfspacing]{setspace}	%Zeilenabstand 1,5
+
+\usepackage{floatflt}					%Umflossene Grafiken
+\usepackage{float}
+\usepackage[section]{placeins}
+\usepackage{afterpage}
+\usepackage{tabularx}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\usepackage{listings}				%Codelisting
+\usepackage{color}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=mystyle}
+
+
+\fancyfoot{}
+\fancyfoot[R]{\thepage}
+
+\usepackage{hyperref}
+\usepackage{multibib} 
+\newcites{Refs,Urls}{Literaturverzeichnis,Verzeichnis der Webadressen}
+
+\usepackage{url}
+
+\begin{document}
+
+%==================Deckblatt===========================%
+\begin{figure}
+    \subfigure {\includegraphics [scale=0.8] {img/hnu_logo.png} }
+    \hspace{2cm}
+    \subfigure {\includegraphics [scale=0.5] {img/tls_logo.png} }
+\end{figure}
+\ \\
+\vspace{0.5cm} 
+
+\begin{center} 
+
+\begin{huge} 
+Bachelorthesis \\ 
+Front-End-Entwicklung \\ 
+Mainframe\\
+\end{huge}
+\vspace{1.5cm} 
+
+
+\begin{small}
+Bachelorarbeit gemäß § 17 der Allgemeinen Prüfungsordnung vom 01.08.2008 \\im Bachelorstudiengang Informationsmanagement und Unternehmenskommunikation \\an der Hochschule für angewandte Wissenschaften Neu-Ulm \\
+\end {small}
+
+\vspace{3cm} 
+
+
+\end {center}
+
+\begin{table} [!h]
+\begin{tabular}{lll}
+
+	Erstkorrektor	& 	&	Prof. Dr. Phillipp Brune \\
+	Betreuer 		& 	&	Christian Finster \\
+	 & & \\
+	Verfasser		&	&	Marc Morschhauser (Matr.-Nr.: 204041)\\
+	 & & \\
+	  & & \\
+	   & & \\
+	Thema erhalten: & & 01.01.2020 \\
+	Arbeit abgegeben & & 01.05.2020 \\
+
+\end{tabular}
+\label{tab:threecols}
+\end{table}
+
+
+\vspace{3cm} 
+\noindent\rule{16cm}{1pt} 
+Unterschrift des Studierenden \hspace{1.5cm}         Unterschrift und Firmenstempel der \\
+\hspace*{10cm}Ausbildungsstelle
+\thispagestyle{empty}
+
+%==================Ende Deckblatt===========================%
+\section{Abstract}
+Hier kommt der/die/das Abstract.\\
+
+\newpage
+
+\listoffigures
+\pagenumbering{Roman}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\pagenumbering{arabic}
+
+
+%===========Main Content=========%
+\setcounter{page}{3}
+%\begin{onehalfspacing}
+
+\newpage
+
+\section{Einleitung}
+Big Data, Cloud, Blockchain, IoT - die Digitalisierung schreitet stets voran und dadurch auch die damit verbundene Datenmenge die täglich verarbeitet werden muss. Viele Web-Services sind in diesem Punkt vor allem auf Flexibilität angewiesen. Große Serverfarmen ermöglichen den Betreibern von Online-Businesses heutzutage eine nie da gewesene Agilität in ihrer Ressourcenplanung. So können physische oder auch virtuelle Server bei hohem Datenaufkommen jederzeit innerhalb weniger Minuten hinzugebucht werden. Jedoch gibt es auch Services, bei denen wenige Minuten einen Unterschied von mehreren Millionen Euros machen. Diese Services verlangen nach Informationstechnologien, die nicht nur einen extrem hohen Datendurchsatz verarbeiten können, sondern auch die höchste Verfügbarkeit gewährleisten. Der IBM Mainframe leistet in seiner neuesten Ausführung einen I/O-Wert von über 800GB pro Sekunde und eine Verfügbarkeit von 99,999\%, was ihn zu einem Eckpfeiler im IT-Management der heutigen Finanzbranche macht. Seine Sicherheit und seine Geschwindigkeit finden auch in anderen Industrien Anwendung - so profitieren etwa die Luft- und Raumfahrt, Regierungen oder auch große Verkaufshäuser von diesem Supercomputer.\\
+\newpage
+
+\section{Related Work}
+\newpage
+
+\section{Forschungsfrage}
+\newpage
+
+\section{Anforderungen}
+\newpage
+
+\section{Die Entwicklungsumgebung}
+In diesem Kapitel soll eine optimale Entwicklungsumgebung für das Projekt geschaffen werden. Hierfür wird ein Apache Web-Server innerhalb einer virtuellen Linux-Partition implementiert. Sowohl Linux als auch bei Apache handelt es sich um freie open-source Projekte.\\
+-Kostenersparnis durch open-source projekte?!-\\
+-Gründe für Linux / Apache ???!-
+
+
+
+\subsection{Einrichten einer Linux-VM}
+Passend für den Apache Web-Server ist die Ubuntu Server GUI. \\
+Installiert wird diese in der Virtual-Box von Oracle. \\
+
+Für dieses Vorhaben wird die Ubuntu Version Server 16.04.3 LTS herangezogen.\\
+\ \\
+
+VirtualBox wird als Maschine verwendet, um den Linux-Server zu beherbergen.\\
+Hier wird eine neue Virtuelle Maschine erstellt. \\
+Dem Projekt wird der Name sandbox verliehen, was eine isolierte,  von der Öffentlichkeit -zunächst- abgeschottete Umgebung impliziert. Zusätzlich wird hier bereits von Anfang an festgelegt, dass es sich um einen Linux und genauer um eine 64-Bit VM mit dem Ubuntu OS handeln soll.\\
+Eine dynamische HDD Zuweisung sorgt dafür, dass die Servergröße nicht um Vorhinein festgelegt werden muss, sondern mitwächst, sollte mehr Speicherplatz benötigt werden. Die Größe ist natürlich durch die lokale Festplatte  begrenzt. \\Erklärung localhost!?\\
+
+Um eine lokale Entwicklung auf diesem Server zu ermöglichen, sind einige Konfigurationen nötig.\\
+Neben der Bereitstellung der richtigen Linux-Version (Für dieses Vorhaben wird die Ubuntu Version Server 16.04.3 LTS herangezogen.) wird hier die Verteilung der Virtual Machine auf die verfügbaren CPUs und die damit verbundene Auslastung eingestellt. (2 CPU - 100\% - wichtig????!)\\
+\ \\
+Wichtige Einstellungen im Bereich Netzwerk:\\
+NAT - Network Adress Translation - hier werden die Ports eingestellt über welche die VM kommuniziert.\\
+Portweiterleitung??!?!?\\
+Alle wichtig für lokal development\\
+Rule1: Apache / TCP / -empty for any ip / Host: 8080 / Guest : 80 for default HTTP-port for web traffic\\
+->Apache - Webbrowser\\
+Rule 2: MySQL / TCP / Host: 9306 / Guest: 3306\\
+->Verbindung zu MySQL server -> debugging uploading etc.\\
+Rule 3: MailCatcher / / 1080 / 1080\\
+Receive only Mail-server, dass nicht zufällig E-Mails versandt werden\\
+Rule 4: SSH / 2222 / / 22\\
+Hierüber kann die VM über die Kommandozeile gesteuert werden\\
+- bidirectional - traffic I/O\\
+Firewall erwähnen!!! - ist auf den meisten Systemen bereits vorhanden \\
+Ports einstellen ist aber kein Ersatz für eine Firewall -- siehe später in squid\\
+Auf dem lokalen System -Mac- wird ein Ordner erstellt -sandbox- welcher als gemeinsamer Ordner automatisch eingebunden wird.\\
+\ \\
+Ubuntu installieren:\\
+sudo - superuser do - benötigt um root-befehle zu geben\\
+LAMP server für apache / OpenSSH für SSH zugriff\\
+localhost - der eigene Computer wird via Loopback zugegriffen!? \\
+Ändern des Hostname am Mac für die VM zu sandbox.dev \\
+->Aufrufen der hosts datei -> Terminal\\
+
+\begin{center}
+\begin{lstlisting}[language=HTML]
+$ sudo nano /etc/hosts
+\end{lstlisting}
+\end{center}
+
+add 127.0.0.1	sandbox.dev\\
+Nun kann man sich mit folgendem Befehl auf der VM einloggen.\\
+\begin{center}
+\begin{lstlisting}[language=HTML]
+$ ssh sandbox.dev
+\end{lstlisting}
+\end{center}
+
+Um nicht jedes mal ein PW eingeben zu müssen und um man-in-the-middle-Attacken zu verhindern, werden nun keys generiert.\\
+
+\begin{center}
+\begin{lstlisting}[language=HTML]
+$ ssh-keygen -t rsa -C "username@example.com"
+\end{lstlisting}
+\end{center}
+
+Nun kann noch ein extra pw eingegeben werden, aber da es eine lokale Installation ist, wird das nicht gemacht.\\
+
+Wenn der Private key generiert wurde, wird noch ein public key generiert.\\
+
+
+\begin{center}
+\begin{lstlisting}[language=HTML]
+$ ssh -p2222 marc@sandbox.dev mkdir -p .ssh
+\end{lstlisting}
+\end{center}
+
+Um sich nun direkt auf den Server einloggen zu können:\\
+
+\begin{center}
+\begin{lstlisting}[language=HTML]
+$ cat ~/.ssh/id_rsa.pub | ssh -p2222 marc@sandbox.dev 'cat >> .ssh/authorized_keys'
+\end{lstlisting}
+\end{center}
+
+Da nun immer noch ssh -p2222 marc@sandbox.dev geschrieben werden muss - wird die config datei verändert.
+
+\begin{center}
+\begin{lstlisting}[language=HTML]
+$ nano ~/.ssh/config
+\end{lstlisting}
+\end{center}
+
+Edit:
+
+Host sandbox.dev
+        Port 2222
+        User marc
+
+Nun kann man sich einfach mit ssh sandbox.dev auf den Server einloggen (lokal).\\
+
+\ \\
+
+
+\subsection{Einrichten eines Apache Web-Servers}
+Um den Web-Server zu konfigurieren wird dieser zuerst auf den neuesten Stand gebracht.\\
+apt - advanced packages tool (packages erklären?!)\\
+\ \\
+\ \\
+ssh sandbox.dev soll nicht jedes mal erwähnt werden.. Abgrenzen mit Farben wann man eingeloggt ist und wann nicht!?
+\ \\
+\ \\
+Da die Installation-disc nicht alle updates beinhaltet: Für alle neuen Installationen und Fehlerbehebungen:\\
+- Update -> update list of available packages
+\begin{center}
+\begin{lstlisting}[language=HTML]
+$ sudo apt-get update
+\end{lstlisting}
+\end{center}
+
+Nun müssen alle erworbenen packages auf den neuesten Stand gebracht werden.
+- Upgrade -> upgrade currently installed software
+\begin{center}
+\begin{lstlisting}[language=HTML]
+$ sudo apt-get upgrade 
+\end{lstlisting}
+\end{center}
+
+Virtual-Box-Integration:\\
+Virtual Box verfügt über ein Add-On -> Guest Additions.\\
+-> Eine Ansammlung von Treibern und System Programmen -> diese optimieren das OS für Performance und Usability.\\
+Dies wird zB beim Filesharing gebraucht - zwischen Host und Guest.\\
+
+\ \\
+Man benötigt: build-essential --> tools for compiling\\
+und virtual-box-dkms --> Dynamic Kernel Module Support\\
+module-assistant --> handles module source packages\\
+
+\ \\
+Additional Software?! s. Bilder\\
+
+\begin{center}
+\begin{lstlisting}[language=HTML]
+$ sudo apt-get install build-essential virtualbox-dkms nano zip unzip curl man-db acpid git module-assistant
+\end{lstlisting}
+\end{center}
+
+--> sudo reboot\\
+
+--> log back in ssh....\\
+
+\subsubsection{Installation Guest-Additions}
+Install Virtual-Box Guest Additions to share Data betw. Guest and hosts:
+the shared folder will be %/media/sf_sandbox\\
+\ \\
+Der mount-command wird benutzt um the device file system to the file tree zu attachen.\\
+Man kann auf verschiedenen Content zugreifen - wie zb eine CD.\\
+Es wird eine virtuelle CD in das virtuelle Laufwerk der virtualBox gelegt um die Guest Additions zu laden.\\
+Zum mounten benötigt man ein device und ein directory\\
+\ \\
+-> Device: dev cdrom (immer mit slashes)\\
+-> directory: media cdrom\\
+\ \\
+Erstmal die CD einlegen -> Devices -> Insert.... Screenshot!?\\
+\ \\ 
+Durch ls -la /dev oder /media schauen ob die cdrom files da sind?!
+\ \\
+
+
+Dann mounten:
+\begin{center}
+\begin{lstlisting}[language=HTML]
+$ sudo mount /dev/cdrom /media/cdrom
+\end{lstlisting}
+\end{center}
+
+Das Terminal zeigt: 
+
+\begin{center}
+\begin{lstlisting}[language=HTML]
+mount: /dev/sr0 is write-protected, mounting read-only
+\end{lstlisting}
+\end{center}
+Das ist normal. Wie bei einer cd.\\
+
+
+Nun werden die Guest Additions installiert.\\
+\begin{center}
+\begin{lstlisting}[language=HTML]
+$ sudo sh /media/cdrom/VBoxLinuxAdditions.run --nox11
+\end{lstlisting}
+\end{center}
+
+--> sudo reboot und ssh back again.\\
+
+Check die geladenen modules.
+
+\begin{center}
+\begin{lstlisting}[language=HTML]
+$ lsmod | grep vbox
+\end{lstlisting}
+\end{center}
+
+grep erklären -> vboxsf muss vorhanden sein - shared folder.\\
+
+Nun sollte der media folder überprüft werden:
+\begin{center}
+\begin{lstlisting}[language=HTML]
+$ ls -la /media
+\end{lstlisting}
+\end{center}
+Hier sollte ein Verzeichnis cdrom und ein sf\_sandbox vorhanden sein!!!!\\
+
+
+
+
+\ \\
+sh-Command - built in command interpreter
+lsmod - lists (s. Bilder)\\
+
+
+\subsubsection{Zugang zu sf}
+Nun muss Zugang zu den shared Folders gewährleistet werden.\\
+
+Da der Ordner sf\_sandbox nicht root sondern Gruppe vboxsf ist hat man bisher keinen Zugriff auf diesen Ordner. Hier für muss der Zugang gewährleistet werden.\\
+Für den user marc: \\
+\begin{center}
+\begin{lstlisting}[language=HTML]
+$ sudo usermod -a -G vboxsf marc
+\end{lstlisting}
+\end{center}
+
+Der Zugang erfolgt nach einmaligem logout. -> logout -> ssh -> Zugang sollte da sein.\\
+Der Apache server hat den usernamen www-data -> Dieser braucht ebenfalls zugang zum sf.\\
+
+\begin{center}
+\begin{lstlisting}[language=HTML]
+$ sudo usermod -a -G vboxsf www-data
+\end{lstlisting}
+\end{center}
+
+
+\subsubsection{Linux Konfiguration für den Apache Server}
+Der Server weis bisher noch nichts von sf.\\
+
+command sudoedit - overwrite original file:\\
+vboxsf - HTTP Apache configuration - copy paste from exercise files\\
+wie soll das gehändelt werden??\\
+
+\begin{center}
+\begin{lstlisting}[language=HTML]
+$ sudoedit sites-available/vboxsf.conf
+\end{lstlisting}
+\end{center}
+
+
+Als nächstes die Ports konfigurieren:\\
+Apache läuft eigt auf 80 - es wurde aber auf 8080 weiter geleitet\\
+ports.conf -> verändern\\
+
+\begin{center}
+\begin{lstlisting}[language=HTML]
+$ sudoedit ports.conf
+\end{lstlisting}
+\end{center}
+
+Unter Listen 80 noch Listen 8080 hinzufügen.\\
+
+Managing Apache Sites in Ubuntu s. Bilder \\
+\begin{center}
+\begin{lstlisting}[language=HTML]
+$ sudo a2ensite vboxsf
+\end{lstlisting}
+\end{center}
+\begin{center}
+\begin{lstlisting}[language=HTML]
+$ sudo a2dissite 000-default
+\end{lstlisting}
+\end{center}
+
+Managing Apache Modules in Ubuntu s. Bilder \\
+
+\begin{center}
+\begin{lstlisting}[language=HTML]
+$ sudo a2enmod rewrite vhost_alias
+\end{lstlisting}
+\end{center}
+
+\ \\
+Danach muss der Server neu gestartet werden. Weil Apache neue Group-permissions braucht außerdem wurden die server functionality gechanged durch die modules.\\
+\begin{center}
+\begin{lstlisting}[language=HTML]
+$ sudo service apache2 restart
+\end{lstlisting}
+\end{center}
+
+Ob der Server funktioniert kann über den Browser herausgefunden werden
+\begin{center}
+\begin{lstlisting}[language=HTML]
+sandbox.dev:8080/server-status
+\end{lstlisting}
+\end{center}
+s.Bilder\\
+
+\subsubsection{PHP Konfiguration}
+Da das Front-End in PHP geschrieben werden soll, müssen hier Vorkehrungen getroffen werden.
+PHP ist bereits installiert, muss aber für die Entwicklung noch konfiguriert werden.\\
+\begin{center}
+\begin{lstlisting}[language=HTML]
+$ sudoedit /etc/php/7.0/mods-available/phpcustom.ini
+\end{lstlisting}
+\end{center}
+
+
+\begin{center}
+\begin{lstlisting}[language=HTML]
+; Custom shared config
+; priority=01
+error_reporting=E_ALL
+display_errors=On
+display_startup_errors=On
+error_log=/var/log/php_errors.log
+log_errors_max_len=0
+memory_limit=256M
+post_max_size=100M
+upload_max_filesize=100M
+\end{lstlisting}
+\end{center}
+
+Apache weis nun wo er die errors während der Programmierung hinschreiben soll aber das File exisiert noch nicht.\\
+File error\_log erstellen\\
+touch command erklären
+
+\begin{center}
+\begin{lstlisting}[language=HTML]
+$ sudo touch /var/log/php_errors.log
+\end{lstlisting}
+\end{center}
+
+Permission to read and write to the server.\\
+chown-command - change owner and group of files.\\
+
+PHP-App Frameworks s-Bilder\\
+
+\begin{center}
+\begin{lstlisting}[language=HTML]
+$ sudo apt-get install php-mcrypt php-intl php-sqlite3 php-mbstring php-xml php-gd -y
+\end{lstlisting}
+\end{center}
+
+Zwei frameworks müssen enabled werden.
+
+\begin{center}
+\begin{lstlisting}[language=HTML]
+$ sudo phpenmod mbstring simplexml
+\end{lstlisting}
+\end{center}
+
+sudo service apache2 restart
+
+\subsubsection{MailCatcher}
+
+Benötigte Pakete
+\begin{center}
+\begin{lstlisting}[language=HTML]
+$ sudo apt-get install libsqlite3-dev ruby-dev -y
+\end{lstlisting}
+\end{center}
+
+Mailcatcher selbst installieren
+
+\begin{center}
+\begin{lstlisting}[language=HTML]
+$ sudo gem install mailcatcher
+\end{lstlisting}
+\end{center}
+
+Testmail
+\begin{center}
+\begin{lstlisting}[language=HTML]
+$ php -a
+php > mail('target@example.com', 'Testmail', 'Was geht ab', 'From:source@example.com');
+\end{lstlisting}
+\end{center}
+
+
+\newpage
+
+\section{Design}
+\section{Proof of Concept}
+\section{Evaluation}
+
+
+
+%\end{onehalfspacing}
+
+\newpage
+\begin{thebibliography}{99}
+
+\end{thebibliography}
+
+\thispagestyle{empty}
+
+
+
+\bibliographystyle{plain}
+\bibliography{urlbib}
+
+
+
+
+
+
+\end{document}
