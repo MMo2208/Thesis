@@ -148,6 +148,13 @@ Big Data, Cloud, Blockchain, IoT - die Digitalisierung schreitet stets voran und
 \section{Anforderungen}
 \newpage
 
+\section{Development Environment}
+In this chapter, a development environment will be created. An Oracle Virtual-Machine called VirtualBox will be installed on MacOSX. In this virtual machine the open and free Linux-System Ubuntu 16.04 LTS will be running, to make it possible to implement an Apache HTTP-Server. The Apache Server makes it possible to develop a simple dynamic website offline on a localhost that can be accessed through any web-browser as long as the virtual machine is running.\\
+\\Schematische Darstellung!!
+
+
+\newpage
+
 \section{Die Entwicklungsumgebung}
 In diesem Kapitel soll eine optimale Entwicklungsumgebung für das Projekt geschaffen werden. Hierfür wird ein Apache Web-Server innerhalb einer virtuellen Linux-Partition implementiert. Sowohl Linux als auch bei Apache handelt es sich um freie open-source Projekte.\\
 -Kostenersparnis durch open-source projekte?!-\\
@@ -539,6 +546,117 @@ php > mail('target@example.com', 'Testmail', 'Was geht ab', 'From:source@example
 \newpage
 
 \section{Design}
+Once the Server is up and running a framework for programming the website is needed to save time and make the application stable and safe in the end. For this Application the choice is a PHP-Framework named Laravel. \\
+\\Laravel Begründung?!
+
+At the beginning, the admin-section will be implemented to create users, which will be granted to have access to the Mainframe-Training-Units.\\
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.4]{img/Schemepage.jpg}
+	\caption{schematic presentation of the admin/user-section}
+	\label{schematic presentation of the admin/user-section}
+\end{figure}
+\\
+
+\subsection{MVC-Framework}
+Laravel is a framework that follows the MVC-Pattern. MVC stands for Model-View-Controller.
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.5]{img/MVC.jpg}
+	\caption{Model-View-Controller Pattern}
+	\label{Model-View-Controller Pattern}
+\end{figure}
+\\
+\subsubsection{Routing explained}
+Routes are established (unter anderem) in the web.php file. In the example we see the Routings that are triggering the AdminsController - the @ triggers a function that is listed in this controller. For example create.
+\begin{center}
+\begin{lstlisting}[language=PHP]
+/* Admin Routing */
+Route::get('/admin', 'AdminsController@admin')->name('admin_view');
+Route::get('/admin/alter', 'AdminsController@alter')->name('alter_user');
+Route::get('/admin/create', 'AdminsController@newUser')->name('new_user');
+Route::post('/admin/create', 'AdminsController@create')->name('create_user');
+Route::get('/admin/{user_id}', 'AdminsController@show')->name('show_user');
+Route::post('/admin/{user_id}', 'AdminsController@modify')->name('update_user');
+\end{lstlisting}
+\end{center}
+
+The names help to navigate to the pages in an easier manner. With blade you can just define the link to the named paged.\\
+\\Blade kurz erklären.
+
+\begin{center}
+\begin{lstlisting}[language=HTML]
+<a class="hollow button" href="{{ route('show_user', ['user_id' => 1 ]) }}">EDIT</a>
+\end{lstlisting}
+\end{center}
+
+The create function does nothing but return the view / the file 'createuser.php' that is located in the folder 'admin'.
+\begin{center}
+\begin{lstlisting}[language=PHP]
+    public function create()
+    {
+      return view('admin/createuser');
+    }
+\end{lstlisting}
+\end{center}
+
+But within the Controller, also different types of data can be generated and passed to the view.\\
+In this example hard coded user data is passed to the view 'overview'
+
+\begin{center}
+\begin{lstlisting}[language=PHP]
+    public function admin()
+    {
+
+            $data = [];                     			//data als leeres array definieren
+
+            $obj = new \stdClass;
+            $obj->id = 1;
+            $obj->title = 'mr';
+            $obj->name = 'john';
+            $obj->last_name = 'doe';
+            $obj->email = 'john@domain.com';
+            
+            $data['users'][] = $obj;      		//data wird als obj definiert
+
+      return view('admin/overview', $data); 	//pass data to view
+    }
+\end{lstlisting}
+\end{center}
+
+While there will be a view to Add a new user and to modify an existing one, due to the controller there is no need to have two different pages / forms for that. There is just on file containing the form that can be used for both - editing and creating. The File here is form.php\\
+In the controller there will be two functions.
+
+\begin{center}
+\begin{lstlisting}[language=PHP]
+/* 1st Function */
+    public function newUser() 
+    {
+      $data = [];
+      $data['modify'] = 0;
+      return view('admin/form', $data);
+    }
+
+/* 2nd Function */
+    public function show($users_id)
+    {
+      $data = [];
+      $data['modify'] = 1;
+      return view('admin/form', $data);
+    }
+\end{lstlisting}
+\end{center}
+
+While they both show the same view 'admin/form', the passed data is different. The modify-sequence on line 5 and 13 enables the view to differentiate whether the passed data should be reorganized or added to the database.
+This becomes possible through an action that is allocated in the form.php file.
+\begin{center}
+\begin{lstlisting}[language=PHP]
+        <form action="{{ $modify == 1 ? route('update_user', [ 'user_id' => 1]) : route('create_user') }}" method="post">
+\end{lstlisting}
+\end{center}
+Here the status of \$modify is queried and based on this decision the view routes to a particular function that is defined in the AdminsController. If the user is modified, a user-id has to be set.\\
+
+\newpage
 \section{Proof of Concept}
 \section{Evaluation}
 

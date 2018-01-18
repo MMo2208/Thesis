@@ -3,14 +3,17 @@
 \contentsline {section}{\numberline {3}Related Work}{4}{section.3}
 \contentsline {section}{\numberline {4}Forschungsfrage}{5}{section.4}
 \contentsline {section}{\numberline {5}Anforderungen}{6}{section.5}
-\contentsline {section}{\numberline {6}Die Entwicklungsumgebung}{7}{section.6}
-\contentsline {subsection}{\numberline {6.1}Einrichten einer Linux-VM}{7}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}Einrichten eines Apache Web-Servers}{9}{subsection.6.2}
-\contentsline {subsubsection}{\numberline {6.2.1}Installation Guest-Additions}{10}{subsubsection.6.2.1}
-\contentsline {subsubsection}{\numberline {6.2.2}Zugang zu sf}{11}{subsubsection.6.2.2}
-\contentsline {subsubsection}{\numberline {6.2.3}Linux Konfiguration f\"ur den Apache Server}{12}{subsubsection.6.2.3}
-\contentsline {subsubsection}{\numberline {6.2.4}PHP Konfiguration}{13}{subsubsection.6.2.4}
-\contentsline {subsubsection}{\numberline {6.2.5}MailCatcher}{14}{subsubsection.6.2.5}
-\contentsline {section}{\numberline {7}Design}{15}{section.7}
-\contentsline {section}{\numberline {8}Proof of Concept}{15}{section.8}
-\contentsline {section}{\numberline {9}Evaluation}{15}{section.9}
+\contentsline {section}{\numberline {6}Development Environment}{7}{section.6}
+\contentsline {section}{\numberline {7}Die Entwicklungsumgebung}{8}{section.7}
+\contentsline {subsection}{\numberline {7.1}Einrichten einer Linux-VM}{8}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Einrichten eines Apache Web-Servers}{10}{subsection.7.2}
+\contentsline {subsubsection}{\numberline {7.2.1}Installation Guest-Additions}{11}{subsubsection.7.2.1}
+\contentsline {subsubsection}{\numberline {7.2.2}Zugang zu sf}{12}{subsubsection.7.2.2}
+\contentsline {subsubsection}{\numberline {7.2.3}Linux Konfiguration f\"ur den Apache Server}{13}{subsubsection.7.2.3}
+\contentsline {subsubsection}{\numberline {7.2.4}PHP Konfiguration}{14}{subsubsection.7.2.4}
+\contentsline {subsubsection}{\numberline {7.2.5}MailCatcher}{15}{subsubsection.7.2.5}
+\contentsline {section}{\numberline {8}Design}{16}{section.8}
+\contentsline {subsection}{\numberline {8.1}MVC-Framework}{16}{subsection.8.1}
+\contentsline {subsubsection}{\numberline {8.1.1}Routing explained}{16}{subsubsection.8.1.1}
+\contentsline {section}{\numberline {9}Proof of Concept}{20}{section.9}
+\contentsline {section}{\numberline {10}Evaluation}{20}{section.10}

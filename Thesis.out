@@ -3,14 +3,17 @@
 \BOOKMARK [1][-]{section.3}{Related Work}{}% 3
 \BOOKMARK [1][-]{section.4}{Forschungsfrage}{}% 4
 \BOOKMARK [1][-]{section.5}{Anforderungen}{}% 5
-\BOOKMARK [1][-]{section.6}{Die Entwicklungsumgebung}{}% 6
-\BOOKMARK [2][-]{subsection.6.1}{Einrichten einer Linux-VM}{section.6}% 7
-\BOOKMARK [2][-]{subsection.6.2}{Einrichten eines Apache Web-Servers}{section.6}% 8
-\BOOKMARK [3][-]{subsubsection.6.2.1}{Installation Guest-Additions}{subsection.6.2}% 9
-\BOOKMARK [3][-]{subsubsection.6.2.2}{Zugang zu sf}{subsection.6.2}% 10
-\BOOKMARK [3][-]{subsubsection.6.2.3}{Linux Konfiguration f\374r den Apache Server}{subsection.6.2}% 11
-\BOOKMARK [3][-]{subsubsection.6.2.4}{PHP Konfiguration}{subsection.6.2}% 12
-\BOOKMARK [3][-]{subsubsection.6.2.5}{MailCatcher}{subsection.6.2}% 13
-\BOOKMARK [1][-]{section.7}{Design}{}% 14
-\BOOKMARK [1][-]{section.8}{Proof of Concept}{}% 15
-\BOOKMARK [1][-]{section.9}{Evaluation}{}% 16
+\BOOKMARK [1][-]{section.6}{Development Environment}{}% 6
+\BOOKMARK [1][-]{section.7}{Die Entwicklungsumgebung}{}% 7
+\BOOKMARK [2][-]{subsection.7.1}{Einrichten einer Linux-VM}{section.7}% 8
+\BOOKMARK [2][-]{subsection.7.2}{Einrichten eines Apache Web-Servers}{section.7}% 9
+\BOOKMARK [3][-]{subsubsection.7.2.1}{Installation Guest-Additions}{subsection.7.2}% 10
+\BOOKMARK [3][-]{subsubsection.7.2.2}{Zugang zu sf}{subsection.7.2}% 11
+\BOOKMARK [3][-]{subsubsection.7.2.3}{Linux Konfiguration f\374r den Apache Server}{subsection.7.2}% 12
+\BOOKMARK [3][-]{subsubsection.7.2.4}{PHP Konfiguration}{subsection.7.2}% 13
+\BOOKMARK [3][-]{subsubsection.7.2.5}{MailCatcher}{subsection.7.2}% 14
+\BOOKMARK [1][-]{section.8}{Design}{}% 15
+\BOOKMARK [2][-]{subsection.8.1}{MVC-Framework}{section.8}% 16
+\BOOKMARK [3][-]{subsubsection.8.1.1}{Routing explained}{subsection.8.1}% 17
+\BOOKMARK [1][-]{section.9}{Proof of Concept}{}% 18
+\BOOKMARK [1][-]{section.10}{Evaluation}{}% 19
