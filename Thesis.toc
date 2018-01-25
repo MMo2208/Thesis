@@ -1,19 +1,22 @@
-\contentsline {section}{\numberline {1}Abstract}{3}{section.1}
-\contentsline {section}{\numberline {2}Introduction}{3}{section.2}
-\contentsline {section}{\numberline {3}Related Work}{4}{section.3}
-\contentsline {section}{\numberline {4}Forschungsfrage}{5}{section.4}
-\contentsline {section}{\numberline {5}Anforderungen}{6}{section.5}
-\contentsline {section}{\numberline {6}Development Environment}{7}{section.6}
-\contentsline {section}{\numberline {7}Die Entwicklungsumgebung}{8}{section.7}
-\contentsline {subsection}{\numberline {7.1}Einrichten einer Linux-VM}{8}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Einrichten eines Apache Web-Servers}{10}{subsection.7.2}
-\contentsline {subsubsection}{\numberline {7.2.1}Installation Guest-Additions}{11}{subsubsection.7.2.1}
-\contentsline {subsubsection}{\numberline {7.2.2}Zugang zu sf}{12}{subsubsection.7.2.2}
-\contentsline {subsubsection}{\numberline {7.2.3}Linux Konfiguration f\"ur den Apache Server}{13}{subsubsection.7.2.3}
-\contentsline {subsubsection}{\numberline {7.2.4}PHP Konfiguration}{14}{subsubsection.7.2.4}
-\contentsline {subsubsection}{\numberline {7.2.5}MailCatcher}{15}{subsubsection.7.2.5}
-\contentsline {section}{\numberline {8}Design}{16}{section.8}
-\contentsline {subsection}{\numberline {8.1}MVC-Framework}{16}{subsection.8.1}
-\contentsline {subsubsection}{\numberline {8.1.1}Routing explained}{16}{subsubsection.8.1.1}
-\contentsline {section}{\numberline {9}Proof of Concept}{20}{section.9}
-\contentsline {section}{\numberline {10}Evaluation}{20}{section.10}
+\select@language {english}
+\contentsline {section}{\numberline {1}Abstract}{I}{section.1}
+\contentsline {section}{\numberline {2}List of abbreviations}{III}{section.2}
+\contentsline {section}{\numberline {3}Introduction}{3}{section.3}
+\contentsline {section}{\numberline {4}Related Work}{4}{section.4}
+\contentsline {section}{\numberline {5}Research gap}{5}{section.5}
+\contentsline {section}{\numberline {6}Anforderungen}{6}{section.6}
+\contentsline {section}{\numberline {7}Development Environment}{7}{section.7}
+\contentsline {section}{\numberline {8}Die Entwicklungsumgebung}{8}{section.8}
+\contentsline {subsection}{\numberline {8.1}Einrichten einer Linux-VM}{8}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Einrichten eines Apache Web-Servers}{10}{subsection.8.2}
+\contentsline {subsubsection}{\numberline {8.2.1}Installation Guest-Additions}{11}{subsubsection.8.2.1}
+\contentsline {subsubsection}{\numberline {8.2.2}Zugang zu sf}{12}{subsubsection.8.2.2}
+\contentsline {subsubsection}{\numberline {8.2.3}Linux Konfiguration f\"ur den Apache Server}{13}{subsubsection.8.2.3}
+\contentsline {subsubsection}{\numberline {8.2.4}PHP Konfiguration}{14}{subsubsection.8.2.4}
+\contentsline {subsubsection}{\numberline {8.2.5}MailCatcher}{15}{subsubsection.8.2.5}
+\contentsline {section}{\numberline {9}Design}{16}{section.9}
+\contentsline {subsection}{\numberline {9.1}MVC-Framework}{16}{subsection.9.1}
+\contentsline {subsubsection}{\numberline {9.1.1}Routing explained}{16}{subsubsection.9.1.1}
+\contentsline {section}{\numberline {10}Proof of Concept}{20}{section.10}
+\contentsline {section}{\numberline {11}Evaluation}{20}{section.11}
+\contentsline {section}{\numberline {12}Appendices}{22}{section.12}
