@@ -5,18 +5,19 @@
 \contentsline {section}{\numberline {4}Related Work}{4}{section.4}
 \contentsline {section}{\numberline {5}Research gap}{5}{section.5}
 \contentsline {section}{\numberline {6}Anforderungen}{6}{section.6}
-\contentsline {section}{\numberline {7}Development Environment}{7}{section.7}
-\contentsline {section}{\numberline {8}Die Entwicklungsumgebung}{8}{section.8}
-\contentsline {subsection}{\numberline {8.1}Einrichten einer Linux-VM}{8}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Einrichten eines Apache Web-Servers}{10}{subsection.8.2}
-\contentsline {subsubsection}{\numberline {8.2.1}Installation Guest-Additions}{11}{subsubsection.8.2.1}
-\contentsline {subsubsection}{\numberline {8.2.2}Zugang zu sf}{12}{subsubsection.8.2.2}
-\contentsline {subsubsection}{\numberline {8.2.3}Linux Konfiguration f\"ur den Apache Server}{13}{subsubsection.8.2.3}
-\contentsline {subsubsection}{\numberline {8.2.4}PHP Konfiguration}{14}{subsubsection.8.2.4}
-\contentsline {subsubsection}{\numberline {8.2.5}MailCatcher}{15}{subsubsection.8.2.5}
-\contentsline {section}{\numberline {9}Design}{16}{section.9}
-\contentsline {subsection}{\numberline {9.1}MVC-Framework}{16}{subsection.9.1}
-\contentsline {subsubsection}{\numberline {9.1.1}Routing explained}{16}{subsubsection.9.1.1}
-\contentsline {section}{\numberline {10}Proof of Concept}{20}{section.10}
-\contentsline {section}{\numberline {11}Evaluation}{20}{section.11}
-\contentsline {section}{\numberline {12}Appendices}{22}{section.12}
+\contentsline {section}{\numberline {7}Dive into \ac {JCL}}{7}{section.7}
+\contentsline {section}{\numberline {8}Development Environment}{8}{section.8}
+\contentsline {section}{\numberline {9}Die Entwicklungsumgebung}{9}{section.9}
+\contentsline {subsection}{\numberline {9.1}Einrichten einer Linux-VM}{9}{subsection.9.1}
+\contentsline {subsection}{\numberline {9.2}Einrichten eines Apache Web-Servers}{11}{subsection.9.2}
+\contentsline {subsubsection}{\numberline {9.2.1}Installation Guest-Additions}{12}{subsubsection.9.2.1}
+\contentsline {subsubsection}{\numberline {9.2.2}Zugang zu sf}{13}{subsubsection.9.2.2}
+\contentsline {subsubsection}{\numberline {9.2.3}Linux Konfiguration f\"ur den Apache Server}{14}{subsubsection.9.2.3}
+\contentsline {subsubsection}{\numberline {9.2.4}PHP Konfiguration}{15}{subsubsection.9.2.4}
+\contentsline {subsubsection}{\numberline {9.2.5}MailCatcher}{16}{subsubsection.9.2.5}
+\contentsline {section}{\numberline {10}Design}{17}{section.10}
+\contentsline {subsection}{\numberline {10.1}MVC-Framework}{17}{subsection.10.1}
+\contentsline {subsubsection}{\numberline {10.1.1}Routing explained}{17}{subsubsection.10.1.1}
+\contentsline {section}{\numberline {11}Proof of Concept}{21}{section.11}
+\contentsline {section}{\numberline {12}Evaluation}{21}{section.12}
+\contentsline {section}{\numberline {13}Appendices}{24}{section.13}

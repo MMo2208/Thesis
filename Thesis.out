@@ -4,18 +4,19 @@
 \BOOKMARK [1][-]{section.4}{Related Work}{}% 4
 \BOOKMARK [1][-]{section.5}{Research gap}{}% 5
 \BOOKMARK [1][-]{section.6}{Anforderungen}{}% 6
-\BOOKMARK [1][-]{section.7}{Development Environment}{}% 7
-\BOOKMARK [1][-]{section.8}{Die Entwicklungsumgebung}{}% 8
-\BOOKMARK [2][-]{subsection.8.1}{Einrichten einer Linux-VM}{section.8}% 9
-\BOOKMARK [2][-]{subsection.8.2}{Einrichten eines Apache Web-Servers}{section.8}% 10
-\BOOKMARK [3][-]{subsubsection.8.2.1}{Installation Guest-Additions}{subsection.8.2}% 11
-\BOOKMARK [3][-]{subsubsection.8.2.2}{Zugang zu sf}{subsection.8.2}% 12
-\BOOKMARK [3][-]{subsubsection.8.2.3}{Linux Konfiguration f\374r den Apache Server}{subsection.8.2}% 13
-\BOOKMARK [3][-]{subsubsection.8.2.4}{PHP Konfiguration}{subsection.8.2}% 14
-\BOOKMARK [3][-]{subsubsection.8.2.5}{MailCatcher}{subsection.8.2}% 15
-\BOOKMARK [1][-]{section.9}{Design}{}% 16
-\BOOKMARK [2][-]{subsection.9.1}{MVC-Framework}{section.9}% 17
-\BOOKMARK [3][-]{subsubsection.9.1.1}{Routing explained}{subsection.9.1}% 18
-\BOOKMARK [1][-]{section.10}{Proof of Concept}{}% 19
-\BOOKMARK [1][-]{section.11}{Evaluation}{}% 20
-\BOOKMARK [1][-]{section.12}{Appendices}{}% 21
+\BOOKMARK [1][-]{section.7}{Dive into JCL}{}% 7
+\BOOKMARK [1][-]{section.8}{Development Environment}{}% 8
+\BOOKMARK [1][-]{section.9}{Die Entwicklungsumgebung}{}% 9
+\BOOKMARK [2][-]{subsection.9.1}{Einrichten einer Linux-VM}{section.9}% 10
+\BOOKMARK [2][-]{subsection.9.2}{Einrichten eines Apache Web-Servers}{section.9}% 11
+\BOOKMARK [3][-]{subsubsection.9.2.1}{Installation Guest-Additions}{subsection.9.2}% 12
+\BOOKMARK [3][-]{subsubsection.9.2.2}{Zugang zu sf}{subsection.9.2}% 13
+\BOOKMARK [3][-]{subsubsection.9.2.3}{Linux Konfiguration f\374r den Apache Server}{subsection.9.2}% 14
+\BOOKMARK [3][-]{subsubsection.9.2.4}{PHP Konfiguration}{subsection.9.2}% 15
+\BOOKMARK [3][-]{subsubsection.9.2.5}{MailCatcher}{subsection.9.2}% 16
+\BOOKMARK [1][-]{section.10}{Design}{}% 17
+\BOOKMARK [2][-]{subsection.10.1}{MVC-Framework}{section.10}% 18
+\BOOKMARK [3][-]{subsubsection.10.1.1}{Routing explained}{subsection.10.1}% 19
+\BOOKMARK [1][-]{section.11}{Proof of Concept}{}% 20
+\BOOKMARK [1][-]{section.12}{Evaluation}{}% 21
+\BOOKMARK [1][-]{section.13}{Appendices}{}% 22

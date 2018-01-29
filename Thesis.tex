@@ -142,10 +142,12 @@ Hier kommt der/die/das Abstract.\\
 \newpage
 \section{List of abbreviations}
 \begin{acronym}[Bash]
+
 	 \acro{IoT}{Internet of Things}
 	 \acro{I/O}{Input / Output}
- 	\acro{OS}{Operating System}
+ 	 \acro{OS}{Operating System}
 	 \acro{ULE}{Ubiquitous Learning Environment}
+	 \acro{JCL}{Job Control Language}
 
 \end{acronym}
 
@@ -172,7 +174,7 @@ But since the IT improved considerably over the last decades, the Mainframe was 
 The Goethe-University in Frankfurt, Germany, attends to participate in closing this gap. Therefore the university procured one of the aforementioned IBM supercomputers to train their students dealing with it.\\
 \ \\
 This Bachelor Thesis approaches a Front-End-Application, which will be running on a Linux Virtual-Machine but executing tasks on the mainframe's \ac{OS} called z/OS. By building this bridge between the Linux VM and the z/OS, students will be able to get in touch with the Mainframe located in Frankfurt University through a web-browser and as a consequence experience how the system is working.\\
-\ \
+\ \\
 The resources for this activity are allocated by the \textit{Talentschmiede AG} - a Frankfurt located IT consultancy which is in close contact to the finance sector and knows and cares about the gap of skilled professionals. Further it is supported by the \textit{Academic Mainframe Consortium e.V.} - an association founded by Mainframe Experts which are also willing to acquire new educated staff in the division of Mainframe.
 \newpage
 
@@ -180,8 +182,8 @@ The resources for this activity are allocated by the \textit{Talentschmiede AG} 
 While a malicious tongue once suggested that " the last mainframe will be unplugged in 1996 " , it reconsidered when IBM introduced it's latest version of it in 2008 \cite{lohr2008old}. Till the present day the mainframe is the backbone of the financial markets worldwide and just as important for other big industries\cite{carayannisenterprise} \cite{lohr2006ibm}.
 The view on the mainframe technology as an IT-dinosaur has to change and the need of adding the mainframe technology to the IS Curriculum in a wide range was overdue already 10 years before \cite{wallis2007s} \cite{wong2009old} \cite{douglas2009enterprise}. Sharma et al. analysed the need of Large System Education regarding to mainframe education and they are investigating " the   academic response   to   the   need   for   large   systems specialists " \cite{sharma2011teach}. In \cite{corridori2009ways} A. Corridori addresses the concerns and the opportunites that come with adding mainframe content to universities curricula and also previews ways to do this. How the economy and with it, the labor market can benefit from it is stated in \cite{sharmaalive}. \\
 \ \\
-The potentials of present digital media used to educate in a wide range is discovered by Cope et al. \cite{cope2009ubiquitous}. It is described that "the learner's  relationship  to knowledge  and  the  processes  of  pedagogy  have  not  changed  in  any  significant  way" but through technology " the educational paradigm has changed ". Vicki Jones et al. also address the integration of modern information technology in everyday's life and the advantages of this change regarding education \cite{jones2004ubiquitous}. Here it is stated that " Adaptive learning can offer great advantages in providing students with specific and personalised knowledge as and when required ". While the term " Adaptive Learning " is responsive to the methods that are used to transfer knowledge \cite{midgley2014goals} , " \ac{ULE} " describes an environment with the possibility of learning everywhere and anytime\cite{hwang2008criteria}. Hwang et al. emphasize the fact, that ULEs are an innovative approach for teaching complex topics \cite{hwang2009context}. \\
-\\The possibility to learn on the Mainframe anywhere and anytime is what this Bachelor Thesis is supposed to achieve.\\
+The potentials of present digital media used to educate in a wide range is discovered by Cope et al. \cite{cope2009ubiquitous}. It is described that "the learner's  relationship  to knowledge  and  the  processes  of  pedagogy  have  not  changed  in  any  significant  way" but through technology " the educational paradigm has changed ". Vicki Jones et al. also address the integration of modern information technology in everyday's life and the advantages of this change regarding education \cite{jones2004ubiquitous}. Here it is stated that " Adaptive learning can offer great advantages in providing students with specific and personalised knowledge as and when required ". While the term " Adaptive Learning " is responsive to the methods that are used to transfer knowledge \cite{midgley2014goals} , " \ac{ULE} " describes an environment with the possibility of learning everywhere and anytime\cite{hwang2008criteria}. Hwang et al. emphasize the fact, that ULEs are an innovative approach for teaching complex topics \cite{hwang2009context}. To establish a ULE there are many technologies needed \cite{sakamura2005ubiquitous}, this thesis is supposed to do a first step in this direction to learn on the Mainframe anywhere and anytime.\\
+
 \ \\
 ......
 
@@ -193,6 +195,33 @@ The potentials of present digital media used to educate in a wide range is disco
 
 \section{Anforderungen}
 \newpage
+
+\section{Dive into \ac{JCL}}
+\ \\
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{img/JCL-1.jpg}
+	\caption{JCL Functionality}
+	\label{JCL Functionality}
+\end{figure}
+\\
+- Not really a language like java etc. more like Job Control "Statements" that tell the OS what to do\\
+-each statement 80characters\\
+-JCL is introduced with // \\
+-z/OS has written (hard coded) application programs -not associated with any physical resources, just names -which include internal file-names -> through JCL those programs can be opened for reading and writing during execution.\\
+-JCL links the program file names with physical resources (e.g. data set names or unix file names).\\
+--JCL is used to process programs in the background ("batch")\\
+- And to process programs in the foreground("started task")\\
+-JCL instruct z/OS -> Start / submit
+- JCL SUBMIT Statement will result in batch process of one or more programs (BACKGROUND)\\
+- JCL START will result in FOREGROUND processing of a processing program\\
+\ \\
+Syntax Fundamentals
+Every Batch Job must contain JOB-statement \& EXEC statement\\
+->JOB statement highlight the beginning of a batch job \& assigns a name to the job\\
+JCL started tasks do not require a JOB Statement
+->both have at least one EXEC statement -> marks the beginning of a job step , assigns name to the step \& identifies the program or procedure to be executed in the step.
+
 
 \section{Development Environment}
 In this chapter, a development environment will be created. An Oracle Virtual-Machine called VirtualBox will be installed on MacOSX. In this virtual machine the open and free Linux-System Ubuntu 16.04 LTS will be running, to make it possible to implement an Apache HTTP-Server. The Apache Server makes it possible to develop a simple dynamic website offline on a localhost that can be accessed through any web-browser as long as the virtual machine is running.\\
