@@ -2,21 +2,36 @@
 \BOOKMARK [1][-]{section.2}{List of abbreviations}{}% 2
 \BOOKMARK [1][-]{section.3}{Introduction}{}% 3
 \BOOKMARK [1][-]{section.4}{Related Work}{}% 4
-\BOOKMARK [1][-]{section.5}{Research gap}{}% 5
-\BOOKMARK [1][-]{section.6}{Anforderungen}{}% 6
-\BOOKMARK [1][-]{section.7}{Dive into JCL}{}% 7
-\BOOKMARK [1][-]{section.8}{Development Environment}{}% 8
-\BOOKMARK [1][-]{section.9}{Die Entwicklungsumgebung}{}% 9
-\BOOKMARK [2][-]{subsection.9.1}{Einrichten einer Linux-VM}{section.9}% 10
-\BOOKMARK [2][-]{subsection.9.2}{Einrichten eines Apache Web-Servers}{section.9}% 11
-\BOOKMARK [3][-]{subsubsection.9.2.1}{Installation Guest-Additions}{subsection.9.2}% 12
-\BOOKMARK [3][-]{subsubsection.9.2.2}{Zugang zu sf}{subsection.9.2}% 13
-\BOOKMARK [3][-]{subsubsection.9.2.3}{Linux Konfiguration f\374r den Apache Server}{subsection.9.2}% 14
-\BOOKMARK [3][-]{subsubsection.9.2.4}{PHP Konfiguration}{subsection.9.2}% 15
-\BOOKMARK [3][-]{subsubsection.9.2.5}{MailCatcher}{subsection.9.2}% 16
-\BOOKMARK [1][-]{section.10}{Design}{}% 17
-\BOOKMARK [2][-]{subsection.10.1}{MVC-Framework}{section.10}% 18
-\BOOKMARK [3][-]{subsubsection.10.1.1}{Routing explained}{subsection.10.1}% 19
-\BOOKMARK [1][-]{section.11}{Proof of Concept}{}% 20
-\BOOKMARK [1][-]{section.12}{Evaluation}{}% 21
-\BOOKMARK [1][-]{section.13}{Appendices}{}% 22
+\BOOKMARK [1][-]{section.5}{An overview on the IBM Mainframe}{}% 5
+\BOOKMARK [2][-]{subsection.5.1}{Online Transaction Processing}{section.5}% 6
+\BOOKMARK [2][-]{subsection.5.2}{Batch Processing}{section.5}% 7
+\BOOKMARK [2][-]{subsection.5.3}{Separation of duties}{section.5}% 8
+\BOOKMARK [2][-]{subsection.5.4}{Mainframe Operation Systems}{section.5}% 9
+\BOOKMARK [2][-]{subsection.5.5}{Virtualisation with z/VM}{section.5}% 10
+\BOOKMARK [1][-]{section.6}{Research gap}{}% 11
+\BOOKMARK [1][-]{section.7}{Dive into JCL}{}% 12
+\BOOKMARK [2][-]{subsection.7.1}{Job Control Environment}{section.7}% 13
+\BOOKMARK [2][-]{subsection.7.2}{Job structure}{section.7}% 14
+\BOOKMARK [3][-]{subsubsection.7.2.1}{EXEC-Statements}{subsection.7.2}% 15
+\BOOKMARK [3][-]{subsubsection.7.2.2}{DD-Statements}{subsection.7.2}% 16
+\BOOKMARK [3][-]{subsubsection.7.2.3}{Background / Foreground jobs}{subsection.7.2}% 17
+\BOOKMARK [1][-]{section.8}{Access possibilities}{}% 18
+\BOOKMARK [2][-]{subsection.8.1}{Access with Virtual Switch / HiperSockets / TCP/IP}{section.8}% 19
+\BOOKMARK [2][-]{subsection.8.2}{Access through Java with FTP}{section.8}% 20
+\BOOKMARK [2][-]{subsection.8.3}{Access via SSH/SFTP - z/OS Remote Services Processing Model - Co:Z}{section.8}% 21
+\BOOKMARK [1][-]{section.9}{Requirements}{}% 22
+\BOOKMARK [1][-]{section.10}{Development Environment}{}% 23
+\BOOKMARK [1][-]{section.11}{Die Entwicklungsumgebung}{}% 24
+\BOOKMARK [2][-]{subsection.11.1}{Einrichten einer Linux-VM}{section.11}% 25
+\BOOKMARK [2][-]{subsection.11.2}{Einrichten eines Apache Web-Servers}{section.11}% 26
+\BOOKMARK [3][-]{subsubsection.11.2.1}{Installation Guest-Additions}{subsection.11.2}% 27
+\BOOKMARK [3][-]{subsubsection.11.2.2}{Zugang zu sf}{subsection.11.2}% 28
+\BOOKMARK [3][-]{subsubsection.11.2.3}{Linux Konfiguration f\374r den Apache Server}{subsection.11.2}% 29
+\BOOKMARK [3][-]{subsubsection.11.2.4}{PHP Konfiguration}{subsection.11.2}% 30
+\BOOKMARK [3][-]{subsubsection.11.2.5}{MailCatcher}{subsection.11.2}% 31
+\BOOKMARK [1][-]{section.12}{Design}{}% 32
+\BOOKMARK [2][-]{subsection.12.1}{MVC-Framework}{section.12}% 33
+\BOOKMARK [3][-]{subsubsection.12.1.1}{Routing explained}{subsection.12.1}% 34
+\BOOKMARK [1][-]{section.13}{Proof of Concept}{}% 35
+\BOOKMARK [1][-]{section.14}{Evaluation}{}% 36
+\BOOKMARK [1][-]{section.15}{Appendices}{}% 37

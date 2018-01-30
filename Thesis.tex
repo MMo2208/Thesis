@@ -148,6 +148,8 @@ Hier kommt der/die/das Abstract.\\
  	 \acro{OS}{Operating System}
 	 \acro{ULE}{Ubiquitous Learning Environment}
 	 \acro{JCL}{Job Control Language}
+ 	 \acro{JES}{Job Entry Subsystem}
+ 	 \acro{OLTP}{Online Transaction Processing}
 
 \end{acronym}
 
@@ -169,7 +171,7 @@ Hier kommt der/die/das Abstract.\\
 \newpage
 
 \section{Introduction}
-Big Data, Cloud, Blockchain, \ac{IoT}  - Digitalization is steadily proceeding and with it the amount of data that has to be processed every day. Many web-services at this point are dependent on flexibility in first place. Big server farms facilitate an unprecedented agility to operators of online-businesses referring to their resource-planning. Urgent situations with high data traffic can be handled by adding physical or also virtual servers within minutes. However there are services where minutes make the difference between millions of euros. Those services demand for information technology, which not only has a high data throughput but also ensures the highest availability. The IBM Mainframe in its newest construction provides an \ac{I/O} of over 800GB per second while being available 99,999\% of the time running. This makes the Mainframe a cornerstone in present finance-sector's IT-management. Due to it's security and it's high speed it also finds it's use in other big industries - thus also insurances, the aerospace industry or big retail companies benefit from this supercomputer.\\
+Big Data, Cloud, Blockchain, \ac{IoT}  - Digitalization is steadily proceeding and with it the amount of data that has to be processed every day. Many web-services at this point are dependent on flexibility in first place. Big server farms facilitate an unprecedented agility to operators of online-businesses referring to their resource-planning. Urgent situations with high data traffic can be handled by adding physical or also virtual servers within minutes. However there are services where minutes make the difference between millions of euros. Those services demand for information technology, which not only has a high data throughput but also ensures the highest availability. The IBM Mainframe in its newest construction provides an \ac{I/O} of 288GB per second  while being available 99,999\% of the time running. This makes the Mainframe a cornerstone in present finance-sector's IT-management. Due to it's security and it's high speed it also finds it's use in other big industries - thus also insurances, the aerospace industry or big retail companies benefit from this supercomputer.\\
 But since the IT improved considerably over the last decades, the Mainframe was presumed dead and many companies discontinued training their staff to maintain this technology. Contrary to their expectations they are dependent on it till today and they will presumably be in the remote future. What is left is a big gap in the division of skilled professionals that is hard to close.\\
 The Goethe-University in Frankfurt, Germany, attends to participate in closing this gap. Therefore the university procured one of the aforementioned IBM supercomputers to train their students dealing with it.\\
 \ \\
@@ -187,28 +189,133 @@ The potentials of present digital media used to educate in a wide range is disco
 \ \\
 ......
 
+\newpage
+
+\section{An overview on the IBM Mainframe}
+Prior to entering the main issue of implementing the web-application, this chapter introduces a few mainframe terminologies to assure a full understanding of the steps that take place in the following chapters. \\
+While many people just take the easy way by calling almost every computer a \textit{server}, the term \textit{mainframe} is often just used to point out that this is largest server in use. In this thesis the term \textit{mainframe} describes the IBM Supercomputer which is capable of "supporting thousands of 
+applications and input/output devices to simultaneously serve thousands of users" \cite{ebbers2016introduction}.\\
+So the most common utilization of the mainframe is divided in two categories: 
+\begin{itemize}
+\item \ac{OLTP}, incl. web-based applications
+\item Batch Processing
+\end{itemize}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{img/batchtrans.png}
+	\caption{Typical workloads}
+	\label{Typical workloads}
+\end{figure}
+\ \\
+\subsection{Online Transaction Processing}
+One of the core functions of many businesses is OLTP. For this case the mainframe serves a large amount of applications to make it possible to execute thousands of transactions in short time while handling not only a huge amount of different transaction types, but also to do this with many different users at a glance.\\
+For end-users those transaction processes are often commonly known, while they appear in everyday's life, such as:
+\begin{itemize}
+\item Credit card payments in supermarkets
+\item ATM transactions
+\item Online purchasings
+\end{itemize}
+
+\textbf{---- Explain Online part and why not consolidated in this thesis ---- }
+
+\subsection{Batch Processing}
+The other main function of the mainframe is processing data in a batch. Eventually terabytes of. These processes are generally done without much user interaction. A batch job simply gets committed and processes the data that is determined in the job-statement ( further informations in chapter \ref{JCL} )
+
+\textit{ An 
+equivalent concept can be found in a UNIX script file or a Windows® command 
+file, but a z/OS batch job migh
+t process millions of records.}\\
+
+\textbf{---- Explain deeper and bridge to System Operators ---- }
+
+
+\ \\
+\subsection{Separation of duties}
+distinguish between:
+\begin{itemize}
+\item System programmers 
+\item System administrators (for example, DBA, storage, network, security, and 
+performance)
+\item Application designers and programmers 
+\item \textbf{System operators (explain)}
+\item Production control analysts
+\end{itemize}
+\ \\
+\subsection{Mainframe Operation Systems}
+z/OS\\
+z/VM\\
+z/VSE\\
+Linux for zSeries\\
+z/TPF\\
+\ \\
+
+\subsection{Virtualisation with z/VM}
+\textit{As an aid to consolidation, the mainframe offers software virtualization, through z/VM. z/VM?s extreme virtualization capabilities, which have been perfected since its introduction in 1967, make it possible to virtualize thousands of  distributed servers on a single server, resulting in the significant reduction in the use of space and energy. }
+\ \\
+\textit{z/Virtual Machine (z/VM) has two basic components: a control program (CP) and 
+a single-user operating system (CMS). As a control program, z/VM is a hypervisor because it runs other operating systems in the virtual machines it creates. Any of the IBM mainframe operating systems such as z/OS, Linux on System z, z/VSE, and z/TPF can be run as guest systemsin their own virtual machines, and z/VM can run any combination of guest systems. }\\
+\textbf{---- Explain and show z/VM Constellation, LPARs etc ---- }
 
 \newpage
 
 \section{Research gap}
+Get Access to Batch process in division of education\\
 \newpage
 
-\section{Anforderungen}
-\newpage
 
 \section{Dive into \ac{JCL}}
+\label{JCL}
+\textbf{---- Important to understand JCL for accessing JES Spool?! ---- }\\
 \ \\
+To get familiar with JCL, this chapter will give an introduction in how these Statements are working. There is talk about "Statements", because JCL is used to tell the OS what to do. Each Statement is an independent work unit, known as "Job" - therefore this language is called "Job Control Language". Each Job consists of instructions that are either typed in by an operator or they are stored and get transmitted to the computer. \\ 
+
+\subsection{Job Control Environment}
+So to understand how a job is executed, it is important to know which components are needed for this process.\\
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.25]{img/JCL-1.jpg}
-	\caption{JCL Functionality}
+	\caption{JCL Functionality, Source: IBM}
 	\label{JCL Functionality}
 \end{figure}
-\\
-- Not really a language like java etc. more like Job Control "Statements" that tell the OS what to do\\
+\ \\
+On figure \ref{JCL Functionality} you can see a job process described in 7 steps.\\
+\begin{enumerate}
+\item JCL submit 
+\item JCL requests program 
+\item Program gets loaded
+\item Resources for program get allocated through JCL
+\item Resources get provided to program
+\item Program writes output to JES Spool
+\item Output to gets transferred to printer as requested
+\end{enumerate}
+\ \\
+The z/OS has written (hard coded) application programs which are not associated with any physical resources. Those programs are just names, which include internal file-names. Through JCL those programs can be opened for reading and writing during execution.\\
+The \ac{JES} is there to evaluate and accept or not accept a job. If the syntax is right and the job is accepted the JES runs it on the OS and controls this process. The results get transferred to an output unit.\\
+
+
+\subsection{Job structure}
 -each statement 80characters\\
 -JCL is introduced with // \\
--z/OS has written (hard coded) application programs -not associated with any physical resources, just names -which include internal file-names -> through JCL those programs can be opened for reading and writing during execution.\\
+
+\subsubsection{EXEC-Statements}
+Within a job, there are working executions introduced through an "EXEC-statement". Every job needs at least one execution, but there can obviously be many more in addition. If a job has no execution it stops.
+\ \\
+\begin{lstlisting}[language=PHP]
+//STEP0001 EXEC PGM=IEBGENER
+...
+//STEP0002 EXEC PROC=PRDPROC1
+//STEP0003 EXEC PRDPROC2
+\end{lstlisting}
+
+
+\subsubsection{DD-Statements}
+\begin{itemize}
+\item{SYSUT1}
+\item{SYSUT2}
+\item{SYSIN}
+\item{SYSPRINT}
+\end{itemize}
 -JCL links the program file names with physical resources (e.g. data set names or unix file names).\\
 --JCL is used to process programs in the background ("batch")\\
 - And to process programs in the foreground("started task")\\
@@ -216,11 +323,30 @@ The potentials of present digital media used to educate in a wide range is disco
 - JCL SUBMIT Statement will result in batch process of one or more programs (BACKGROUND)\\
 - JCL START will result in FOREGROUND processing of a processing program\\
 \ \\
-Syntax Fundamentals
+\subsubsection{Background / Foreground jobs}
 Every Batch Job must contain JOB-statement \& EXEC statement\\
 ->JOB statement highlight the beginning of a batch job \& assigns a name to the job\\
 JCL started tasks do not require a JOB Statement
 ->both have at least one EXEC statement -> marks the beginning of a job step , assigns name to the step \& identifies the program or procedure to be executed in the step.
+
+\newpage
+
+\section{Access possibilities}
+For executing JCL Jobs from Linux as host on z/OS as the target system, there are mainly three ways which will be evaluated in this chapter.\\
+\subsection{Access with Virtual Switch / HiperSockets / TCP/IP}
+\url{http://www.redbooks.ibm.com/redbooks/pdfs/sg246816.pdf}
+
+\subsection{Access through Java with FTP}
+\url{https://www.ibm.com/developerworks/systems/library/es-zosbatchjavav/es-zosbatchjavav-pdf.pdf}
+
+\subsection{Access via SSH/SFTP - z/OS Remote Services Processing Model - Co:Z}
+
+
+\newpage
+
+\section{Requirements}
+\newpage
+
 
 
 \section{Development Environment}

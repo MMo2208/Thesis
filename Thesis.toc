@@ -3,21 +3,36 @@
 \contentsline {section}{\numberline {2}List of abbreviations}{III}{section.2}
 \contentsline {section}{\numberline {3}Introduction}{3}{section.3}
 \contentsline {section}{\numberline {4}Related Work}{4}{section.4}
-\contentsline {section}{\numberline {5}Research gap}{5}{section.5}
-\contentsline {section}{\numberline {6}Anforderungen}{6}{section.6}
-\contentsline {section}{\numberline {7}Dive into \ac {JCL}}{7}{section.7}
-\contentsline {section}{\numberline {8}Development Environment}{8}{section.8}
-\contentsline {section}{\numberline {9}Die Entwicklungsumgebung}{9}{section.9}
-\contentsline {subsection}{\numberline {9.1}Einrichten einer Linux-VM}{9}{subsection.9.1}
-\contentsline {subsection}{\numberline {9.2}Einrichten eines Apache Web-Servers}{11}{subsection.9.2}
-\contentsline {subsubsection}{\numberline {9.2.1}Installation Guest-Additions}{12}{subsubsection.9.2.1}
-\contentsline {subsubsection}{\numberline {9.2.2}Zugang zu sf}{13}{subsubsection.9.2.2}
-\contentsline {subsubsection}{\numberline {9.2.3}Linux Konfiguration f\"ur den Apache Server}{14}{subsubsection.9.2.3}
-\contentsline {subsubsection}{\numberline {9.2.4}PHP Konfiguration}{15}{subsubsection.9.2.4}
-\contentsline {subsubsection}{\numberline {9.2.5}MailCatcher}{16}{subsubsection.9.2.5}
-\contentsline {section}{\numberline {10}Design}{17}{section.10}
-\contentsline {subsection}{\numberline {10.1}MVC-Framework}{17}{subsection.10.1}
-\contentsline {subsubsection}{\numberline {10.1.1}Routing explained}{17}{subsubsection.10.1.1}
-\contentsline {section}{\numberline {11}Proof of Concept}{21}{section.11}
-\contentsline {section}{\numberline {12}Evaluation}{21}{section.12}
-\contentsline {section}{\numberline {13}Appendices}{24}{section.13}
+\contentsline {section}{\numberline {5}An overview on the IBM Mainframe}{5}{section.5}
+\contentsline {subsection}{\numberline {5.1}Online Transaction Processing}{5}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Batch Processing}{6}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Separation of duties}{6}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Mainframe Operation Systems}{6}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.5}Virtualisation with z/VM}{7}{subsection.5.5}
+\contentsline {section}{\numberline {6}Research gap}{8}{section.6}
+\contentsline {section}{\numberline {7}Dive into \ac {JCL}}{9}{section.7}
+\contentsline {subsection}{\numberline {7.1}Job Control Environment}{9}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Job structure}{10}{subsection.7.2}
+\contentsline {subsubsection}{\numberline {7.2.1}EXEC-Statements}{10}{subsubsection.7.2.1}
+\contentsline {subsubsection}{\numberline {7.2.2}DD-Statements}{10}{subsubsection.7.2.2}
+\contentsline {subsubsection}{\numberline {7.2.3}Background / Foreground jobs}{11}{subsubsection.7.2.3}
+\contentsline {section}{\numberline {8}Access possibilities}{12}{section.8}
+\contentsline {subsection}{\numberline {8.1}Access with Virtual Switch / HiperSockets / TCP/IP}{12}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Access through Java with FTP}{12}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}Access via SSH/SFTP - z/OS Remote Services Processing Model - Co:Z}{12}{subsection.8.3}
+\contentsline {section}{\numberline {9}Requirements}{13}{section.9}
+\contentsline {section}{\numberline {10}Development Environment}{14}{section.10}
+\contentsline {section}{\numberline {11}Die Entwicklungsumgebung}{15}{section.11}
+\contentsline {subsection}{\numberline {11.1}Einrichten einer Linux-VM}{15}{subsection.11.1}
+\contentsline {subsection}{\numberline {11.2}Einrichten eines Apache Web-Servers}{17}{subsection.11.2}
+\contentsline {subsubsection}{\numberline {11.2.1}Installation Guest-Additions}{18}{subsubsection.11.2.1}
+\contentsline {subsubsection}{\numberline {11.2.2}Zugang zu sf}{19}{subsubsection.11.2.2}
+\contentsline {subsubsection}{\numberline {11.2.3}Linux Konfiguration f\"ur den Apache Server}{20}{subsubsection.11.2.3}
+\contentsline {subsubsection}{\numberline {11.2.4}PHP Konfiguration}{21}{subsubsection.11.2.4}
+\contentsline {subsubsection}{\numberline {11.2.5}MailCatcher}{22}{subsubsection.11.2.5}
+\contentsline {section}{\numberline {12}Design}{23}{section.12}
+\contentsline {subsection}{\numberline {12.1}MVC-Framework}{23}{subsection.12.1}
+\contentsline {subsubsection}{\numberline {12.1.1}Routing explained}{23}{subsubsection.12.1.1}
+\contentsline {section}{\numberline {13}Proof of Concept}{27}{section.13}
+\contentsline {section}{\numberline {14}Evaluation}{27}{section.14}
+\contentsline {section}{\numberline {15}Appendices}{30}{section.15}
