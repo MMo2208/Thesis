@@ -127,7 +127,7 @@ Bachelorthesis \\
 \hrule\par\rule[-1em]{0pt}{2.5em}
 \begin{large}
 \textbf{Development of a Web-Application\\
-for executing tasks on an IBM-Mainframe\\
+for executing Job-Scripts on an IBM-Mainframe\\
 in the context of Education\\}
 \vspace{0.3cm}
 \end{large}
@@ -137,7 +137,9 @@ in the context of Education\\}
 
 
 \begin{small}
-Bachelorarbeit gemäß § 17 der Allgemeinen Prüfungsordnung vom 01.08.2008 \\im Bachelorstudiengang Informationsmanagement und Unternehmenskommunikation \\an der Hochschule für angewandte Wissenschaften Neu-Ulm \\
+Bachelorarbeit gemäß § 17 der Allgemeinen Prüfungsordnung vom 01.08.2008 \\
+im Bachelorstudiengang Informationsmanagement und Unternehmenskommunikation \\
+an der Hochschule für angewandte Wissenschaften Neu-Ulm \\
 \end {small}
 
 \vspace{3cm} 
@@ -236,6 +238,10 @@ This Bachelor Thesis approaches a Front-End-Application, which will be running o
 The resources for this activity are allocated by the \textit{Talentschmiede AG} - a Frankfurt located IT consultancy which is in close contact to the finance sector and knows and cares about the gap of skilled professionals. Further it is supported by the \textit{Academic Mainframe Consortium e.V.} - an association founded by Mainframe Experts which are also willing to acquire new educated staff in the division of Mainframe.
 \newpage
 
+%================== Related Work ===========================%
+
+
+
 \section{Related Work}
 While a malicious tongue once suggested that " the last mainframe will be unplugged in 1996 " , it reconsidered when IBM introduced it's latest version of it in 2008 \cite{lohr2008old}. Till the present day the mainframe is the backbone of the financial markets worldwide and just as important for other big industries\cite{carayannisenterprise} \cite{lohr2006ibm}.
 The view on the mainframe technology as an IT-dinosaur has to change and the need of adding the mainframe technology to the IS Curriculum in a wide range was overdue already 10 years before \cite{wallis2007s} \cite{wong2009old} \cite{douglas2009enterprise}. Sharma et al. analysed the need of Large System Education regarding to mainframe education and they are investigating " the   academic response   to   the   need   for   large   systems specialists " \cite{sharma2011teach}. In \cite{corridori2009ways} A. Corridori addresses the concerns and the opportunites that come with adding mainframe content to universities curricula and also previews ways to do this. How the economy and with it, the labor market can benefit from it is stated in \cite{sharmaalive}. \\
@@ -243,9 +249,16 @@ The view on the mainframe technology as an IT-dinosaur has to change and the nee
 The potentials of present digital media used to educate in a wide range is discovered by Cope et al. \cite{cope2009ubiquitous}. It is described that "the learner's  relationship  to knowledge  and  the  processes  of  pedagogy  have  not  changed  in  any  significant  way" but through technology " the educational paradigm has changed ". Vicki Jones et al. also address the integration of modern information technology in everyday's life and the advantages of this change regarding education \cite{jones2004ubiquitous}. Here it is stated that " Adaptive learning can offer great advantages in providing students with specific and personalised knowledge as and when required ". While the term " Adaptive Learning " is responsive to the methods that are used to transfer knowledge \cite{midgley2014goals} , " \ac{ULE} " describes an environment with the possibility of learning everywhere and anytime\cite{hwang2008criteria}. Hwang et al. emphasize the fact, that ULEs are an innovative approach for teaching complex topics \cite{hwang2009context}. To establish a ULE there are many technologies needed \cite{sakamura2005ubiquitous}, this thesis is supposed to do a first step in this direction to learn on the Mainframe anywhere and anytime.\\
 
 \ \\
+Kiefer, COBOL as a modern language \cite{kiefer2017cobol}\\
+Khadka, How do professionals perceive legacy systems and software modernization? \cite{khadka2014professionals}\\
+Vinaja, 50th anniversary of the mainframe computer: a reflective analysis \cite{vinaja201450}\\
+
 ......
 
 \newpage
+
+%==================Overview on Mainframe / z/OS===========================%
+
 
 \section{An overview on the IBM Mainframe}
 Prior to entering the main issue of implementing the web-application, this chapter introduces a few mainframe terminologies to assure a full understanding of the steps that take place in the following chapters. \\
@@ -309,15 +322,25 @@ z/TPF\\
 \textit{As an aid to consolidation, the mainframe offers software virtualization, through z/VM. z/VM?s extreme virtualization capabilities, which have been perfected since its introduction in 1967, make it possible to virtualize thousands of  distributed servers on a single server, resulting in the significant reduction in the use of space and energy. }
 \ \\
 \textit{z/Virtual Machine (z/VM) has two basic components: a control program (CP) and 
-a single-user operating system (CMS). As a control program, z/VM is a hypervisor because it runs other operating systems in the virtual machines it creates. Any of the IBM mainframe operating systems such as z/OS, Linux on System z, z/VSE, and z/TPF can be run as guest systemsin their own virtual machines, and z/VM can run any combination of guest systems. }\\
+a single-user operating system (CMS). As a control program, z/VM is a hypervisor because it runs other operating systems in the virtual machines it creates. Any of the IBM mainframe operating systems such as z/OS, Linux on System z, z/VSE, and z/TPF can be run as guest systemsin their own virtual machines, and z/VM can run any combination of guest systems.}\\
 \textbf{---- Explain and show z/VM Constellation, LPARs etc ---- }
 \ \\
 more in : \url{http://www.redbooks.ibm.com/redbooks/pdfs/sg247603.pdf}
 \newpage
 
+
+%================== Research Gap ===========================%
+
+
+
 \section{Research gap}
-Get Access to Batch process in division of education\\
+While the web-access to z/OS for OLTP is very established because of the usage, that is often conducted by end-users or computers, that are not located in immediate proximity to the server, the access to the JES-spool through web-applications is less common, since the system-operators are usually working in ultimate contact to the mainframe.\\
+Certainly there are operators handling batch-processes through a web front-end due to flexibility reasons. But while these applications are to simplify the process of managing the workload in daily-business, this thesis tries to establish an environment where the jobs have to be done in full amplitude, but on a test-system.\\
+This setup has the ambitions of getting people into JCL quite quickly on the one hand and give them the opportunity to train their abilities and, in this way reduce potential uncertainties towards working on large-scale systems, on the other hand. With this method a pertinent and long-lasting learning effect is to be achieved in short time.\\
 \newpage
+
+
+%================== JCL ===========================%
 
 
 \section{Dive into \ac{JCL}}
@@ -387,11 +410,16 @@ JCL started tasks do not require a JOB Statement
 
 \newpage
 
+
+
+%================== Get Access to JES ===========================%
+
+
+
 \section{Access possibilities}
 In order to execute JCL-Jobs on z/OS from the Linux host, an access point is required to submit the data. This chapter is to reveal how the z/VM connects the Linux-host and the z-OS Target-system in this case and how this connection can be used to transfer data among them.\\
 To enable the communication between different applications, a protocol is needed. The protocol that is used in the System Z is the \ac{TCP}/\ac{IP}, which is provided through the HiperSockets function. HiperSockets is a technology developed by IBM to enable high-speed communication between \ac{LPAR} with a hypervisor or between applications inside a z/VM as it is the case here.\\
 You could imagine a HiperSockets-network like an internal \ac{LAN}, linking all partitions for internal communication.\\
-
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.7]{img/Hiper.png}
@@ -447,12 +475,14 @@ The SSH protocol (also referred to as Secure Shell) is a method for secure remot
 
 \newpage
 
+%================== Requirements and Development ===========================%
+
+
 \section{Requirements}
 installing z/VM and Creating Linux or z/OS Guests
 \url{http://www.redbooks.ibm.com/redbooks/pdfs/sg247603.pdf}
 from p.137
 \newpage
-
 
 
 \section{Development Environment}

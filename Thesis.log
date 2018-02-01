@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.29)  31 JAN 2018 16:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.29)  1 FEB 2018 15:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1246,46 +1246,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 232--239
 
 [3]
 Package acronym Info: Label `acro:ULE' newly defined as it shall be overridden
-although it is yet undefined on input line 245.
+although it is yet undefined on input line 249.
 
-Underfull \hbox (badness 10000) in paragraph at lines 242--246
+Underfull \hbox (badness 10000) in paragraph at lines 246--250
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 242--246
+Underfull \hbox (badness 10000) in paragraph at lines 246--250
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 251--255
 
  []
 
 [4]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 258.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 269.
 
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 258.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 269.
 Package acronym Info: Label `acro:OLTP' newly defined as it shall be overridden
 
-although it is yet undefined on input line 258.
+although it is yet undefined on input line 269.
 
-<img/batchtrans.png, id=309, 647.41875pt x 433.62pt>
+<img/batchtrans.png, id=315, 647.41875pt x 433.62pt>
 File: img/batchtrans.png Graphic file (type png)
  <use img/batchtrans.png>
-Package pdftex.def Info: img/batchtrans.png used on input line 264.
+Package pdftex.def Info: img/batchtrans.png used on input line 275.
 (pdftex.def)             Requested size: 323.70857pt x 216.80946pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 268--269
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
 
  []
 
 [5 <./img/batchtrans.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 285--286
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 290--291
+Underfull \hbox (badness 10000) in paragraph at lines 296--297
 
  []
 
@@ -1295,60 +1295,65 @@ Underfull \hbox (badness 10000) in paragraph at lines 301--302
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 303--309
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 303--309
+Underfull \hbox (badness 10000) in paragraph at lines 314--320
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 314--320
 
  []
 
 [6]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 317.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 328.
 
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 ) [7]
-Underfull \hbox (badness 10000) in paragraph at lines 321--322
+Underfull \hbox (badness 10000) in paragraph at lines 337--340
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 327--330
+Underfull \hbox (badness 10000) in paragraph at lines 348--351
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 327--330
+Underfull \hbox (badness 10000) in paragraph at lines 348--351
 
  []
 
-<img/JCL-1.jpg, id=339, 1815.78375pt x 1294.8375pt>
+<img/JCL-1.jpg, id=345, 1815.78375pt x 1294.8375pt>
 File: img/JCL-1.jpg Graphic file (type jpg)
  <use img/JCL-1.jpg>
-Package pdftex.def Info: img/JCL-1.jpg used on input line 335.
+Package pdftex.def Info: img/JCL-1.jpg used on input line 356.
 (pdftex.def)             Requested size: 453.94482pt x 323.70857pt.
 
-Overfull \hbox (0.97693pt too wide) in paragraph at lines 335--336
+Overfull \hbox (0.97693pt too wide) in paragraph at lines 356--357
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 332--341
+Underfull \hbox (badness 10000) in paragraph at lines 353--362
 
  []
 
 [9 <./img/JCL-1.jpg>]
 Package acronym Info: Label `acro:JES' newly defined as it shall be overridden
-although it is yet undefined on input line 352.
+although it is yet undefined on input line 373.
 
-Underfull \hbox (badness 10000) in paragraph at lines 350--353
+Underfull \hbox (badness 10000) in paragraph at lines 371--374
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 356--358
+Underfull \hbox (badness 10000) in paragraph at lines 377--379
 
  []
 
@@ -1358,61 +1363,61 @@ File: lstlang1.sty 2014/09/06 1.5e listings language file
 (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang2.sty
 File: lstlang2.sty 2014/09/06 1.5e listings language file
 )
-Underfull \hbox (badness 10000) in paragraph at lines 360--362
+Underfull \hbox (badness 10000) in paragraph at lines 381--383
 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 377--384
+Underfull \hbox (badness 10000) in paragraph at lines 398--405
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--384
+Underfull \hbox (badness 10000) in paragraph at lines 398--405
 
  []
 
 [11]
 Package acronym Info: Label `acro:TCP' newly defined as it shall be overridden
-although it is yet undefined on input line 394.
+although it is yet undefined on input line 421.
 
 
-Package acronym Warning: Acronym `TCP' is not defined on input line 394.
+Package acronym Warning: Acronym `TCP' is not defined on input line 421.
 
 
-Package acronym Warning: Acronym `TCP' is not defined on input line 394.
+Package acronym Warning: Acronym `TCP' is not defined on input line 421.
 
 Package acronym Info: Label `acro:IP' newly defined as it shall be overridden
-although it is yet undefined on input line 394.
+although it is yet undefined on input line 421.
 
-Package acronym Warning: Acronym `IP' is not defined on input line 394.
+Package acronym Warning: Acronym `IP' is not defined on input line 421.
 
 
-Package acronym Warning: Acronym `IP' is not defined on input line 394.
+Package acronym Warning: Acronym `IP' is not defined on input line 421.
 
 Package acronym Info: Label `acro:LPAR' newly defined as it shall be overridden
 
-although it is yet undefined on input line 394.
+although it is yet undefined on input line 421.
 Package acronym Info: Label `acro:LAN' newly defined as it shall be overridden
-although it is yet undefined on input line 395.
+although it is yet undefined on input line 422.
 
-Underfull \hbox (badness 10000) in paragraph at lines 393--396
+Underfull \hbox (badness 10000) in paragraph at lines 420--423
 
  []
 
-<img/Hiper.png, id=373, 495.8525pt x 371.3875pt>
+<img/Hiper.png, id=379, 495.8525pt x 371.3875pt>
 File: img/Hiper.png Graphic file (type png)
  <use img/Hiper.png>
-Package pdftex.def Info: img/Hiper.png used on input line 399.
+Package pdftex.def Info: img/Hiper.png used on input line 426.
 (pdftex.def)             Requested size: 347.09438pt x 259.96947pt.
 
-<img/workloads.png, id=374, 685.56125pt x 317.185pt>
+<img/workloads.png, id=380, 685.56125pt x 317.185pt>
 File: img/workloads.png Graphic file (type png)
  <use img/workloads.png>
-Package pdftex.def Info: img/workloads.png used on input line 406.
+Package pdftex.def Info: img/workloads.png used on input line 433.
 (pdftex.def)             Requested size: 479.8896pt x 222.02797pt.
 
-Overfull \hbox (26.9217pt too wide) in paragraph at lines 406--407
+Overfull \hbox (26.9217pt too wide) in paragraph at lines 433--434
  [][] 
  []
 
@@ -1420,79 +1425,79 @@ Overfull \hbox (26.9217pt too wide) in paragraph at lines 406--407
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 422--423
+Underfull \hbox (badness 10000) in paragraph at lines 449--450
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 411--424
+Underfull \hbox (badness 10000) in paragraph at lines 438--451
 
  []
 
 [12 <./img/Hiper.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 425--426
+Underfull \hbox (badness 10000) in paragraph at lines 452--453
 
  []
 
 Package acronym Info: Label `acro:FTP' newly defined as it shall be overridden
-although it is yet undefined on input line 427.
+although it is yet undefined on input line 454.
 
-Underfull \hbox (badness 10000) in paragraph at lines 427--428
+Underfull \hbox (badness 10000) in paragraph at lines 454--455
 
  []
 
 [13 <./img/workloads.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 437--439
+Underfull \hbox (badness 10000) in paragraph at lines 464--466
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 441--443
+Underfull \hbox (badness 10000) in paragraph at lines 468--470
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 445--447
+Underfull \hbox (badness 10000) in paragraph at lines 472--474
 
  []
 
 [14] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 461--463
+Underfull \hbox (badness 10000) in paragraph at lines 490--492
 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 475--477
+Underfull \hbox (badness 10000) in paragraph at lines 504--506
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 478--480
+Underfull \hbox (badness 10000) in paragraph at lines 507--509
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 478--480
+Underfull \hbox (badness 10000) in paragraph at lines 507--509
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 481--485
+Underfull \hbox (badness 10000) in paragraph at lines 510--514
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 486--512
+Underfull \hbox (badness 10000) in paragraph at lines 515--541
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 486--512
+Underfull \hbox (badness 10000) in paragraph at lines 515--541
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 486--512
+Underfull \hbox (badness 10000) in paragraph at lines 515--541
 
  []
 
@@ -1502,127 +1507,107 @@ File: lstlang1.sty 2014/09/06 1.5e listings language file
 (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
 )
-Underfull \hbox (badness 10000) in paragraph at lines 519--521
+Underfull \hbox (badness 10000) in paragraph at lines 548--550
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 527--528
+Underfull \hbox (badness 10000) in paragraph at lines 556--557
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 535--536
+Underfull \hbox (badness 10000) in paragraph at lines 564--565
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 537--538
+Underfull \hbox (badness 10000) in paragraph at lines 566--567
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 546--547
+Underfull \hbox (badness 10000) in paragraph at lines 575--576
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 568--569
+Underfull \hbox (badness 10000) in paragraph at lines 597--598
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 570--571
+Underfull \hbox (badness 10000) in paragraph at lines 599--600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 574--583
+Underfull \hbox (badness 10000) in paragraph at lines 603--612
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 574--583
+Underfull \hbox (badness 10000) in paragraph at lines 603--612
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 574--583
+Underfull \hbox (badness 10000) in paragraph at lines 603--612
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 597--601
+Underfull \hbox (badness 10000) in paragraph at lines 626--630
 
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 602--606
+Underfull \hbox (badness 10000) in paragraph at lines 631--635
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 607--609
+Underfull \hbox (badness 10000) in paragraph at lines 636--638
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 616--617
+Underfull \hbox (badness 10000) in paragraph at lines 645--646
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 618--619
+Underfull \hbox (badness 10000) in paragraph at lines 647--648
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 621--636
+Underfull \hbox (badness 10000) in paragraph at lines 650--665
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 621--636
+Underfull \hbox (badness 10000) in paragraph at lines 650--665
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 621--636
+Underfull \hbox (badness 10000) in paragraph at lines 650--665
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 621--636
+Underfull \hbox (badness 10000) in paragraph at lines 650--665
 
  []
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 652--653
+Underfull \hbox (badness 10000) in paragraph at lines 681--682
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 655--656
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 662--663
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 672--673
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 680--681
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 685--688
+Underfull \hbox (badness 10000) in paragraph at lines 684--685
 
  []
 
@@ -1632,17 +1617,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 691--692
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 693--695
+Underfull \hbox (badness 10000) in paragraph at lines 701--702
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 701--703
-
- []
-
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 712--713
+Underfull \hbox (badness 10000) in paragraph at lines 709--710
 
  []
 
@@ -1652,103 +1632,129 @@ Underfull \hbox (badness 10000) in paragraph at lines 714--717
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 725--728
+Underfull \hbox (badness 10000) in paragraph at lines 720--721
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 735--736
+Underfull \hbox (badness 10000) in paragraph at lines 722--724
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 737--738
+Underfull \hbox (badness 10000) in paragraph at lines 730--732
+
+ []
+
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 741--742
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 749--750
+Underfull \hbox (badness 10000) in paragraph at lines 743--746
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 757--759
+Underfull \hbox (badness 10000) in paragraph at lines 754--757
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 764--765
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 766--767
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 778--779
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 786--788
 
  []
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 771--772
+Underfull \hbox (badness 10000) in paragraph at lines 800--801
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 774--776
+Underfull \hbox (badness 10000) in paragraph at lines 803--805
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 808--810
+Underfull \hbox (badness 10000) in paragraph at lines 837--839
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 811--812
+Underfull \hbox (badness 10000) in paragraph at lines 840--841
 
  []
 
 [23] [24]
-Underfull \hbox (badness 10000) in paragraph at lines 858--860
+Underfull \hbox (badness 10000) in paragraph at lines 887--889
 
  []
 
-<img/Schemepage.jpg, id=517, 1003.75pt x 707.64375pt>
+<img/Schemepage.jpg, id=523, 1003.75pt x 707.64375pt>
 File: img/Schemepage.jpg Graphic file (type jpg)
  <use img/Schemepage.jpg>
-Package pdftex.def Info: img/Schemepage.jpg used on input line 864.
+Package pdftex.def Info: img/Schemepage.jpg used on input line 893.
 (pdftex.def)             Requested size: 401.49289pt x 283.05249pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 861--869
+Underfull \hbox (badness 10000) in paragraph at lines 890--898
 
  []
 
-<img/MVC.jpg, id=518, 640.3925pt x 480.79625pt>
+<img/MVC.jpg, id=524, 640.3925pt x 480.79625pt>
 File: img/MVC.jpg Graphic file (type jpg)
  <use img/MVC.jpg>
-Package pdftex.def Info: img/MVC.jpg used on input line 874.
+Package pdftex.def Info: img/MVC.jpg used on input line 903.
 (pdftex.def)             Requested size: 320.19547pt x 240.39752pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 871--879
+Underfull \hbox (badness 10000) in paragraph at lines 900--908
 
  []
 
 [25 <./img/Schemepage.jpg>]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 883.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 912.
 
-Underfull \hbox (badness 10000) in paragraph at lines 893--895
+Underfull \hbox (badness 10000) in paragraph at lines 922--924
 
  []
 
 [26 <./img/MVC.jpg>] [27]
-Underfull \hbox (badness 10000) in paragraph at lines 966--967
+Underfull \hbox (badness 10000) in paragraph at lines 995--996
 
  []
 
 [28] [29] (./Thesis.bbl [30]) [31] [32]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 993.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 993.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1022.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1022.
  (./Thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 993.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 993.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1022.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1022.
+
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
 (rerunfilecheck)             Checksum: B173D2EB8AF05BECCFFC6D50226A0F49;2384.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 993.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1022.
  ) 
 Here is how much of TeX's memory you used:
- 33004 strings out of 493089
- 635783 string characters out of 6134841
- 1179604 words of memory out of 5000000
- 35730 multiletter control sequences out of 15000+600000
+ 33013 strings out of 493089
+ 635960 string characters out of 6134841
+ 1179723 words of memory out of 5000000
+ 35736 multiletter control sequences out of 15000+600000
  17796 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  67i,12n,93p,10414b,2979s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1766,10 +1772,10 @@ ve/2015/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/local/texlive
 /2015/texmf-dist/fonts/type1/public/cm-super/sfsl1200.pfb></usr/local/texlive/2
 015/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/201
 5/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on Thesis.pdf (37 pages, 1500246 bytes).
+Output written on Thesis.pdf (37 pages, 1502226 bytes).
 PDF statistics:
- 709 PDF objects out of 1000 (max. 8388607)
- 640 compressed objects within 7 object streams
- 261 named destinations out of 1000 (max. 500000)
+ 715 PDF objects out of 1000 (max. 8388607)
+ 646 compressed objects within 7 object streams
+ 264 named destinations out of 1000 (max. 500000)
  336 words of extra memory for PDF output out of 10000 (max. 10000000)
 
