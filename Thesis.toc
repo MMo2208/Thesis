@@ -17,22 +17,21 @@
 \contentsline {subsubsection}{\numberline {7.2.2}DD-Statements}{10}{subsubsection.7.2.2}
 \contentsline {subsubsection}{\numberline {7.2.3}Background / Foreground jobs}{11}{subsubsection.7.2.3}
 \contentsline {section}{\numberline {8}Access possibilities}{12}{section.8}
-\contentsline {subsection}{\numberline {8.1}Access with Virtual Switch / HiperSockets / TCP/IP}{12}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Access through Java with FTP}{12}{subsection.8.2}
-\contentsline {subsection}{\numberline {8.3}Access via SSH/SFTP - z/OS Remote Services Processing Model - Co:Z}{12}{subsection.8.3}
-\contentsline {section}{\numberline {9}Requirements}{13}{section.9}
-\contentsline {section}{\numberline {10}Development Environment}{14}{section.10}
-\contentsline {section}{\numberline {11}Die Entwicklungsumgebung}{15}{section.11}
-\contentsline {subsection}{\numberline {11.1}Einrichten einer Linux-VM}{15}{subsection.11.1}
-\contentsline {subsection}{\numberline {11.2}Einrichten eines Apache Web-Servers}{17}{subsection.11.2}
-\contentsline {subsubsection}{\numberline {11.2.1}Installation Guest-Additions}{18}{subsubsection.11.2.1}
-\contentsline {subsubsection}{\numberline {11.2.2}Zugang zu sf}{19}{subsubsection.11.2.2}
-\contentsline {subsubsection}{\numberline {11.2.3}Linux Konfiguration f\"ur den Apache Server}{20}{subsubsection.11.2.3}
-\contentsline {subsubsection}{\numberline {11.2.4}PHP Konfiguration}{21}{subsubsection.11.2.4}
-\contentsline {subsubsection}{\numberline {11.2.5}MailCatcher}{22}{subsubsection.11.2.5}
-\contentsline {section}{\numberline {12}Design}{23}{section.12}
-\contentsline {subsection}{\numberline {12.1}MVC-Framework}{23}{subsection.12.1}
-\contentsline {subsubsection}{\numberline {12.1.1}Routing explained}{23}{subsubsection.12.1.1}
-\contentsline {section}{\numberline {13}Proof of Concept}{27}{section.13}
-\contentsline {section}{\numberline {14}Evaluation}{27}{section.14}
-\contentsline {section}{\numberline {15}Appendices}{30}{section.15}
+\contentsline {subsection}{\numberline {8.1}Access through Java with FTP}{13}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Access via \ac {SSH}/ \ac {SFTP}}{14}{subsection.8.2}
+\contentsline {section}{\numberline {9}Requirements}{15}{section.9}
+\contentsline {section}{\numberline {10}Development Environment}{16}{section.10}
+\contentsline {section}{\numberline {11}Die Entwicklungsumgebung}{17}{section.11}
+\contentsline {subsection}{\numberline {11.1}Einrichten einer Linux-VM}{17}{subsection.11.1}
+\contentsline {subsection}{\numberline {11.2}Einrichten eines Apache Web-Servers}{19}{subsection.11.2}
+\contentsline {subsubsection}{\numberline {11.2.1}Installation Guest-Additions}{20}{subsubsection.11.2.1}
+\contentsline {subsubsection}{\numberline {11.2.2}Zugang zu sf}{21}{subsubsection.11.2.2}
+\contentsline {subsubsection}{\numberline {11.2.3}Linux Konfiguration f\"ur den Apache Server}{22}{subsubsection.11.2.3}
+\contentsline {subsubsection}{\numberline {11.2.4}PHP Konfiguration}{23}{subsubsection.11.2.4}
+\contentsline {subsubsection}{\numberline {11.2.5}MailCatcher}{24}{subsubsection.11.2.5}
+\contentsline {section}{\numberline {12}Design}{25}{section.12}
+\contentsline {subsection}{\numberline {12.1}MVC-Framework}{25}{subsection.12.1}
+\contentsline {subsubsection}{\numberline {12.1.1}Routing explained}{25}{subsubsection.12.1.1}
+\contentsline {section}{\numberline {13}Proof of Concept}{29}{section.13}
+\contentsline {section}{\numberline {14}Evaluation}{29}{section.14}
+\contentsline {section}{\numberline {15}Appendices}{32}{section.15}
