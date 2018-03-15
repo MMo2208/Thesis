@@ -20,17 +20,11 @@
 \BOOKMARK [2][-]{subsection.8.2}{Access via SSH/ SFTP}{section.8}% 20
 \BOOKMARK [1][-]{section.9}{Requirements}{}% 21
 \BOOKMARK [1][-]{section.10}{Development Environment}{}% 22
-\BOOKMARK [1][-]{section.11}{Die Entwicklungsumgebung}{}% 23
-\BOOKMARK [2][-]{subsection.11.1}{Einrichten einer Linux-VM}{section.11}% 24
-\BOOKMARK [2][-]{subsection.11.2}{Einrichten eines Apache Web-Servers}{section.11}% 25
-\BOOKMARK [3][-]{subsubsection.11.2.1}{Installation Guest-Additions}{subsection.11.2}% 26
-\BOOKMARK [3][-]{subsubsection.11.2.2}{Zugang zu sf}{subsection.11.2}% 27
-\BOOKMARK [3][-]{subsubsection.11.2.3}{Linux Konfiguration f\374r den Apache Server}{subsection.11.2}% 28
-\BOOKMARK [3][-]{subsubsection.11.2.4}{PHP Konfiguration}{subsection.11.2}% 29
-\BOOKMARK [3][-]{subsubsection.11.2.5}{MailCatcher}{subsection.11.2}% 30
-\BOOKMARK [1][-]{section.12}{Design}{}% 31
-\BOOKMARK [2][-]{subsection.12.1}{MVC-Framework}{section.12}% 32
-\BOOKMARK [3][-]{subsubsection.12.1.1}{Routing explained}{subsection.12.1}% 33
-\BOOKMARK [1][-]{section.13}{Proof of Concept}{}% 34
-\BOOKMARK [1][-]{section.14}{Evaluation}{}% 35
-\BOOKMARK [1][-]{section.15}{Appendices}{}% 36
+\BOOKMARK [1][-]{section.11}{Design}{}% 23
+\BOOKMARK [2][-]{subsection.11.1}{Welcome}{section.11}% 24
+\BOOKMARK [2][-]{subsection.11.2}{Your Jobs}{section.11}% 25
+\BOOKMARK [2][-]{subsection.11.3}{Submit a new Job}{section.11}% 26
+\BOOKMARK [2][-]{subsection.11.4}{Result}{section.11}% 27
+\BOOKMARK [1][-]{section.12}{Proof of Concept}{}% 28
+\BOOKMARK [1][-]{section.13}{Evaluation}{}% 29
+\BOOKMARK [1][-]{section.14}{Appendices}{}% 30

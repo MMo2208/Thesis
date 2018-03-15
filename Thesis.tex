@@ -72,23 +72,24 @@
 \pagestyle{fancy}
 
 \usepackage{listings}				%Codelisting
+\usepackage{courier}
 \usepackage{color}
 \usepackage{acronym}				%Abkürzungen
  
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{backcolour}{rgb}{0.98,0.98,0.98}
  
 \lstdefinestyle{mystyle}{
     backgroundcolor=\color{backcolour},   
     commentstyle=\color{codegreen},
     keywordstyle=\color{magenta},
     numberstyle=\tiny\color{codegray},
-    stringstyle=\color{codepurple},
+    stringstyle=\color{blue},
     basicstyle=\footnotesize,
     breakatwhitespace=false,         
-    breaklines=true,                 
+    breaklines=false,                 
     captionpos=b,                    
     keepspaces=true,                 
     numbers=left,                    
@@ -157,7 +158,7 @@ an der Hochschule für angewandte Wissenschaften Neu-Ulm \\
 	 & & \\
 	  & & \\
 	   & & \\
-	Thema erhalten: & & 01.01.2020 \\
+	Thema erhalten & & 01.01.2020 \\
 	Arbeit abgegeben & & 01.05.2020 \\
 
 \end{tabular}
@@ -262,7 +263,7 @@ Vinaja, 50th anniversary of the mainframe computer: a reflective analysis \cite{
 
 \section{An overview on the IBM Mainframe}
 Prior to entering the main issue of implementing the web-application, this chapter introduces a few mainframe terminologies to assure a full understanding of the steps that take place in the following chapters. \\
-While many people just take the easy way by calling almost every computer a \textit{server}, the term \textit{mainframe} is often just used to point out that this is largest server in use. In this thesis the term \textit{mainframe} describes the IBM Supercomputer which is capable of "supporting thousands of 
+Because, while many people just take the easy way by calling almost every computer a \textit{server}, and the term \textit{mainframe} is often just used to point out that this is largest server in use, in this thesis the term \textit{mainframe} describes the IBM Supercomputer which is capable of "supporting thousands of 
 applications and input/output devices to simultaneously serve thousands of users" \cite{ebbers2016introduction}.\\
 So the most common utilization of the mainframe is divided in two categories: 
 \begin{itemize}
@@ -332,11 +333,10 @@ more in : \url{http://www.redbooks.ibm.com/redbooks/pdfs/sg247603.pdf}
 %================== Research Gap ===========================%
 
 
-
 \section{Research gap}
 While the web-access to z/OS for OLTP is very established because of the usage, that is often conducted by end-users or computers, that are not located in immediate proximity to the server, the access to the JES-spool through web-applications is less common, since the system-operators are usually working in ultimate contact to the mainframe.\\
-Certainly there are operators handling batch-processes through a web front-end due to flexibility reasons. But while these applications are to simplify the process of managing the workload in daily-business, this thesis tries to establish an environment where the jobs have to be done in full amplitude, but on a test-system.\\
-This setup has the ambitions of getting people into JCL quite quickly on the one hand and give them the opportunity to train their abilities and, in this way reduce potential uncertainties towards working on large-scale systems, on the other hand. With this method a pertinent and long-lasting learning effect is to be achieved in short time.\\
+Certainly there are operators handling batch-processes through a web front-end due to flexibility and simplicity reasons. But while these applications are to simplify the process of managing the workload in daily-business, this thesis tries to establish an environment where the jobs have to be done in full amplitude, but on a test-system, implemented just for educational reasons.\\
+This setup will have the ambitions of getting people into JCL quite quickly on the one hand and give them the opportunity to train their abilities and, in this way reduce potential uncertainties towards working on large-scale systems, on the other hand. With this method a pertinent and long-lasting learning effect is to be achieved in short time.\\
 \newpage
 
 
@@ -479,7 +479,8 @@ The SSH protocol (also referred to as Secure Shell) is a method for secure remot
 
 
 \section{Requirements}
-installing z/VM and Creating Linux or z/OS Guests
+A tool named Co:Z SFTP, an open-source product developed by Dovetail Technologies, will help to establish a safe connection with before mentioned techniques. It works as a port of OpenSSH SFTP for z/OS and therefore enables the access to z/OS datasets and spool files.\\
+
 \url{http://www.redbooks.ibm.com/redbooks/pdfs/sg247603.pdf}
 from p.137
 \newpage
@@ -489,509 +490,248 @@ from p.137
 In this chapter, a development environment will be created. An Oracle Virtual-Machine called VirtualBox will be installed on MacOSX. In this virtual machine the open and free Linux-System Ubuntu 16.04 LTS will be running, to make it possible to implement an Apache HTTP-Server. The Apache Server makes it possible to develop a simple dynamic website offline on a localhost that can be accessed through any web-browser as long as the virtual machine is running.\\
 \\Schematische Darstellung!!
 
+\ \\
+Electron Framework short explanation\\
+
 
 \newpage
 
-\section{Die Entwicklungsumgebung}
-In diesem Kapitel soll eine optimale Entwicklungsumgebung für das Projekt geschaffen werden. Hierfür wird ein Apache Web-Server innerhalb einer virtuellen Linux-Partition implementiert. Sowohl Linux als auch bei Apache handelt es sich um freie open-source Projekte.\\
--Kostenersparnis durch open-source projekte?!-\\
--Gründe für Linux / Apache ???!-
-
-
-
-\subsection{Einrichten einer Linux-VM}
-Passend für den Apache Web-Server ist die Ubuntu Server GUI. \\
-Installiert wird diese in der Virtual-Box von Oracle. \\
-
-Für dieses Vorhaben wird die Ubuntu Version Server 16.04.3 LTS herangezogen.\\
-\ \\
-
-VirtualBox wird als Maschine verwendet, um den Linux-Server zu beherbergen.\\
-Hier wird eine neue Virtuelle Maschine erstellt. \\
-Dem Projekt wird der Name sandbox verliehen, was eine isolierte,  von der Öffentlichkeit -zunächst- abgeschottete Umgebung impliziert. Zusätzlich wird hier bereits von Anfang an festgelegt, dass es sich um einen Linux und genauer um eine 64-Bit VM mit dem Ubuntu OS handeln soll.\\
-Eine dynamische HDD Zuweisung sorgt dafür, dass die Servergröße nicht um Vorhinein festgelegt werden muss, sondern mitwächst, sollte mehr Speicherplatz benötigt werden. Die Größe ist natürlich durch die lokale Festplatte  begrenzt. \\Erklärung localhost!?\\
-
-Um eine lokale Entwicklung auf diesem Server zu ermöglichen, sind einige Konfigurationen nötig.\\
-Neben der Bereitstellung der richtigen Linux-Version (Für dieses Vorhaben wird die Ubuntu Version Server 16.04.3 LTS herangezogen.) wird hier die Verteilung der Virtual Machine auf die verfügbaren CPUs und die damit verbundene Auslastung eingestellt. (2 CPU - 100\% - wichtig????!)\\
-\ \\
-Wichtige Einstellungen im Bereich Netzwerk:\\
-NAT - Network Adress Translation - hier werden die Ports eingestellt über welche die VM kommuniziert.\\
-Portweiterleitung??!?!?\\
-Alle wichtig für lokal development\\
-Rule1: Apache / TCP / -empty for any ip / Host: 8080 / Guest : 80 for default HTTP-port for web traffic\\
-->Apache - Webbrowser\\
-Rule 2: MySQL / TCP / Host: 9306 / Guest: 3306\\
-->Verbindung zu MySQL server -> debugging uploading etc.\\
-Rule 3: MailCatcher / / 1080 / 1080\\
-Receive only Mail-server, dass nicht zufällig E-Mails versandt werden\\
-Rule 4: SSH / 2222 / / 22\\
-Hierüber kann die VM über die Kommandozeile gesteuert werden\\
-- bidirectional - traffic I/O\\
-Firewall erwähnen!!! - ist auf den meisten Systemen bereits vorhanden \\
-Ports einstellen ist aber kein Ersatz für eine Firewall -- siehe später in squid\\
-Auf dem lokalen System -Mac- wird ein Ordner erstellt -sandbox- welcher als gemeinsamer Ordner automatisch eingebunden wird.\\
-\ \\
-Ubuntu installieren:\\
-sudo - superuser do - benötigt um root-befehle zu geben\\
-LAMP server für apache / OpenSSH für SSH zugriff\\
-localhost - der eigene Computer wird via Loopback zugegriffen!? \\
-Ändern des Hostname am Mac für die VM zu sandbox.dev \\
-->Aufrufen der hosts datei -> Terminal\\
-
-\begin{center}
-\begin{lstlisting}[language=HTML]
-$ sudo nano /etc/hosts
-\end{lstlisting}
-\end{center}
-
-add 127.0.0.1	sandbox.dev\\
-Nun kann man sich mit folgendem Befehl auf der VM einloggen.\\
-\begin{center}
-\begin{lstlisting}[language=HTML]
-$ ssh sandbox.dev
-\end{lstlisting}
-\end{center}
-
-Um nicht jedes mal ein PW eingeben zu müssen und um man-in-the-middle-Attacken zu verhindern, werden nun keys generiert.\\
-
-\begin{center}
-\begin{lstlisting}[language=HTML]
-$ ssh-keygen -t rsa -C "username@example.com"
-\end{lstlisting}
-\end{center}
-
-Nun kann noch ein extra pw eingegeben werden, aber da es eine lokale Installation ist, wird das nicht gemacht.\\
-
-Wenn der Private key generiert wurde, wird noch ein public key generiert.\\
-
-
-\begin{center}
-\begin{lstlisting}[language=HTML]
-$ ssh -p2222 marc@sandbox.dev mkdir -p .ssh
-\end{lstlisting}
-\end{center}
-
-Um sich nun direkt auf den Server einloggen zu können:\\
-
-\begin{center}
-\begin{lstlisting}[language=HTML]
-$ cat ~/.ssh/id_rsa.pub | ssh -p2222 marc@sandbox.dev 'cat >> .ssh/authorized_keys'
-\end{lstlisting}
-\end{center}
-
-Da nun immer noch ssh -p2222 marc@sandbox.dev geschrieben werden muss - wird die config datei verändert.
-
-\begin{center}
-\begin{lstlisting}[language=HTML]
-$ nano ~/.ssh/config
-\end{lstlisting}
-\end{center}
-
-Edit:
-
-Host sandbox.dev
-        Port 2222
-        User marc
-
-Nun kann man sich einfach mit ssh sandbox.dev auf den Server einloggen (lokal).\\
-
-\ \\
-
-
-\subsection{Einrichten eines Apache Web-Servers}
-Um den Web-Server zu konfigurieren wird dieser zuerst auf den neuesten Stand gebracht.\\
-apt - advanced packages tool (packages erklären?!)\\
-\ \\
-\ \\
-ssh sandbox.dev soll nicht jedes mal erwähnt werden.. Abgrenzen mit Farben wann man eingeloggt ist und wann nicht!?
-\ \\
-\ \\
-Da die Installation-disc nicht alle updates beinhaltet: Für alle neuen Installationen und Fehlerbehebungen:\\
-- Update -> update list of available packages
-\begin{center}
-\begin{lstlisting}[language=HTML]
-$ sudo apt-get update
-\end{lstlisting}
-\end{center}
-
-Nun müssen alle erworbenen packages auf den neuesten Stand gebracht werden.
-- Upgrade -> upgrade currently installed software
-\begin{center}
-\begin{lstlisting}[language=HTML]
-$ sudo apt-get upgrade 
-\end{lstlisting}
-\end{center}
-
-Virtual-Box-Integration:\\
-Virtual Box verfügt über ein Add-On -> Guest Additions.\\
--> Eine Ansammlung von Treibern und System Programmen -> diese optimieren das OS für Performance und Usability.\\
-Dies wird zB beim Filesharing gebraucht - zwischen Host und Guest.\\
-
-\ \\
-Man benötigt: build-essential --> tools for compiling\\
-und virtual-box-dkms --> Dynamic Kernel Module Support\\
-module-assistant --> handles module source packages\\
-
-\ \\
-Additional Software?! s. Bilder\\
-
-\begin{center}
-\begin{lstlisting}[language=HTML]
-$ sudo apt-get install build-essential virtualbox-dkms nano zip unzip curl man-db acpid git module-assistant
-\end{lstlisting}
-\end{center}
-
---> sudo reboot\\
-
---> log back in ssh....\\
-
-\subsubsection{Installation Guest-Additions}
-Install Virtual-Box Guest Additions to share Data betw. Guest and hosts:
-the shared folder will be %/media/sf_sandbox\\
-\ \\
-Der mount-command wird benutzt um the device file system to the file tree zu attachen.\\
-Man kann auf verschiedenen Content zugreifen - wie zb eine CD.\\
-Es wird eine virtuelle CD in das virtuelle Laufwerk der virtualBox gelegt um die Guest Additions zu laden.\\
-Zum mounten benötigt man ein device und ein directory\\
-\ \\
--> Device: dev cdrom (immer mit slashes)\\
--> directory: media cdrom\\
-\ \\
-Erstmal die CD einlegen -> Devices -> Insert.... Screenshot!?\\
-\ \\ 
-Durch ls -la /dev oder /media schauen ob die cdrom files da sind?!
-\ \\
-
-
-Dann mounten:
-\begin{center}
-\begin{lstlisting}[language=HTML]
-$ sudo mount /dev/cdrom /media/cdrom
-\end{lstlisting}
-\end{center}
-
-Das Terminal zeigt: 
-
-\begin{center}
-\begin{lstlisting}[language=HTML]
-mount: /dev/sr0 is write-protected, mounting read-only
-\end{lstlisting}
-\end{center}
-Das ist normal. Wie bei einer cd.\\
-
-
-Nun werden die Guest Additions installiert.\\
-\begin{center}
-\begin{lstlisting}[language=HTML]
-$ sudo sh /media/cdrom/VBoxLinuxAdditions.run --nox11
-\end{lstlisting}
-\end{center}
-
---> sudo reboot und ssh back again.\\
-
-Check die geladenen modules.
-
-\begin{center}
-\begin{lstlisting}[language=HTML]
-$ lsmod | grep vbox
-\end{lstlisting}
-\end{center}
-
-grep erklären -> vboxsf muss vorhanden sein - shared folder.\\
-
-Nun sollte der media folder überprüft werden:
-\begin{center}
-\begin{lstlisting}[language=HTML]
-$ ls -la /media
-\end{lstlisting}
-\end{center}
-Hier sollte ein Verzeichnis cdrom und ein sf\_sandbox vorhanden sein!!!!\\
-
-
-
-
-\ \\
-sh-Command - built in command interpreter
-lsmod - lists (s. Bilder)\\
-
-
-\subsubsection{Zugang zu sf}
-Nun muss Zugang zu den shared Folders gewährleistet werden.\\
-
-Da der Ordner sf\_sandbox nicht root sondern Gruppe vboxsf ist hat man bisher keinen Zugriff auf diesen Ordner. Hier für muss der Zugang gewährleistet werden.\\
-Für den user marc: \\
-\begin{center}
-\begin{lstlisting}[language=HTML]
-$ sudo usermod -a -G vboxsf marc
-\end{lstlisting}
-\end{center}
-
-Der Zugang erfolgt nach einmaligem logout. -> logout -> ssh -> Zugang sollte da sein.\\
-Der Apache server hat den usernamen www-data -> Dieser braucht ebenfalls zugang zum sf.\\
-
-\begin{center}
-\begin{lstlisting}[language=HTML]
-$ sudo usermod -a -G vboxsf www-data
-\end{lstlisting}
-\end{center}
-
-
-\subsubsection{Linux Konfiguration für den Apache Server}
-Der Server weis bisher noch nichts von sf.\\
-
-command sudoedit - overwrite original file:\\
-vboxsf - HTTP Apache configuration - copy paste from exercise files\\
-wie soll das gehändelt werden??\\
-
-\begin{center}
-\begin{lstlisting}[language=HTML]
-$ sudoedit sites-available/vboxsf.conf
-\end{lstlisting}
-\end{center}
-
-
-Als nächstes die Ports konfigurieren:\\
-Apache läuft eigt auf 80 - es wurde aber auf 8080 weiter geleitet\\
-ports.conf -> verändern\\
-
-\begin{center}
-\begin{lstlisting}[language=HTML]
-$ sudoedit ports.conf
-\end{lstlisting}
-\end{center}
-
-Unter Listen 80 noch Listen 8080 hinzufügen.\\
-
-Managing Apache Sites in Ubuntu s. Bilder \\
-\begin{center}
-\begin{lstlisting}[language=HTML]
-$ sudo a2ensite vboxsf
-\end{lstlisting}
-\end{center}
-\begin{center}
-\begin{lstlisting}[language=HTML]
-$ sudo a2dissite 000-default
-\end{lstlisting}
-\end{center}
-
-Managing Apache Modules in Ubuntu s. Bilder \\
-
-\begin{center}
-\begin{lstlisting}[language=HTML]
-$ sudo a2enmod rewrite vhost_alias
-\end{lstlisting}
-\end{center}
-
-\ \\
-Danach muss der Server neu gestartet werden. Weil Apache neue Group-permissions braucht außerdem wurden die server functionality gechanged durch die modules.\\
-\begin{center}
-\begin{lstlisting}[language=HTML]
-$ sudo service apache2 restart
-\end{lstlisting}
-\end{center}
-
-Ob der Server funktioniert kann über den Browser herausgefunden werden
-\begin{center}
-\begin{lstlisting}[language=HTML]
-sandbox.dev:8080/server-status
-\end{lstlisting}
-\end{center}
-s.Bilder\\
-
-\subsubsection{PHP Konfiguration}
-Da das Front-End in PHP geschrieben werden soll, müssen hier Vorkehrungen getroffen werden.
-PHP ist bereits installiert, muss aber für die Entwicklung noch konfiguriert werden.\\
-\begin{center}
-\begin{lstlisting}[language=HTML]
-$ sudoedit /etc/php/7.0/mods-available/phpcustom.ini
-\end{lstlisting}
-\end{center}
-
-
-\begin{center}
-\begin{lstlisting}[language=HTML]
-; Custom shared config
-; priority=01
-error_reporting=E_ALL
-display_errors=On
-display_startup_errors=On
-error_log=/var/log/php_errors.log
-log_errors_max_len=0
-memory_limit=256M
-post_max_size=100M
-upload_max_filesize=100M
-\end{lstlisting}
-\end{center}
-
-Apache weis nun wo er die errors während der Programmierung hinschreiben soll aber das File exisiert noch nicht.\\
-File error\_log erstellen\\
-touch command erklären
-
-\begin{center}
-\begin{lstlisting}[language=HTML]
-$ sudo touch /var/log/php_errors.log
-\end{lstlisting}
-\end{center}
-
-Permission to read and write to the server.\\
-chown-command - change owner and group of files.\\
-
-PHP-App Frameworks s-Bilder\\
-
-\begin{center}
-\begin{lstlisting}[language=HTML]
-$ sudo apt-get install php-mcrypt php-intl php-sqlite3 php-mbstring php-xml php-gd -y
-\end{lstlisting}
-\end{center}
-
-Zwei frameworks müssen enabled werden.
-
-\begin{center}
-\begin{lstlisting}[language=HTML]
-$ sudo phpenmod mbstring simplexml
-\end{lstlisting}
-\end{center}
-
-sudo service apache2 restart
-
-\subsubsection{MailCatcher}
-
-Benötigte Pakete
-\begin{center}
-\begin{lstlisting}[language=HTML]
-$ sudo apt-get install libsqlite3-dev ruby-dev -y
-\end{lstlisting}
-\end{center}
-
-Mailcatcher selbst installieren
-
-\begin{center}
-\begin{lstlisting}[language=HTML]
-$ sudo gem install mailcatcher
-\end{lstlisting}
-\end{center}
-
-Testmail
-\begin{center}
-\begin{lstlisting}[language=HTML]
-$ php -a
-php > mail('target@example.com', 'Testmail', 'Was geht ab', 'From:source@example.com');
-\end{lstlisting}
-\end{center}
-
-
-\newpage
 
 \section{Design}
-Once the Server is up and running a framework for programming the website is needed to save time and make the application stable and safe in the end. For this Application the choice is a PHP-Framework named Laravel. \\
-\\Laravel Begründung?!
+We use a one-page Framework (hyperspace ansprechen?!) \\
+Co:Z Documentation can be visited on \hyperlink{http://dovetail.com/docs/sftp/using.html}{http://dovetail.com/docs/sftp/using.html}\\
+Implementation of 4 sections: \\
+\subsection{Welcome}
+Not much explanation needed - Get started leads to first section: Your Jobs.
+Perhaps gamification part with points/stars or something.
+For use of the next sections an SFTP-Client is implemented to get a connection to Co:Z-SFTP\\
+ssh2.js library explanation?!\\
 
-At the beginning, the admin-section will be implemented to create users, which will be granted to have access to the Mainframe-Training-Units.\\
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.4]{img/Schemepage.jpg}
-	\caption{schematic presentation of the admin/user-section}
-	\label{schematic presentation of the admin/user-section}
-\end{figure}
-\\
+\begin{lstlisting}[language=Java]
+var Client = require('ssh2').Client;
+var connection = new Client();
 
-\subsection{MVC-Framework}
-Laravel is a framework that follows the MVC-Pattern. MVC stands for Model-View-Controller.
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.5]{img/MVC.jpg}
-	\caption{Model-View-Controller Pattern}
-	\label{Model-View-Controller Pattern}
-\end{figure}
-\\
-\subsubsection{Routing explained}
-Routes are established (unter anderem) in the web.php file. In the example we see the Routings that are triggering the AdminsController - the @ triggers a function that is listed in this controller. For example create.
-\begin{center}
-\begin{lstlisting}[language=PHP]
-/* Admin Routing */
-Route::get('/admin', 'AdminsController@admin')->name('admin_view');
-Route::get('/admin/alter', 'AdminsController@alter')->name('alter_user');
-Route::get('/admin/create', 'AdminsController@newUser')->name('new_user');
-Route::post('/admin/create', 'AdminsController@create')->name('create_user');
-Route::get('/admin/{user_id}', 'AdminsController@show')->name('show_user');
-Route::post('/admin/{user_id}', 'AdminsController@modify')->name('update_user');
+var connSettings = {
+     host: '141.2.192.32',
+     port: 22, // Guest-SFTP Port
+     username: 'u0xxx',
+     password: 'xxxxxxxx'
+};
 \end{lstlisting}
-\end{center}
 
-The names help to navigate to the pages in an easier manner. With blade you can just define the link to the named paged.\\
-\\Blade kurz erklären.
-
-\begin{center}
+\subsection{Your Jobs}
+In this section the user can see the jobs he or she submitted so far and in addition the job the user is currently working on.\\
 \begin{lstlisting}[language=HTML]
-<a class="hollow button" href="{{ route('show_user', ['user_id' => 1 ]) }}">EDIT</a>
+       <!-- Here the JES-Spool is listed -->
+       <div id="dirout"></div>
 \end{lstlisting}
-\end{center}
 
-The create function does nothing but return the view / the file 'createuser.php' that is located in the folder 'admin'.
-\begin{center}
-\begin{lstlisting}[language=PHP]
-    public function create()
-    {
-      return view('admin/createuser');
+With the following JS-function, the jobs are passed to the application.\\
+\begin{lstlisting}[language=Java]
+var remotePathToList = '//-JES';
+
+var conn = new Client();
+conn.on('ready', function() {
+    conn.sftp(function(err, sftp) {
+         if (err) throw err;
+
+         sftp.readdir(remotePathToList, function(err, list) {
+                if (err) throw err;
+
+                var rows = list;
+
+                    var jobs = "<table border='1|1'>";
+                    for (var i = 0; i < rows.length; i++) {
+                        jobs+="<tr>";
+                        jobs+="<td>"+rows[i].filename+"</td>";
+                        jobs+="<td>"+rows[i].longname+"</td>";
+
+                        jobs+="</tr>";
+                    }
+                    jobs+="</table>";
+                document.getElementById("dirout").innerHTML = jobs;
+
+                // Do not forget to close the connection, otherwise you'll get troubles
+                conn.end();
+         });
+    });
+}).connect(connSettings);
+\end{lstlisting}
+\ \\
+\begin{itemize}
+\item{Line 1: Navigating to the //-JES directory, which is a directory, defined through Co:Z and contains the job-files.}
+\item{Lines 3-5: Here the connection is established with the above described parameters.}
+\item{Line 6: Throws an error if something went wrong (in console! to be changed?!).}
+\item{from Line 8: the directory is readed. Here two variables, err and list, are defined. The err variable is just to get output in case of errors. List defines the Objects located in the //-JES directory. }
+\item{from Line 11: The List content gets defined as rows, those rows are given to a table that is defined as a variable "jobs". The function in jobs, adds a row for each object.}
+\item{Line 22: Calls a div in index.html with the id="dirout" which is empty by default. Here it puts the table with the listed jobs.}
+\item{After this the connection is ended, to get always just a status of the directory in the moment it is charged.}
+\end{itemize}
+
+\subsection{Submit a new Job}
+First a file is created as a text-file. explain buttons.\\
+Screenshots!?\\
+\begin{lstlisting}[language=HTML]
+          <button onclick="createFile()">Create Job</button>
+\end{lstlisting}
+\ \\
+\begin{lstlisting}[language=HTML]
+   <div style="margin-top:30px;">
+     <p id="filesuccess">Write your Job in the textarea above and 
+     		click on Create Job.</p>
+     <div class="field">
+       <button id="subBut" style="display:none;" onclick="transFile()">
+       			Submit the Job now</button>
+       <div id="messages"></div>
+     </div>
+   </div>
+\end{lstlisting}
+\ \\
+Use node filesystem. Change content - innerHTML and color. explain variables.
+\begin{lstlisting}[language=Java]
+// Create Job file
+function createFile() {
+  var fs = require('fs');
+  var filepath = "temp/JCL.txt";
+  var fileContent = document.getElementById("JCLcontent").value;
+  var filesuccess = document.getElementById("filesuccess");
+  var subBut = document.getElementById("subBut");
+
+  //Check if textarea contains content
+  if (fileContent == '') {
+
+    filesuccess.style.color = "#ff9800";
+    filesuccess.innerHTML = "Please write a Job first.";
+
+  } else if (fileContent != '') {
+
+    // if it does, create textfile
+    fs.writeFile(filepath, fileContent, (err) => {
+                    if (err) throw err;
+
+      //output as success or "create a job first"
+      filesuccess.style.color = "#00e676";
+      filesuccess.innerHTML = "Your Job has been created. 
+      			Submit now to the JES-Spool.";
+      subBut.style.display = "block";
+
+        });
+  }
+};
+\end{lstlisting}
+\ \\
+Change the mode ls = readdir in node. Explain streams. 
+\begin{lstlisting}[language=Java]
+//Transfer Job File to Mainframe
+function transFile() {
+var changeMod = '/+mode=text'
+
+var conn = new Client();
+  conn.on('ready', function() {
+    console.log('Client -> ready');
+      conn.sftp(function(err, sftp) {
+           if (err) throw err;
+
+             // change Transfer Mode with ls /+mode=text
+             sftp.readdir(changeMod, function(err, list) {
+                    if (err) throw err;
+                    // List the Changing in the console
+                    console.dir('mode -> text');
+                    // This time no connection closing, to get the output-action
+             });
+
+
+             var fs = require("fs"); // Use node filesystem
+             
+             //Read the textfile and send it to subdirectory, called "myjob"
+             var readStream = fs.createReadStream( 'temp/JCL.txt' );
+             var writeStream = sftp.createWriteStream( '//-JES.INTRDR/MYJOB' );
+
+             writeStream.on('close',function () {
+                 console.log( "file transferred succesfully" );
+                 document.getElementById('three').style.display = 'block';
+             });
+
+             writeStream.on('end', function () {
+                 console.log( "sftp connection closed" );
+                 conn.close();
+             });
+
+             // initiate transfer of file
+             readStream.pipe( writeStream );
+         });
+
+      }).connect(connSettings);
+  };
+\end{lstlisting}
+\ \\
+"three" = Result area -> gets displayed after submitting
+\subsection{Result}
+Here describe Error handling and output divs.
+
+
+\begin{lstlisting}[language=Java]
+<section id="three" class="wrapper style3 fade-up">
+
+   <div class="inner">
+      <h2>Your Result</h2>
+      <p>Here you can see if your job was submitted to the mainframe. 
+      To get more details on the job status go to the overview. 
+      You can also check the return code there.</p>
+      
+  <div class="features">
+  <section id="resultinfo">
+      <span class="icon major fa-info"></span>
+      <h3>No submit</h3>
+      <p>You first have to submit something to get a result.</p>
+  </section>
+  
+   <section id="goodresult" style="display:none;">
+      <span class="icon major fa-check"></span>
+      <h3>You succeeded</h3>
+      <p>Your file was submitted. 
+      Go to the overview to check its status.</p>
+   </section>
+   
+   <section id="badresult" style="display:none;">
+     <span class="icon major fa-times"></span>
+     <h3>Something went wrong</h3>
+     <p>Bad Connection. Check your VPN.</p>
+   </section>
+   </div>
+   
+   // The page has to get reloaded to view the new jobs in the list 
+     <ul class="actions">
+       <li><a href="#one" class="button" 
+       	onClick="window.location.reload()">Go to overview</a></li>
+     </ul>
+     
+   </div>
+ </section>
+\end{lstlisting}
+Catch TimeOut Error in ssh2 library, Client function.
+\begin{lstlisting}[language=Java]
+function Client() {
+
+ [ ... ]
+ 
+   function startTimeout() {
+    if (self.config.readyTimeout > 0) {
+      self._readyTimeout = setTimeout(function() {
+        var err = new Error('Timed out while waiting for handshake');
+
+        document.getElementById("badlist").style.display = "block";
+        document.getElementById("resultinfo").style.display = "none";
+        document.getElementById("badresult").style.display = "block";
+
+        err.level = 'client-timeout';
+        self.emit('error', err);
+        sock.destroy();
+      }, self.config.readyTimeout);
     }
+  }
+};
 \end{lstlisting}
-\end{center}
-
-But within the Controller, also different types of data can be generated and passed to the view.\\
-In this example hard coded user data is passed to the view 'overview'
-
-\begin{center}
-\begin{lstlisting}[language=PHP]
-    public function admin()
-    {
-
-            $data = [];                     			//data als leeres array definieren
-
-            $obj = new \stdClass;
-            $obj->id = 1;
-            $obj->title = 'mr';
-            $obj->name = 'john';
-            $obj->last_name = 'doe';
-            $obj->email = 'john@domain.com';
-            
-            $data['users'][] = $obj;      		//data wird als obj definiert
-
-      return view('admin/overview', $data); 	//pass data to view
-    }
-\end{lstlisting}
-\end{center}
-
-While there will be a view to Add a new user and to modify an existing one, due to the controller there is no need to have two different pages / forms for that. There is just on file containing the form that can be used for both - editing and creating. The File here is form.php\\
-In the controller there will be two functions.
-
-\begin{center}
-\begin{lstlisting}[language=PHP]
-/* 1st Function */
-    public function newUser() 
-    {
-      $data = [];
-      $data['modify'] = 0;
-      return view('admin/form', $data);
-    }
-
-/* 2nd Function */
-    public function show($users_id)
-    {
-      $data = [];
-      $data['modify'] = 1;
-      return view('admin/form', $data);
-    }
-\end{lstlisting}
-\end{center}
-
-While they both show the same view 'admin/form', the passed data is different. The modify-sequence on line 5 and 13 enables the view to differentiate whether the passed data should be reorganized or added to the database.
-This becomes possible through an action that is allocated in the form.php file.
-\begin{center}
-\begin{lstlisting}[language=PHP]
-        <form action="{{ $modify == 1 ? route('update_user', [ 'user_id' => 1]) : route('create_user') }}" method="post">
-\end{lstlisting}
-\end{center}
-Here the status of \$modify is queried and based on this decision the view routes to a particular function that is defined in the AdminsController. If the user is modified, a user-id has to be set.\\
 
 \newpage
 \section{Proof of Concept}

@@ -21,17 +21,11 @@
 \contentsline {subsection}{\numberline {8.2}Access via \ac {SSH}/ \ac {SFTP}}{14}{subsection.8.2}
 \contentsline {section}{\numberline {9}Requirements}{15}{section.9}
 \contentsline {section}{\numberline {10}Development Environment}{16}{section.10}
-\contentsline {section}{\numberline {11}Die Entwicklungsumgebung}{17}{section.11}
-\contentsline {subsection}{\numberline {11.1}Einrichten einer Linux-VM}{17}{subsection.11.1}
-\contentsline {subsection}{\numberline {11.2}Einrichten eines Apache Web-Servers}{19}{subsection.11.2}
-\contentsline {subsubsection}{\numberline {11.2.1}Installation Guest-Additions}{20}{subsubsection.11.2.1}
-\contentsline {subsubsection}{\numberline {11.2.2}Zugang zu sf}{21}{subsubsection.11.2.2}
-\contentsline {subsubsection}{\numberline {11.2.3}Linux Konfiguration f\"ur den Apache Server}{22}{subsubsection.11.2.3}
-\contentsline {subsubsection}{\numberline {11.2.4}PHP Konfiguration}{23}{subsubsection.11.2.4}
-\contentsline {subsubsection}{\numberline {11.2.5}MailCatcher}{24}{subsubsection.11.2.5}
-\contentsline {section}{\numberline {12}Design}{25}{section.12}
-\contentsline {subsection}{\numberline {12.1}MVC-Framework}{25}{subsection.12.1}
-\contentsline {subsubsection}{\numberline {12.1.1}Routing explained}{25}{subsubsection.12.1.1}
-\contentsline {section}{\numberline {13}Proof of Concept}{29}{section.13}
-\contentsline {section}{\numberline {14}Evaluation}{29}{section.14}
-\contentsline {section}{\numberline {15}Appendices}{32}{section.15}
+\contentsline {section}{\numberline {11}Design}{17}{section.11}
+\contentsline {subsection}{\numberline {11.1}Welcome}{17}{subsection.11.1}
+\contentsline {subsection}{\numberline {11.2}Your Jobs}{17}{subsection.11.2}
+\contentsline {subsection}{\numberline {11.3}Submit a new Job}{19}{subsection.11.3}
+\contentsline {subsection}{\numberline {11.4}Result}{21}{subsection.11.4}
+\contentsline {section}{\numberline {12}Proof of Concept}{23}{section.12}
+\contentsline {section}{\numberline {13}Evaluation}{23}{section.13}
+\contentsline {section}{\numberline {14}Appendices}{26}{section.14}
