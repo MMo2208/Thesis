@@ -210,6 +210,7 @@ Hier kommt der/die/das Abstract.\\
 	\acro{FTP}{File Transfer Protocol}
 	\acro{SSH}{Secure Shell}
 	\acro{SFTP}{Secure File Transfer Protocol}
+	\acro{VPN}{Virtual Private Network}
 \end{acronym}
 
 \newpage
@@ -263,7 +264,7 @@ Vinaja, 50th anniversary of the mainframe computer: a reflective analysis \cite{
 
 \section{An overview on the IBM Mainframe}
 Prior to entering the main issue of implementing the web-application, this chapter introduces a few mainframe terminologies to assure a full understanding of the steps that take place in the following chapters. \\
-Because, while many people just take the easy way by calling almost every computer a \textit{server}, and the term \textit{mainframe} is often just used to point out that this is largest server in use, in this thesis the term \textit{mainframe} describes the IBM Supercomputer which is capable of "supporting thousands of 
+Because, while many people just take the easy way by calling almost every computer a \textit{server}, and the term \textit{mainframe} is often just used to point out that this is the largest server in use, in this thesis the term \textit{mainframe} describes the IBM Supercomputer which is capable of "supporting thousands of 
 applications and input/output devices to simultaneously serve thousands of users" \cite{ebbers2016introduction}.\\
 So the most common utilization of the mainframe is divided in two categories: 
 \begin{itemize}
@@ -473,44 +474,64 @@ The SSH protocol (also referred to as Secure Shell) is a method for secure remot
 
 \end{myboxii}
 
+\subsection{Co:Z SFTP-Server}
+
+\textbf{---- Describe Co:Z ---- }\\
+A tool named Co:Z SFTP, an open-source product developed by Dovetailed Technologies, will help to establish a safe connection with before mentioned techniques. It works as a port of OpenSSH SFTP for z/OS and therefore enables the access to z/OS datasets and spool files.\\
+
 \newpage
 
 %================== Requirements and Development ===========================%
 
 
 \section{Requirements}
-A tool named Co:Z SFTP, an open-source product developed by Dovetail Technologies, will help to establish a safe connection with before mentioned techniques. It works as a port of OpenSSH SFTP for z/OS and therefore enables the access to z/OS datasets and spool files.\\
+To get access to z/OS, a system constellation as seen on Fig. \ref{constellation} will be implemented. A z/VM running Linux (LPAR 1) will serve as a web-server. Here the application is hosted and can be accessed through the user's web-browser. Due to the hipersockets network, that links LPAR 1 to the z/OS (LPAR 2), whereupon an SFTP-Server can be running, a stable and safe connection can be established. As before mentioned, the Co:Z SFTP-Server is deployed here, to get direct access to the JES-Spool. Through this constellation, students will be able to submit jobs directly on the mainframe, from any given device that they are using to access the internet.\\
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.7]{img/Schemahosting.jpg}
+	\caption{constellation}
+	\label{constellation}
+\end{figure}
 
 \url{http://www.redbooks.ibm.com/redbooks/pdfs/sg247603.pdf}
 from p.137
 \newpage
 
-
-\section{Development Environment}
-In this chapter, a development environment will be created. An Oracle Virtual-Machine called VirtualBox will be installed on MacOSX. In this virtual machine the open and free Linux-System Ubuntu 16.04 LTS will be running, to make it possible to implement an Apache HTTP-Server. The Apache Server makes it possible to develop a simple dynamic website offline on a localhost that can be accessed through any web-browser as long as the virtual machine is running.\\
-\\Schematische Darstellung!!
-
-\ \\
-Electron Framework short explanation\\
+\textbf{---- Ubuntu / Apache Server etc.?! Implementation part ---- }\\
+\textbf{---- Node.js website / hosting / Electron ---- }\\
 
 
 \newpage
 
 
 \section{Design}
-We use a one-page Framework (hyperspace ansprechen?!) \\
-Co:Z Documentation can be visited on \hyperlink{http://dovetail.com/docs/sftp/using.html}{http://dovetail.com/docs/sftp/using.html}\\
-Implementation of 4 sections: \\
-\subsection{Welcome}
-Not much explanation needed - Get started leads to first section: Your Jobs.
-Perhaps gamification part with points/stars or something.
-For use of the next sections an SFTP-Client is implemented to get a connection to Co:Z-SFTP\\
-ssh2.js library explanation?!\\
+In this chapter, a framework, based on the node-stack, is used to implement the web-application. This framework, called electron, gives the opportunity to develop the javascript-application locally, before the installation on the z/VM. For development, the mainframe access takes place through the \ac{VPN} that is provided by the Frankfurt University.\\
+Since the Co:Z-SFTP-Server in its handling, differs slightly from usual SFTP-Servers, becoming noticeable through the commands that have to be executed, the following subchapters provide a brief glimpse on how the actions would be executed through a terminal. But it is avoided to go too much into detail here, as the focus is on the realisation through javascript, as these are the functions, which are triggered in the application in the end.\\
+For further interests, the full Co:Z documentation can be read on \hyperlink{http://dovetail.com/docs/sftp/using.html}{http://dovetail.com/docs/sftp/using.html}.\\
+
+\subsection{Registration / Login}
+To be able to work on the IBM Machine, the students have to be added as authenticated users on the mainframe first. This has to be done by a mainframe administrator before. With given user-data they are ready to register for and use the Mainframe-Self-Service.\\
+
+\subsection{Registration / Login}
+\textbf{---- Admin Bereich kurz schematisiert darstellen?! ---- }\\
+
+After a successfull registration, the users can login to the Self-Service. Here they get provided a one-page program, which is devided into four sections. These sections and their functions are explained in the following.\\ 
+For the next sections, an SFTP-Client is implemented to get a connection to Co:Z-SFTP. The node package ssh2.js by Brian White makes it possible to use the openSSH protocol as it is also used by Co:Z-SFTP. Beside the scripts and packages used to run the electron framework, two files are applied here to set up the applications' front-end - One HTML-File, index.html, containing the structure of the page and a file called SFTP-functions.js . This is where the functions regarding the SFTP-Client get implemented. After installation of the ssh2-package, the following Code includes the package into SFTP-functions script. \\
+\ \\
+\textit{For a better understanding, the Filename is always listed before the code. As long as it doesn't change throughout the code-listings, it is the same file as before.}\\
 
 \begin{lstlisting}[language=Java]
+// SFTP-functions.js
+
 var Client = require('ssh2').Client;
 var connection = new Client();
-
+\end{lstlisting}
+\ \\
+To establish a connection, the application needs a few settings to get acces. The host called here is the IP-Address of the Co:Z Server, port 22 is the port that is usually used for guest-access via SFTP. The guest-access is required due to the web-server running not in the same LPAR as the z/OS. The data used by the user to log in to the service gets passed to the client.\\
+\textbf{---- Variablen für userdaten, password hashen ---- }\\
+\ \\
+\begin{lstlisting}[language=Java]
 var connSettings = {
      host: '141.2.192.32',
      port: 22, // Guest-SFTP Port
@@ -518,26 +539,84 @@ var connSettings = {
      password: 'xxxxxxxx'
 };
 \end{lstlisting}
+\ \\
+\subsection{Welcome}
+The first section simply welcomes the user to the self service. \\
+If there are any problems with the connection to z/OS the user gets an error message here. \\
+For this, a div-container, is placed but not shown as long as the connection is not failing.\\
+\ \\
+\textbf{---- Error-message anpassen ---- }\\
 
-\subsection{Your Jobs}
-In this section the user can see the jobs he or she submitted so far and in addition the job the user is currently working on.\\
 \begin{lstlisting}[language=HTML]
-       <!-- Here the JES-Spool is listed -->
-       <div id="dirout"></div>
+// index.html
+
+    <div id="badlist" class="features" style="display:none;">
+       <section>
+         <span class="icon major fa-times"></span>
+         <h3>Something went wrong</h3>
+         <p>Bad Connection. Check your VPN.</p>
+       </section>
+     </div>
+\end{lstlisting}
+\ \\
+To make this container appear in case of connection-issues, the Client.js file, that comes under the ssh2-library, is used. This script controls many functions around the SFTP-client, including the Time-Out Error-handling. While this functions usually just lists the error in the console, a few commands are added to search the document index.html for objects with the parenthesized IDs and set their CSS-style attribute "display" to "block" or to "none". The first command in the following code triggers the above mentioned div-container. The other two commands have reference to section three. Those are bespoken in chapter \ref{three.}.\\
+\begin{lstlisting}[language=Java]
+// Client.js
+
+function Client() {
+
+ [ ... ]
+ 
+   function startTimeout() {
+    if (self.config.readyTimeout > 0) {
+      self._readyTimeout = setTimeout(function() {
+        var err = new Error('Timed out while waiting for handshake');
+
+	// Here the commands are called, to show the error messages
+        document.getElementById("badlist").style.display = "block";
+        document.getElementById("resultinfo").style.display = "none";
+        document.getElementById("badresult").style.display = "block";
+
+        err.level = 'client-timeout';
+        self.emit('error', err);
+        sock.destroy();
+      }, self.config.readyTimeout);
+    }
+  }
+};
 \end{lstlisting}
 
-With the following JS-function, the jobs are passed to the application.\\
+\subsection{Your Jobs}
+In this section the user can see the jobs he or she submitted so far. An empty div-container is placed in this section to get filled via JavaScript.
+\begin{lstlisting}[language=HTML]
+// index.html
+
+       <div id="dirout"></div>
+\end{lstlisting}
+The Jobs that were submitted, are located in a directory called "//-JES" from here they can be passed to the container in the form of a table.\\
+The command that is usually used to read data in this directory on the Co:Z SFTP-Server is:
+\begin{lstlisting}[language=HTML]
+ls -al //-JES
+\end{lstlisting}
+This command leads to a list of all spool-files and some information to them in form of a table in a shell or terminal. To trigger this kind of listing, the ssh2-library provides the command \textit{readdir} to list the requested directory.\\
+With the following function, the jobs are passed to the application.\\
 \begin{lstlisting}[language=Java]
+//SFTP-functions.js
+
+// Declare the directory-path as a variable
 var remotePathToList = '//-JES';
 
 var conn = new Client();
 conn.on('ready', function() {
     conn.sftp(function(err, sftp) {
          if (err) throw err;
-
+	
+	// Trigger the listing of the directory
          sftp.readdir(remotePathToList, function(err, list) {
                 if (err) throw err;
 
+		// Declare the output as a table, that
+		// can be passed to the empty container
                 var rows = list;
 
                     var jobs = "<table border='1|1'>";
@@ -549,55 +628,52 @@ conn.on('ready', function() {
                         jobs+="</tr>";
                     }
                     jobs+="</table>";
+                    
+                //pass the variable "jobs", which contains the table
+                // to the empty container "dirout"   
                 document.getElementById("dirout").innerHTML = jobs;
 
-                // Do not forget to close the connection, otherwise you'll get troubles
                 conn.end();
          });
     });
 }).connect(connSettings);
 \end{lstlisting}
 \ \\
-\begin{itemize}
-\item{Line 1: Navigating to the //-JES directory, which is a directory, defined through Co:Z and contains the job-files.}
-\item{Lines 3-5: Here the connection is established with the above described parameters.}
-\item{Line 6: Throws an error if something went wrong (in console! to be changed?!).}
-\item{from Line 8: the directory is readed. Here two variables, err and list, are defined. The err variable is just to get output in case of errors. List defines the Objects located in the //-JES directory. }
-\item{from Line 11: The List content gets defined as rows, those rows are given to a table that is defined as a variable "jobs". The function in jobs, adds a row for each object.}
-\item{Line 22: Calls a div in index.html with the id="dirout" which is empty by default. Here it puts the table with the listed jobs.}
-\item{After this the connection is ended, to get always just a status of the directory in the moment it is charged.}
-\end{itemize}
 
 \subsection{Submit a new Job}
-First a file is created as a text-file. explain buttons.\\
-Screenshots!?\\
-\begin{lstlisting}[language=HTML]
-          <button onclick="createFile()">Create Job</button>
-\end{lstlisting}
-\ \\
-\begin{lstlisting}[language=HTML]
-   <div style="margin-top:30px;">
-     <p id="filesuccess">Write your Job in the textarea above and 
-     		click on Create Job.</p>
-     <div class="field">
-       <button id="subBut" style="display:none;" onclick="transFile()">
-       			Submit the Job now</button>
-       <div id="messages"></div>
+As FTP is short for File-Transfer-Protocol, there first has to be a file to be transferred. Node for this situation provides a module called \textit{file-system}. With this module it is possible to create a .txt file through a textarea. \\
+
+\begin{lstlisting}{language=HTML}
+// index.html
+
+    <div class="field">
+          <textarea name="content" id="JCLcontent" placeholder="Your JCL goes here." rows="10" cols="50"></textarea>
+        </div>
+        <div class="field" style="margin-top:30px;">
+          <button onclick="createFile()">Create Spool-File</button>
      </div>
-   </div>
+     </div>
 \end{lstlisting}
+Here the JCL-code can be written. Beneath the textarea, there is a Button saying "Create Spool-File" that has the onclick event "createFile", which triggers the following function. This function reads the content of the textarea and creates a .txt file, using the node file-system.\\
+
 \ \\
 Use node filesystem. Change content - innerHTML and color. explain variables.
 \begin{lstlisting}[language=Java]
-// Create Job file
+// SFTP-functions.js
+
 function createFile() {
+// Make use of the node file-system
   var fs = require('fs');
+  // Declare, where the file shell be saved
   var filepath = "temp/JCL.txt";
+
+  // Declare HTML-Objects as variables
   var fileContent = document.getElementById("JCLcontent").value;
   var filesuccess = document.getElementById("filesuccess");
   var subBut = document.getElementById("subBut");
 
   //Check if textarea contains content
+  // If the textarea is empty, show error-line
   if (fileContent == '') {
 
     filesuccess.style.color = "#ff9800";
@@ -605,20 +681,43 @@ function createFile() {
 
   } else if (fileContent != '') {
 
-    // if it does, create textfile
+    // if it is not empty, create textfile
     fs.writeFile(filepath, fileContent, (err) => {
                     if (err) throw err;
 
-      //output as success or "create a job first"
       filesuccess.style.color = "#00e676";
       filesuccess.innerHTML = "Your Job has been created. 
       			Submit now to the JES-Spool.";
+       
+       // When the file was created, show the submit-Button
       subBut.style.display = "block";
-
         });
   }
 };
 \end{lstlisting}
+When the spool-file has been created, it is ready to get submitted to the JES-Spool. For this, a success-message and a submit button is shown to the user. This button triggers the \textit{transFile}-function.
+\begin{lstlisting}[language=HTML]
+// index.html 
+
+   <div style="margin-top:30px;">
+     <p id="filesuccess">Write your Job in the textarea above and 
+     		click on Create Job.</p>
+     <div class="field">
+       <button id="subBut" style="display:none;" onclick="transFile()">
+       			Submit the Job now</button>
+     </div>
+   </div>
+\end{lstlisting}
+As the transfer mode is set to binary by default, the .txt file would not be recognized by the JES-Spool if it would be submit now. To change this, it is necessary to change the transfer mode to \textit{text}. The Co:Z transfer mode can be changed by executing:
+\begin{lstlisting}[language=HTML]
+ls /+mode=text
+\end{lstlisting}
+\textit{/+mode=text} is a subdirectory. that simply has to be read. Like in the section before, the \textit{readdir}-function is used to read this subdirectory and with this, change the transfer-mode.
+Now the file is ready to be transferred to the JES-SPOOL. The command for this action would usually be:\\
+\begin{lstlisting}[language=HTML]
+put <local file-path> //-JES.INTRDR/MYJOB
+\end{lstlisting}
+
 \ \\
 Change the mode ls = readdir in node. Explain streams. 
 \begin{lstlisting}[language=Java]
@@ -667,6 +766,7 @@ var conn = new Client();
 \ \\
 "three" = Result area -> gets displayed after submitting
 \subsection{Result}
+\caption{three}
 Here describe Error handling and output divs.
 
 
@@ -710,28 +810,7 @@ Here describe Error handling and output divs.
  </section>
 \end{lstlisting}
 Catch TimeOut Error in ssh2 library, Client function.
-\begin{lstlisting}[language=Java]
-function Client() {
 
- [ ... ]
- 
-   function startTimeout() {
-    if (self.config.readyTimeout > 0) {
-      self._readyTimeout = setTimeout(function() {
-        var err = new Error('Timed out while waiting for handshake');
-
-        document.getElementById("badlist").style.display = "block";
-        document.getElementById("resultinfo").style.display = "none";
-        document.getElementById("badresult").style.display = "block";
-
-        err.level = 'client-timeout';
-        self.emit('error', err);
-        sock.destroy();
-      }, self.config.readyTimeout);
-    }
-  }
-};
-\end{lstlisting}
 
 \newpage
 \section{Proof of Concept}
