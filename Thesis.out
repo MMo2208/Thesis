@@ -18,13 +18,15 @@
 \BOOKMARK [1][-]{section.8}{Access possibilities}{}% 18
 \BOOKMARK [2][-]{subsection.8.1}{Access through Java with FTP}{section.8}% 19
 \BOOKMARK [2][-]{subsection.8.2}{Access via SSH/ SFTP}{section.8}% 20
-\BOOKMARK [1][-]{section.9}{Requirements}{}% 21
-\BOOKMARK [1][-]{section.10}{Development Environment}{}% 22
-\BOOKMARK [1][-]{section.11}{Design}{}% 23
-\BOOKMARK [2][-]{subsection.11.1}{Welcome}{section.11}% 24
-\BOOKMARK [2][-]{subsection.11.2}{Your Jobs}{section.11}% 25
-\BOOKMARK [2][-]{subsection.11.3}{Submit a new Job}{section.11}% 26
-\BOOKMARK [2][-]{subsection.11.4}{Result}{section.11}% 27
-\BOOKMARK [1][-]{section.12}{Proof of Concept}{}% 28
-\BOOKMARK [1][-]{section.13}{Evaluation}{}% 29
-\BOOKMARK [1][-]{section.14}{Appendices}{}% 30
+\BOOKMARK [2][-]{subsection.8.3}{Co:Z SFTP-Server}{section.8}% 21
+\BOOKMARK [1][-]{section.9}{Requirements}{}% 22
+\BOOKMARK [1][-]{section.10}{Design}{}% 23
+\BOOKMARK [2][-]{subsection.10.1}{Registration / Login}{section.10}% 24
+\BOOKMARK [2][-]{subsection.10.2}{Welcome}{section.10}% 25
+\BOOKMARK [2][-]{subsection.10.3}{Your Jobs}{section.10}% 26
+\BOOKMARK [2][-]{subsection.10.4}{Submit a new Job}{section.10}% 27
+\BOOKMARK [2][-]{subsection.10.5}{Result}{section.10}% 28
+\BOOKMARK [1][-]{section.11}{Learning Effect}{}% 29
+\BOOKMARK [1][-]{section.12}{Proof of Concept}{}% 30
+\BOOKMARK [1][-]{section.13}{Evaluation}{}% 31
+\BOOKMARK [1][-]{section.14}{Appendices}{}% 32

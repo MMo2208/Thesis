@@ -129,7 +129,7 @@ Bachelorthesis \\
 \begin{large}
 \textbf{Development of a Web-Application\\
 for executing Job-Scripts on an IBM-Mainframe\\
-in the context of Education\\}
+in context of Education\\}
 \vspace{0.3cm}
 \end{large}
 \hrule\par\rule{0pt}{2em}
@@ -204,8 +204,10 @@ Hier kommt der/die/das Abstract.\\
 	 \acro{ULE}{Ubiquitous Learning Environment}
 	 \acro{JCL}{Job Control Language}
  	 \acro{JES}{Job Entry Subsystem}
+  	 \acro{TSO}{Time Sharing Option}
+ 	 \acro{USS}{Unix System Services}
  	 \acro{OLTP}{Online Transaction Processing}
-	 \acro{LPAR}{Logial Partitions}
+	 \acro{LPAR}{Logical Partitions}
 	\acro{LAN}{Local Area Network}
 	\acro{FTP}{File Transfer Protocol}
 	\acro{SSH}{Secure Shell}
@@ -246,7 +248,7 @@ The resources for this activity are allocated by the \textit{Talentschmiede AG} 
 
 \section{Related Work}
 While a malicious tongue once suggested that " the last mainframe will be unplugged in 1996 " , it reconsidered when IBM introduced it's latest version of it in 2008 \cite{lohr2008old}. Till the present day the mainframe is the backbone of the financial markets worldwide and just as important for other big industries\cite{carayannisenterprise} \cite{lohr2006ibm}.
-The view on the mainframe technology as an IT-dinosaur has to change and the need of adding the mainframe technology to the IS Curriculum in a wide range was overdue already 10 years before \cite{wallis2007s} \cite{wong2009old} \cite{douglas2009enterprise}. Sharma et al. analysed the need of Large System Education regarding to mainframe education and they are investigating " the   academic response   to   the   need   for   large   systems specialists " \cite{sharma2011teach}. In \cite{corridori2009ways} A. Corridori addresses the concerns and the opportunites that come with adding mainframe content to universities curricula and also previews ways to do this. How the economy and with it, the labor market can benefit from it is stated in \cite{sharmaalive}. \\
+The view on the mainframe technology as an IT-dinosaur has to change and the need of adding the mainframe technology to the IS Curriculum in a wide range was overdue already 10 years before \cite{wallis2007s} \cite{wong2009old} \cite{douglas2009enterprise}. Sharma et al. analysed the need of Large System Education regarding to mainframe education and they are investigating " the   academic response   to   the   need   for   large   systems specialists " \cite{sharma2011teach}. In \cite{corridori2009ways} A. Corridori addresses the concerns and the opportunities that come with adding mainframe content to universities curricula and also previews ways to do this. How the economy and with it, the labor market can benefit from it is stated in \cite{sharmaalive}. \\
 \ \\
 The potentials of present digital media used to educate in a wide range is discovered by Cope et al. \cite{cope2009ubiquitous}. It is described that "the learner's  relationship  to knowledge  and  the  processes  of  pedagogy  have  not  changed  in  any  significant  way" but through technology " the educational paradigm has changed ". Vicki Jones et al. also address the integration of modern information technology in everyday's life and the advantages of this change regarding education \cite{jones2004ubiquitous}. Here it is stated that " Adaptive learning can offer great advantages in providing students with specific and personalised knowledge as and when required ". While the term " Adaptive Learning " is responsive to the methods that are used to transfer knowledge \cite{midgley2014goals} , " \ac{ULE} " describes an environment with the possibility of learning everywhere and anytime\cite{hwang2008criteria}. Hwang et al. emphasize the fact, that ULEs are an innovative approach for teaching complex topics \cite{hwang2009context}. To establish a ULE there are many technologies needed \cite{sakamura2005ubiquitous}, this thesis is supposed to do a first step in this direction to learn on the Mainframe anywhere and anytime.\\
 
@@ -288,20 +290,19 @@ For end-users those transaction processes are often commonly known, while they a
 \item Online purchasings
 \end{itemize}
 
-\textbf{---- Explain Online part and why not consolidated in this thesis ---- }
+So in many cases you are already using a mainframe without even taking any note. Since these transaction processes are generally carried out through web-technology they are not to be consolidated in this thesis.
 
 \subsection{Batch Processing}
-The other main function of the mainframe is processing data in a batch. Eventually terabytes of. These processes are generally done without much user interaction. A batch job simply gets committed and processes the data that is determined in the job-statement ( further informations in chapter \ref{JCL} )
-
-\textit{ An 
-equivalent concept can be found in a UNIX script file or a Windows command 
-file, but a z/OS batch job might process millions of records.}\\
-
-\textbf{---- Explain deeper and bridge to System Operators ---- }
-
+The other main function of the mainframe is processing data in a batch. Eventually terabytes of. These processes are generally done without much user interaction. A batch job simply gets committed and processes the data that is determined in the job-statement.\\
+\ \\
+While we dive deeper into the Job-Creation-Language that leads to those processes in chapter \ref{JCL}, it is important for now to understand the concept of these jobs that can be imagined equivalent to a UNIX script file or a Windows command file. The difference is, that z/OS batch-job processes millions of records.\\
+A famous and easy understandable example for a classical batch-job is the payroll of a big-company. z/OS here takes up a core function by bringing together a huge amount of data consisting of personal data, data referring to working hours and salaries. The mainframe is predestined to work this out on a safe and reliable basis.\\
+\ \\
+But of course there are also people included in this process that have to be reliable as well but in addition also have to govern this whole process what makes them exactly the target group of the application that will be developed in this thesis.\\
 
 \ \\
 \subsection{Separation of duties}
+To define the target grouper in more detail, this chapter will give a quick overview on people that have contact to the mainframe in daily work life.\\
 distinguish between:
 \begin{itemize}
 \item System programmers 
@@ -313,12 +314,19 @@ performance)
 \end{itemize}
 \ \\
 \subsection{Mainframe Operation Systems}
-z/OS\\
-z/VM\\
-z/VSE\\
-Linux for zSeries\\
-z/TPF\\
+Another ambit where insights are required for further understanding of the application is the ambit of the different Operation Systems that can be run on the mainframe.\\
+
+-- z = zero Downtime?! --\\
 \ \\
+\begin{itemize}
+\item \textbf{z/OS} is the IBM operating system that runs on most z-system mainframe installations and by that takes the leading role in the field of mainframes. It isn't set apart a lot from normal operating systems as it has the same structure of three layers, consisting of Hardware, Operating System and User Processes. Similar to modern windows-systems there are some kind of subsystems, which run between the OS and the user processes. The most important one in the case of z/OS are the \ref{JES} for the background operations (batch processing), the \ref{TSO} for the foreground operations (interactive) and the \ref{USS}, which represent a posix-compatible unix subsystem.
+\item \textbf{z/VSE}
+\item \textbf{z/TPF}
+\item \textbf{z/VM}
+\item \textbf{Linux for zSeries}
+\end{itemize}
+\ \\
+
 
 \subsection{Virtualisation with z/VM}
 \textit{As an aid to consolidation, the mainframe offers software virtualization, through z/VM. z/VM?s extreme virtualization capabilities, which have been perfected since its introduction in 1967, make it possible to virtualize thousands of  distributed servers on a single server, resulting in the significant reduction in the use of space and energy. }
@@ -489,7 +497,7 @@ To get access to z/OS, a system constellation as seen on Fig. \ref{constellation
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.7]{img/Schemahosting.jpg}
+	\includegraphics[scale=0.4]{img/Schemahosting.jpg}
 	\caption{constellation}
 	\label{constellation}
 \end{figure}
@@ -504,122 +512,157 @@ from p.137
 
 \newpage
 
+%================== Design ===========================%
+
 
 \section{Design}
-In this chapter, a framework, based on the node-stack, is used to implement the web-application. This framework, called electron, gives the opportunity to develop the javascript-application locally, before the installation on the z/VM. For development, the mainframe access takes place through the \ac{VPN} that is provided by the Frankfurt University.\\
-Since the Co:Z-SFTP-Server in its handling, differs slightly from usual SFTP-Servers, becoming noticeable through the commands that have to be executed, the following subchapters provide a brief glimpse on how the actions would be executed through a terminal. But it is avoided to go too much into detail here, as the focus is on the realisation through javascript, as these are the functions, which are triggered in the application in the end.\\
-For further interests, the full Co:Z documentation can be read on \hyperlink{http://dovetail.com/docs/sftp/using.html}{http://dovetail.com/docs/sftp/using.html}.\\
+In this chapter, a framework, based on the node-stack, is used to implement the web-application. This framework, called Express, gives the opportunity to develop the javascript-application within an MVC-pattern, that can run on our zLinux and can be accessed through the browser. For local development, the mainframe access takes place through a \ac{VPN} that is provided by the Frankfurt University. Later this application will be installed on zLinux, so the backend can access z/OS directly through the hipersockets network.\\
+Since the Co:Z-SFTP-Server in its handling, differs slightly from usual SFTP-Servers, becoming noticeable through the commands that have to be executed, the following subchapters provide a brief glimpse on how the actions would be executed through a terminal. But it is avoided to go too much into detail here, as the focus is on the realisation through javascript, as these are the functions, which are triggered in the application in the end.\\ \\
+For further interests, the full Co:Z documentation can be read on \hyperlink{http://dovetail.com/docs/sftp/using.html}{http://dovetail.com/}.\\
+\\
+The following chapter will describe the whole application on the basis of the MVC-pattern on Fig. \ref{Model-View-Controller Scheme}. A quick overview should help to get to know the functionalities straightforward. How the functions are implemented exactly will be described in the following subchapters. The operations that are listed on Fig. \ref{Model-View-Controller Scheme} all take place after the user is logged in. \\
+\ \\
+From Left to Right the first entry point is the HTTP Request to the \textit{routes.js}-file. This happens, when the user is logged in and gets redirected to the home view, which loads the \textit{home.jade}-file. \textit{Jade} is a template engine, used for serverside rendering of HTML-files in NodeJS. In this case home.jade renders a file called \textit{index.html}. This is the front-end, that the user will see and will interact with.( Fig. \ref{welcomeview}, \ref{listview}, \ref{textarea}, \ref{successview} )\\
+The two other routes that are called here pass the userdata for accessing the mainframe to functions in the \textit{sftpManager.js} which works as model and is running as backend on the server. This model is the heart of this application as it contains all the logic to exchange data not only between the user and the database but also between the user and the mainframes' z/OS via SFTP.\\
+The \textit{myController.js} works as a middleware between front- and backend and therefore is used to manage responses from the mainframe and update the user on this operations. \\ \\
+After the functionality of the applications is clear, chapter \ref{learning-content} will introduce a few thoughts on how the users can learn from this program and how those thoughts are transposed.\\
 
-\subsection{Registration / Login}
+\newpage
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.6]{img/MVC-Express.jpg}
+	\caption{Model-View-Controller Scheme}
+	\label{Model-View-Controller Scheme}
+\end{figure}
+
+\subsection{Registration / Login}\label{Login}
 To be able to work on the IBM Machine, the students have to be added as authenticated users on the mainframe first. This has to be done by a mainframe administrator before. With given user-data they are ready to register for and use the Mainframe-Self-Service.\\
-
-\subsection{Registration / Login}
-\textbf{---- Admin Bereich kurz schematisiert darstellen?! ---- }\\
-
-After a successfull registration, the users can login to the Self-Service. Here they get provided a one-page program, which is devided into four sections. These sections and their functions are explained in the following.\\ 
-For the next sections, an SFTP-Client is implemented to get a connection to Co:Z-SFTP. The node package ssh2.js by Brian White makes it possible to use the openSSH protocol as it is also used by Co:Z-SFTP. Beside the scripts and packages used to run the electron framework, two files are applied here to set up the applications' front-end - One HTML-File, index.html, containing the structure of the page and a file called SFTP-functions.js . This is where the functions regarding the SFTP-Client get implemented. After installation of the ssh2-package, the following Code includes the package into SFTP-functions script. \\
+An open-source login template, implemented by Stephen Braitsch ( \hyperlink{https://github.com/braitsch/node-login}{https://github.com/braitsch/node-login} ) will help to get started with the user registration and log-in. This template is built on the MongoDB database, which is a simple non-relational database also known as NoSQL-database. By registration this template saves the username and the password along with some other userdata into this database. There should not be too much detail about the login template here, as it is not part of the thesis. The documentation on its function can be read on the before mentioned github project of Stephen Braitsch.\\ \\
+The favor of this node-login is that when the user logs in its userdata is not only accessible from the database but also from an array called \textit{session}. This session just exists as long as the user is logged in and gets destroyed when he logs out. From this session we take our userdata to access the mainframe. \\
 \ \\
-\textit{For a better understanding, the Filename is always listed before the code. As long as it doesn't change throughout the code-listings, it is the same file as before.}\\
-
+For the next sections, an SFTP-Client is implemented to get a connection to Co:Z-SFTP. The node package \textit{ssh2.js} by Brian White makes it possible to use the openSSH protocol as it is also used by Co:Z-SFTP.
+To access z/OS via SFTP we use the ssh2-package by requiring it on line 1. Then we establish a variable \textit{connSettings} which contains all the requirements to access the mainframes' z/OS through SFTP and get access to the JES-Spool to read and write data. The host called here is the IP-Address of the Co:Z Server, port 22 is the port that is usually used for guest-access via SFTP. The guest-access is required due to the web-server running not in the same LPAR as the z/OS. In line 5 and 6 in the following code you can see that a request (req) is made to the session array to read the username and the password stored here as long as the user is logged in. How this data is passed to the functions can be seen in the chapters \ref{yourjobs} and \ref{submitjob}. \\
 \begin{lstlisting}[language=Java]
-// SFTP-functions.js
-
 var Client = require('ssh2').Client;
-var connection = new Client();
-\end{lstlisting}
-\ \\
-To establish a connection, the application needs a few settings to get acces. The host called here is the IP-Address of the Co:Z Server, port 22 is the port that is usually used for guest-access via SFTP. The guest-access is required due to the web-server running not in the same LPAR as the z/OS. The data used by the user to log in to the service gets passed to the client.\\
-\textbf{---- Variablen für userdaten, password hashen ---- }\\
-\ \\
-\begin{lstlisting}[language=Java]
 var connSettings = {
-     host: '141.2.192.32',
-     port: 22, // Guest-SFTP Port
-     username: 'u0xxx',
-     password: 'xxxxxxxx'
+     host: '141.2.192.32', 							// Mainframes z/OS
+     port: 22, 													// Guest-SFTP Port
+     username: req.session.user.user, 	// Request sessions' username
+     password: req.session.user.pass 		// Request sessions' password
 };
 \end{lstlisting}
 \ \\
 \subsection{Welcome}
-The first section simply welcomes the user to the self service. \\
-If there are any problems with the connection to z/OS the user gets an error message here. \\
-For this, a div-container, is placed but not shown as long as the connection is not failing.\\
+When a user is logged in it gets provided a one-page-layout program, which is devided into four sections. These sections and their functions are explained in the following.\\ 
+As before mentioned the entry point is the \textit{routes.js}-file. Here the home.jade file is called after login to render the index.html. This is done by the following code.\\
 \ \\
-\textbf{---- Error-message anpassen ---- }\\
-
-\begin{lstlisting}[language=HTML]
-// index.html
-
-    <div id="badlist" class="features" style="display:none;">
-       <section>
-         <span class="icon major fa-times"></span>
-         <h3>Something went wrong</h3>
-         <p>Bad Connection. Check your VPN.</p>
-       </section>
-     </div>
-\end{lstlisting}
-\ \\
-To make this container appear in case of connection-issues, the Client.js file, that comes under the ssh2-library, is used. This script controls many functions around the SFTP-client, including the Time-Out Error-handling. While this functions usually just lists the error in the console, a few commands are added to search the document index.html for objects with the parenthesized IDs and set their CSS-style attribute "display" to "block" or to "none". The first command in the following code triggers the above mentioned div-container. The other two commands have reference to section three. Those are bespoken in chapter \ref{three.}.\\
+\textit{For a better understanding, the Filename is always listed before the code. As long as it doesn't change throughout the code-listings, it is the same file as before.}
+\\
 \begin{lstlisting}[language=Java]
-// Client.js
+// routes.js
 
-function Client() {
-
- [ ... ]
- 
-   function startTimeout() {
-    if (self.config.readyTimeout > 0) {
-      self._readyTimeout = setTimeout(function() {
-        var err = new Error('Timed out while waiting for handshake');
-
-	// Here the commands are called, to show the error messages
-        document.getElementById("badlist").style.display = "block";
-        document.getElementById("resultinfo").style.display = "none";
-        document.getElementById("badresult").style.display = "block";
-
-        err.level = 'client-timeout';
-        self.emit('error', err);
-        sock.destroy();
-      }, self.config.readyTimeout);
-    }
-  }
-};
+	app.get('/home', function(req, res) {
+		if (req.session.user == null){
+	// if user is not logged-in redirect back to login page //
+			res.redirect('/');
+		}	else{
+			res.render('home', {
+				title : 'Control Panel',
+				countries : CT,
+				udata : req.session.user
+			});
+			}
+	});
 \end{lstlisting}
+\ \\
+On line 11 you can see that the sessions' userdata is already requested when the program is loaded. If there is something wrong the user gets redirected to the login-page.\\
+The first section simply welcomes the user to the self service. 
+This is the view, the user sees, when entering the program.\\
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.4]{img/view_welcome.png}
+	\caption{Welcome View}
+	\label{welcomeview}
+\end{figure}
 
-\subsection{Your Jobs}
-In this section the user can see the jobs he or she submitted so far. An empty div-container is placed in this section to get filled via JavaScript.
+\subsection{Your Jobs}\label{yourjobs}
+In this section the user should get an overview on the jobs listed in his JES-Spool. Therefore the index.html contains a simple empty div-container that gets filled with a Table of job-files if he submitted jobs so far.
+\ \\
 \begin{lstlisting}[language=HTML]
 // index.html
 
-       <div id="dirout"></div>
+       <!-- Here the JES-Spool is listed -->
+       <div id="dirout" style="max-height:800px;overflow:auto;">
+       </div>
 \end{lstlisting}
-The Jobs that were submitted, are located in a directory called "//-JES" from here they can be passed to the container in the form of a table.\\
+\ \\
+To create this table with the wanted content it takes a few steps. In \textit{home.js}, a file that is part of the node-login and therefore is not listed on the figure above, we do a jQuery GET request, when the document is loaded.
+\ \\
+\begin{lstlisting}[language=Java]
+// home.js
+
+$(document).ready(function(){
+
+//Get Job list
+	$.get("/data-list", function(list) {
+	// give the content 'list' in form of html to a div with the ID 'dirout'
+		$("#dirout").html(list);
+	});
+\end{lstlisting}
+\ \\
+This requests data from the \textit{/data-list} route. Here it requests a variable \textit{list} which it wants to give to the \#dirout-div in form of html.\\
+The route that is requested looks like this:\\
+
+\begin{lstlisting}[language=Java]
+// routes.js
+
+// Establish the sftpManager as variable to use it in route
+var SF = require('./modules/sftpManager');
+
+// Route for getting job-list
+	app.get('/data-list', function(req, res) {
+	// pass user-data to function getList()
+			SF.getList(req, res, connSettings = {
+				host: '141.2.192.32',
+				port: 22, 
+				username: req.session.user.user,
+				password: req.session.user.pass,
+			});
+
+	});
+\end{lstlisting}
+\ \\
+Here the \textit{sftpManager.js} is defined as a variable to use it in the route (line 1). The route itself uses this variable to get the sftpManager to trigger the function getList() along with the user-data located in \textit{connSettings}.\\ \\
+The Jobs that were submitted, are located in a directory on z/OS called "//-JES" from here they can be passed to the container in the form of a table.\\
 The command that is usually used to read data in this directory on the Co:Z SFTP-Server is:
 \begin{lstlisting}[language=HTML]
-ls -al //-JES
+sftp>  ls -al //-JES
 \end{lstlisting}
 This command leads to a list of all spool-files and some information to them in form of a table in a shell or terminal. To trigger this kind of listing, the ssh2-library provides the command \textit{readdir} to list the requested directory.\\
-With the following function, the jobs are passed to the application.\\
+With the following function in the sftpManager, the jobs are passed to the application.\\
 \begin{lstlisting}[language=Java]
-//SFTP-functions.js
+//sftpManager.js
 
-// Declare the directory-path as a variable
-var remotePathToList = '//-JES';
+  getList(req, res) {
+    var remotePathToList = '//-JES';		    //JES-Spool Listing
 
-var conn = new Client();
-conn.on('ready', function() {
-    conn.sftp(function(err, sftp) {
-         if (err) throw err;
-	
-	// Trigger the listing of the directory
-         sftp.readdir(remotePathToList, function(err, list) {
-                if (err) throw err;
+    var conn = new Client();				// Establish SFTP Connection
+    conn.on('ready', function() {
+        conn.sftp(function(err, sftp) {
+          if (err) {
+            //send error to myController if something went wrong
+            res.send(400);
+          } else {
+		
+		// read the //-JES directory
+             sftp.readdir(remotePathToList, function(err, list) {
+                    if (err) throw err;
 
-		// Declare the output as a table, that
-		// can be passed to the empty container
-                var rows = list;
-
-                    var jobs = "<table border='1|1'>";
+                    // Return list
+                    var rows = list;
+			
+		//Creata a table and fill with job-list
+                    var jobs = "<table id='jobtable' border='1|1'>";
                     for (var i = 0; i < rows.length; i++) {
                         jobs+="<tr>";
                         jobs+="<td>"+rows[i].filename+"</td>";
@@ -628,189 +671,232 @@ conn.on('ready', function() {
                         jobs+="</tr>";
                     }
                     jobs+="</table>";
-                    
-                //pass the variable "jobs", which contains the table
-                // to the empty container "dirout"   
-                document.getElementById("dirout").innerHTML = jobs;
 
-                conn.end();
-         });
-    });
-}).connect(connSettings);
+		// send the job-table
+                    res.send(jobs);
+
+                  // We're just calling the list once, 
+                  // so the connection has to be ended now
+                    conn.end();
+             });
+           }
+        });
+    }).connect(connSettings);
+  },
 \end{lstlisting}
 \ \\
-
-\subsection{Submit a new Job}
+Through this, the jQuery GET request mentioned at the beginning gets a variable \textit{list} that contains all spool-files in form of a html table. This table is given to the \#dirout-div and is shown in the browser.
+\ \\
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.4]{img/view_jobtable.png}
+	\caption{List of JES-Spool files}
+	\label{listview}
+\end{figure}
+\ \\
+\ \\
+\subsection{Submit a new Job}\label{submitjob}
 As FTP is short for File-Transfer-Protocol, there first has to be a file to be transferred. Node for this situation provides a module called \textit{file-system}. With this module it is possible to create a .txt file through a textarea. \\
 
 \begin{lstlisting}{language=HTML}
 // index.html
 
-    <div class="field">
-          <textarea name="content" id="JCLcontent" placeholder="Your JCL goes here." rows="10" cols="50"></textarea>
+        <div class="field">
+          <textarea name="content" id="JCLcontent" 
+          placeholder="Your JCL goes here." rows="10" cols="50"></textarea>
         </div>
         <div class="field" style="margin-top:30px;">
-          <button onclick="createFile()">Create Spool-File</button>
-     </div>
-     </div>
+          <p id="filesuccess">Write your Job in the textarea above 
+          and click on Submit Spool-File.</p>
+          <button id="createSpool" onclick="createSpoolfile()">
+          Submit Spool-File</button>
+          <div id="messages"></div>
+        </div>
 \end{lstlisting}
-Here the JCL-code can be written. Beneath the textarea, there is a Button saying "Create Spool-File" that has the onclick event "createFile", which triggers the following function. This function reads the content of the textarea and creates a .txt file, using the node file-system.\\
-
 \ \\
-Use node filesystem. Change content - innerHTML and color. explain variables.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{img/view_textarea.png}
+	\caption{Textarea for typing JCL-Jobs}
+	\label{textarea}
+\end{figure}
+Here the JCL-code can be written. Beneath the textarea, there is a Button saying "Submit Spool-File" that has the onclick-event "createSpoolfile()", which triggers the following function.\\
+
 \begin{lstlisting}[language=Java]
-// SFTP-functions.js
+//myController.js
 
-function createFile() {
-// Make use of the node file-system
-  var fs = require('fs');
-  // Declare, where the file shell be saved
-  var filepath = "temp/JCL.txt";
-
-  // Declare HTML-Objects as variables
-  var fileContent = document.getElementById("JCLcontent").value;
+function createSpoolfile() {
+  var filecontent = $("#JCLcontent").val();
   var filesuccess = document.getElementById("filesuccess");
-  var subBut = document.getElementById("subBut");
+  var resultinfo = document.getElementById("resultinfo");
 
   //Check if textarea contains content
-  // If the textarea is empty, show error-line
-  if (fileContent == '') {
+  if (!filecontent) {
 
     filesuccess.style.color = "#ff9800";
     filesuccess.innerHTML = "Please write a Job first.";
 
-  } else if (fileContent != '') {
+  } else {
 
-    // if it is not empty, create textfile
-    fs.writeFile(filepath, fileContent, (err) => {
-                    if (err) throw err;
+    filesuccess.style.color = "#00e676";
+    filesuccess.innerHTML = "Your Job is on its way to the mainframe. Scroll down to see the result.";
 
-      filesuccess.style.color = "#00e676";
-      filesuccess.innerHTML = "Your Job has been created. 
-      			Submit now to the JES-Spool.";
-       
-       // When the file was created, show the submit-Button
-      subBut.style.display = "block";
-        });
-  }
-};
+  //Define value of textarea as json-object
+  var json = {
+    content: filecontent,
+  };
+
+  // if it does call create-file in routes
+  $.ajax({
+    type: 'POST',
+    url: '/create-file',
+    data: json,
+    
+    ... to be continued in chapter 10.5.
+
 \end{lstlisting}
-When the spool-file has been created, it is ready to get submitted to the JES-Spool. For this, a success-message and a submit button is shown to the user. This button triggers the \textit{transFile}-function.
-\begin{lstlisting}[language=HTML]
-// index.html 
+The function createSpoolfile() that is triggered through the button first checks if the textarea even contains content. If it does not, it advises the user to "write a job first". If the textarea has content, the function here defines this value as a json object and does an ajax-call. This ajax-call of the type POST sends the information as a json-object to the url: /create-file in routes.js. \\
 
-   <div style="margin-top:30px;">
-     <p id="filesuccess">Write your Job in the textarea above and 
-     		click on Create Job.</p>
-     <div class="field">
-       <button id="subBut" style="display:none;" onclick="transFile()">
-       			Submit the Job now</button>
-     </div>
-   </div>
+\begin{lstlisting}[language=Java]
+//routes.js
+
+	// Route for creating and submitting file
+	app.post('/create-file', function(req, res) {
+		SF.createFile(req, res, connSettings = {
+			host: '141.2.192.32',
+			port: 22, // Guest-port is 22
+			username: req.session.user.user,
+			password: req.session.user.pass,
+		});
+	});
 \end{lstlisting}
-As the transfer mode is set to binary by default, the .txt file would not be recognized by the JES-Spool if it would be submit now. To change this, it is necessary to change the transfer mode to \textit{text}. The Co:Z transfer mode can be changed by executing:
+This route again triggers a function in the sftpManager.js and sends the data for the connection to the mainframe. The difference to the above route is that here we have a POST-routing which means we don't request data but we send data to the mainframe. This happens in the function createFile.
+
+\begin{lstlisting}[language=Java]
+//sftpManager.js
+
+  createFile(req, res) {
+    var filedir = './Spool-files/' + req.session.user.user;
+    var filepath = './Spool-files/' + req.session.user.user + '/JCL.txt';
+    var fileContent = req.body.content;
+
+    if (fileContent != '') {
+
+      var dir = './Spool-files/' + req.session.user.user;
+
+      //Create User-folder for JCL files
+      if (!fs.existsSync(dir)){
+        fs.mkdirSync(dir);
+      };
+
+      // When folder exists, create textfile
+      fs.writeFile(filepath, fileContent, (err) => {
+        if (err) {
+          throw err;
+        } else {
+          this.transFile(req, res, connSettings);
+        }
+      });
+    }
+  },
+\end{lstlisting}
+createFile() first checks if the user already has an own directory for his Spool-files to be submitted. If not it creates a subdirectory in the directory 'Spool-files' with the users name. Here it writes a .txt-file with the value of the textarea. After that it triggers the transFile()-function which is also located in the sftpManager. This time it needs no routing because the createFile()-function already has the connSettings variable and passes it to the transFile()-function (line 22). \\ \\
+As the transfer mode is set to binary by default, the .txt file would not be recognized by the JES-Spool if it would be submitted now. To change this, it is necessary to change the transfer mode to \textit{text}. The Co:Z transfer mode can be changed by executing:
 \begin{lstlisting}[language=HTML]
-ls /+mode=text
+sftp>  ls /+mode=text
 \end{lstlisting}
 \textit{/+mode=text} is a subdirectory. that simply has to be read. Like in the section before, the \textit{readdir}-function is used to read this subdirectory and with this, change the transfer-mode.
-Now the file is ready to be transferred to the JES-SPOOL. The command for this action would usually be:\\
-\begin{lstlisting}[language=HTML]
+Now the file is ready to be transferred to the JES-SPOOL. The command for this action would usually be:\begin{lstlisting}[language=HTML]
 put <local file-path> //-JES.INTRDR/MYJOB
 \end{lstlisting}
-
+The ssh2 client executes this by placing a readStream (get) to get the file that has just been created and a writeStream (put) to send this file to the JES subdirectory \textit{MYJOB}.
 \ \\
-Change the mode ls = readdir in node. Explain streams. 
+
 \begin{lstlisting}[language=Java]
-//Transfer Job File to Mainframe
-function transFile() {
-var changeMod = '/+mode=text'
+//sftpManager.js
 
-var conn = new Client();
-  conn.on('ready', function() {
-    console.log('Client -> ready');
-      conn.sftp(function(err, sftp) {
-           if (err) throw err;
+  transFile(req, res) {
+    var changeMod = '/+mode=text'
 
-             // change Transfer Mode with ls /+mode=text
-             sftp.readdir(changeMod, function(err, list) {
-                    if (err) throw err;
-                    // List the Changing in the console
-                    console.dir('mode -> text');
-                    // This time no connection closing, to get the output-action
-             });
+    var conn = new Client();
+      conn.on('ready', function() {
+        console.log('Client -> ready');
+          conn.sftp(function(err, sftp) {
+               if (err) {
+                 //send error to myController if something went wrong
+                 res.send(400);
+               } else {
 
+                 // change Transfer Mode with ls /+mode=text
+                 sftp.readdir(changeMod, function(err, list) {
+                        if (err) throw err;
+                        // List the Changing in the console
+                        console.log('mode -> text');
+                        // This time no connection closing, to get the output-action
+                 });
 
-             var fs = require("fs"); // Use node filesystem
-             
-             //Read the textfile and send it to subdirectory, called "myjob"
-             var readStream = fs.createReadStream( 'temp/JCL.txt' );
-             var writeStream = sftp.createWriteStream( '//-JES.INTRDR/MYJOB' );
+                 var fs = require("fs"); // Use node filesystem
 
-             writeStream.on('close',function () {
+                 //Read the textfile and send it to subdirectory, called "myjob"
+                 var readStream = fs.createReadStream( './Spool-files/' + req.session.user.user + '/JCL.txt' );
+                 var writeStream = sftp.createWriteStream( '//-JES.INTRDR/MYJOB' );
+
+                 writeStream.on('close',function () {
+                 });
+
+                 writeStream.on('end', function () {
+                     console.log( "sftp connection closed" );
+                     conn.close();
+                 });
+
+                 // initiate transfer of file
+                 readStream.pipe( writeStream );
+                 //send success to myController
+                 res.send(200);
                  console.log( "file transferred succesfully" );
-                 document.getElementById('three').style.display = 'block';
+               }
              });
-
-             writeStream.on('end', function () {
-                 console.log( "sftp connection closed" );
-                 conn.close();
-             });
-
-             // initiate transfer of file
-             readStream.pipe( writeStream );
-         });
-
-      }).connect(connSettings);
-  };
-\end{lstlisting}
+          }).connect(connSettings);
+  },
+};\end{lstlisting}
 \ \\
-"three" = Result area -> gets displayed after submitting
-\subsection{Result}
-\caption{three}
-Here describe Error handling and output divs.
-
-
+\newpage
+\subsection{Result} \label{result}
+After this all has happened \textit{myController.js} gets a response in form of 200=success or 400=error and performs the following tasks.\\
 \begin{lstlisting}[language=Java]
-<section id="three" class="wrapper style3 fade-up">
+//myController.js
 
-   <div class="inner">
-      <h2>Your Result</h2>
-      <p>Here you can see if your job was submitted to the mainframe. 
-      To get more details on the job status go to the overview. 
-      You can also check the return code there.</p>
-      
-  <div class="features">
-  <section id="resultinfo">
-      <span class="icon major fa-info"></span>
-      <h3>No submit</h3>
-      <p>You first have to submit something to get a result.</p>
-  </section>
+function createSpoolfile() {
+
+  [...]
   
-   <section id="goodresult" style="display:none;">
-      <span class="icon major fa-check"></span>
-      <h3>You succeeded</h3>
-      <p>Your file was submitted. 
-      Go to the overview to check its status.</p>
-   </section>
-   
-   <section id="badresult" style="display:none;">
-     <span class="icon major fa-times"></span>
-     <h3>Something went wrong</h3>
-     <p>Bad Connection. Check your VPN.</p>
-   </section>
-   </div>
-   
-   // The page has to get reloaded to view the new jobs in the list 
-     <ul class="actions">
-       <li><a href="#one" class="button" 
-       	onClick="window.location.reload()">Go to overview</a></li>
-     </ul>
-     
-   </div>
- </section>
-\end{lstlisting}
-Catch TimeOut Error in ssh2 library, Client function.
+  $.ajax({
+    type: 'POST',
+    url: '/create-file',
+    data: json,
+    success: function() {
+      resultinfo.style.display = "none";
+      document.getElementById("goodresult").style.display = 'block';
+    },
+    error: function() {
+      resultinfo.style.display = "none";
+      document.getElementById("badresult").style.display = 'block';
+    }
+  });
 
+\end{lstlisting}
+
+Depending on the job submit was successful or not, predefined div containers are shown instead of the usual resultinfo-div that advise the user to check the connection in case of an error or show him a success message like this one in case he or she succeeded.\\
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.4]{img/view_success.png}
+	\caption{Success Message}
+	\label{successview}
+\end{figure}
+\ \\
+By clicking the button \textit{Go to overview} the page refreshes, what triggers the functions of chapter \ref{yourjobs} again to get a list containing the new job.\\
+
+\section{Learning Effect}\label{learning-content}
 
 \newpage
 \section{Proof of Concept}

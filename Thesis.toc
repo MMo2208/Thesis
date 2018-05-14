@@ -7,25 +7,27 @@
 \contentsline {subsection}{\numberline {5.1}Online Transaction Processing}{5}{subsection.5.1}
 \contentsline {subsection}{\numberline {5.2}Batch Processing}{6}{subsection.5.2}
 \contentsline {subsection}{\numberline {5.3}Separation of duties}{6}{subsection.5.3}
-\contentsline {subsection}{\numberline {5.4}Mainframe Operation Systems}{6}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.4}Mainframe Operation Systems}{7}{subsection.5.4}
 \contentsline {subsection}{\numberline {5.5}Virtualisation with z/VM}{7}{subsection.5.5}
-\contentsline {section}{\numberline {6}Research gap}{8}{section.6}
-\contentsline {section}{\numberline {7}Dive into \ac {JCL}}{9}{section.7}
-\contentsline {subsection}{\numberline {7.1}Job Control Environment}{9}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Job structure}{10}{subsection.7.2}
-\contentsline {subsubsection}{\numberline {7.2.1}EXEC-Statements}{10}{subsubsection.7.2.1}
-\contentsline {subsubsection}{\numberline {7.2.2}DD-Statements}{10}{subsubsection.7.2.2}
-\contentsline {subsubsection}{\numberline {7.2.3}Background / Foreground jobs}{11}{subsubsection.7.2.3}
-\contentsline {section}{\numberline {8}Access possibilities}{12}{section.8}
-\contentsline {subsection}{\numberline {8.1}Access through Java with FTP}{13}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Access via \ac {SSH}/ \ac {SFTP}}{14}{subsection.8.2}
-\contentsline {section}{\numberline {9}Requirements}{15}{section.9}
-\contentsline {section}{\numberline {10}Development Environment}{16}{section.10}
-\contentsline {section}{\numberline {11}Design}{17}{section.11}
-\contentsline {subsection}{\numberline {11.1}Welcome}{17}{subsection.11.1}
-\contentsline {subsection}{\numberline {11.2}Your Jobs}{17}{subsection.11.2}
-\contentsline {subsection}{\numberline {11.3}Submit a new Job}{19}{subsection.11.3}
-\contentsline {subsection}{\numberline {11.4}Result}{21}{subsection.11.4}
-\contentsline {section}{\numberline {12}Proof of Concept}{23}{section.12}
-\contentsline {section}{\numberline {13}Evaluation}{23}{section.13}
-\contentsline {section}{\numberline {14}Appendices}{26}{section.14}
+\contentsline {section}{\numberline {6}Research gap}{9}{section.6}
+\contentsline {section}{\numberline {7}Dive into \ac {JCL}}{10}{section.7}
+\contentsline {subsection}{\numberline {7.1}Job Control Environment}{10}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Job structure}{11}{subsection.7.2}
+\contentsline {subsubsection}{\numberline {7.2.1}EXEC-Statements}{11}{subsubsection.7.2.1}
+\contentsline {subsubsection}{\numberline {7.2.2}DD-Statements}{11}{subsubsection.7.2.2}
+\contentsline {subsubsection}{\numberline {7.2.3}Background / Foreground jobs}{12}{subsubsection.7.2.3}
+\contentsline {section}{\numberline {8}Access possibilities}{13}{section.8}
+\contentsline {subsection}{\numberline {8.1}Access through Java with FTP}{14}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Access via \ac {SSH}/ \ac {SFTP}}{15}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}Co:Z SFTP-Server}{15}{subsection.8.3}
+\contentsline {section}{\numberline {9}Requirements}{16}{section.9}
+\contentsline {section}{\numberline {10}Design}{18}{section.10}
+\contentsline {subsection}{\numberline {10.1}Registration / Login}{19}{subsection.10.1}
+\contentsline {subsection}{\numberline {10.2}Welcome}{20}{subsection.10.2}
+\contentsline {subsection}{\numberline {10.3}Your Jobs}{21}{subsection.10.3}
+\contentsline {subsection}{\numberline {10.4}Submit a new Job}{24}{subsection.10.4}
+\contentsline {subsection}{\numberline {10.5}Result}{29}{subsection.10.5}
+\contentsline {section}{\numberline {11}Learning Effect}{30}{section.11}
+\contentsline {section}{\numberline {12}Proof of Concept}{31}{section.12}
+\contentsline {section}{\numberline {13}Evaluation}{31}{section.13}
+\contentsline {section}{\numberline {14}Appendices}{34}{section.14}

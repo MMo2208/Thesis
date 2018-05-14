@@ -1,5 +1,11 @@
 \select@language {english}
 \contentsline {figure}{\numberline {1}{\ignorespaces Typical workloads\relax }}{5}{figure.caption.13}
-\contentsline {figure}{\numberline {2}{\ignorespaces JCL Functionality, Source: IBM\relax }}{9}{figure.caption.14}
-\contentsline {figure}{\numberline {3}{\ignorespaces TCP/IP Connection / Hipersockets\relax }}{12}{figure.caption.20}
-\contentsline {figure}{\numberline {4}{\ignorespaces workloads\relax }}{13}{figure.caption.21}
+\contentsline {figure}{\numberline {2}{\ignorespaces JCL Functionality, Source: IBM\relax }}{10}{figure.caption.14}
+\contentsline {figure}{\numberline {3}{\ignorespaces TCP/IP Connection / Hipersockets\relax }}{13}{figure.caption.20}
+\contentsline {figure}{\numberline {4}{\ignorespaces workloads\relax }}{14}{figure.caption.21}
+\contentsline {figure}{\numberline {5}{\ignorespaces constellation\relax }}{16}{figure.caption.23}
+\contentsline {figure}{\numberline {6}{\ignorespaces Model-View-Controller Scheme\relax }}{19}{figure.caption.25}
+\contentsline {figure}{\numberline {7}{\ignorespaces Welcome View\relax }}{21}{figure.caption.26}
+\contentsline {figure}{\numberline {8}{\ignorespaces List of JES-Spool files\relax }}{24}{figure.caption.27}
+\contentsline {figure}{\numberline {9}{\ignorespaces Textarea for typing JCL-Jobs\relax }}{25}{figure.caption.28}
+\contentsline {figure}{\numberline {10}{\ignorespaces Success Message\relax }}{29}{figure.caption.29}
