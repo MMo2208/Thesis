@@ -19,18 +19,18 @@
 \contentsline {section}{\numberline {8}Access possibilities}{13}{section.8}
 \contentsline {subsection}{\numberline {8.1}Access through Java with FTP}{14}{subsection.8.1}
 \contentsline {subsection}{\numberline {8.2}Access via \ac {SSH}/ \ac {SFTP}}{15}{subsection.8.2}
-\contentsline {subsection}{\numberline {8.3}Co:Z SFTP-Server}{15}{subsection.8.3}
-\contentsline {section}{\numberline {9}Requirements}{16}{section.9}
-\contentsline {section}{\numberline {10}Design}{18}{section.10}
-\contentsline {subsection}{\numberline {10.1}Registration / Login}{19}{subsection.10.1}
-\contentsline {subsection}{\numberline {10.2}Welcome}{20}{subsection.10.2}
-\contentsline {subsection}{\numberline {10.3}Your Jobs}{21}{subsection.10.3}
-\contentsline {subsection}{\numberline {10.4}Submit a new Job}{24}{subsection.10.4}
-\contentsline {subsection}{\numberline {10.5}Result}{29}{subsection.10.5}
-\contentsline {section}{\numberline {11}Learning Effect}{30}{section.11}
-\contentsline {subsection}{\numberline {11.1}Information on MVS Utilities}{30}{subsection.11.1}
-\contentsline {subsection}{\numberline {11.2}Return Codes}{32}{subsection.11.2}
-\contentsline {subsection}{\numberline {11.3}Gamification}{34}{subsection.11.3}
-\contentsline {section}{\numberline {12}Proof of Concept}{38}{section.12}
-\contentsline {section}{\numberline {13}Evaluation}{38}{section.13}
-\contentsline {section}{\numberline {14}Appendices}{41}{section.14}
+\contentsline {subsection}{\numberline {8.3}Co:Z SFTP-Server}{16}{subsection.8.3}
+\contentsline {section}{\numberline {9}Requirements}{17}{section.9}
+\contentsline {section}{\numberline {10}Design}{19}{section.10}
+\contentsline {subsection}{\numberline {10.1}Registration / Login}{20}{subsection.10.1}
+\contentsline {subsection}{\numberline {10.2}Welcome}{21}{subsection.10.2}
+\contentsline {subsection}{\numberline {10.3}Your Jobs}{22}{subsection.10.3}
+\contentsline {subsection}{\numberline {10.4}Submit a new Job}{25}{subsection.10.4}
+\contentsline {subsection}{\numberline {10.5}Result}{30}{subsection.10.5}
+\contentsline {section}{\numberline {11}Learning Effect}{31}{section.11}
+\contentsline {subsection}{\numberline {11.1}Information on MVS Utilities}{31}{subsection.11.1}
+\contentsline {subsection}{\numberline {11.2}Return Codes}{33}{subsection.11.2}
+\contentsline {subsection}{\numberline {11.3}Gamification}{35}{subsection.11.3}
+\contentsline {section}{\numberline {12}Proof of Concept}{39}{section.12}
+\contentsline {section}{\numberline {13}Evaluation}{39}{section.13}
+\contentsline {section}{\numberline {14}Appendices}{42}{section.14}

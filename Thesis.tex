@@ -204,6 +204,7 @@ Hier kommt der/die/das Abstract.\\
 	 \acro{ULE}{Ubiquitous Learning Environment}
 	 \acro{JCL}{Job Control Language}
  	 \acro{JES}{Job Entry Subsystem}
+	  \acro{TCP/IP}{Transmission Control Protocol / Internet Protocol}
   	 \acro{TSO}{Time Sharing Option}
  	 \acro{USS}{Unix System Services}
  	 \acro{OLTP}{Online Transaction Processing}
@@ -277,11 +278,10 @@ So the most common utilization of the mainframe is divided in two categories:
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.5]{img/batchtrans.png}
+	\includegraphics[scale=0.5]{img/bodiff.jpg}
 	\caption{Typical workloads}
 	\label{Typical workloads}
 \end{figure}
-\ \\
 \subsection{Online Transaction Processing}
 One of the core functions of many businesses is OLTP. For this case the mainframe serves a large amount of applications to make it possible to execute thousands of transactions in short time while handling not only a huge amount of different transaction types, but also to do this with many different users at a glance.\\
 For end-users those transaction processes are often commonly known, while they appear in everyday's life, such as:
@@ -320,7 +320,7 @@ Another ambit where insights are required for further understanding of the appli
 -- z = zero Downtime?! --\\
 \ \\
 \begin{itemize}
-\item \textbf{z/OS} is the IBM operating system that runs on most z-system mainframe installations and by that takes the leading role in the field of mainframes. It isn't set apart a lot from normal operating systems as it has the same structure of three layers, consisting of Hardware, Operating System and User Processes. Similar to modern windows-systems there are some kind of subsystems, which run between the OS and the user processes. The most important one in the case of z/OS are the \ref{JES} for the background operations (batch processing), the \ref{TSO} for the foreground operations (interactive) and the \ref{USS}, which represent a posix-compatible unix subsystem.
+\item \textbf{z/OS} is the IBM operating system that runs on most z-system mainframe installations and by that takes the leading role in the field of mainframes. It isn't set apart a lot from normal operating systems as it has the same structure of three layers, consisting of Hardware, Operating System and User Processes. Similar to modern windows-systems there are some kind of subsystems, which run between the OS and the user processes. The most important one in the case of z/OS are the \ac{JES} for the background operations (batch processing), the \ac{TSO} for the foreground operations (interactive) and the \ac{USS}, which represent a posix-compatible unix subsystem.
 \item \textbf{z/VSE}
 \item \textbf{z/TPF}
 \item \textbf{z/VM}
@@ -428,8 +428,15 @@ JCL started tasks do not require a JOB Statement
 
 \section{Access possibilities}
 In order to execute JCL-Jobs on z/OS from the Linux host, an access point is required to submit the data. This chapter is to reveal how the z/VM connects the Linux-host and the z-OS Target-system in this case and how this connection can be used to transfer data among them.\\
-To enable the communication between different applications, a protocol is needed. The protocol that is used in the System Z is the \ac{TCP}/\ac{IP}, which is provided through the HiperSockets function. HiperSockets is a technology developed by IBM to enable high-speed communication between \ac{LPAR} with a hypervisor or between applications inside a z/VM as it is the case here.\\
+To enable the communication between different applications, a protocol is needed. The protocol that is used in the System Z is the \ac{TCP/IP}, which is provided through the HiperSockets network. HiperSockets is a technology developed by IBM to enable high-speed communication between \ac{LPAR} with a hypervisor or between applications inside a z/VM.\\
 You could imagine a HiperSockets-network like an internal \ac{LAN}, linking all partitions for internal communication.\\
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{img/hipersockets.jpg}
+	\caption{Hipersockets}
+	\label{Hipersockets}
+\end{figure}
+\ \\
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.7]{img/Hiper.png}
