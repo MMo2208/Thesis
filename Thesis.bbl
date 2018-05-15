@@ -29,6 +29,11 @@ Mike Ebbers, Wolfgang Bosch, Hans~Joachim Ebert, Helmut Hellner, Jerry
 \newblock {\em Introduction to the New Mainframe: IBM Z/VSE Basics}.
 \newblock IBM Redbooks, 2016.
 
+\bibitem{gopaul1993ibm}
+V~Mitra Gopaul.
+\newblock {\em IBM Mainframe Programmer's Desk Reference}.
+\newblock McGraw-Hill, Inc., 1993.
+
 \bibitem{hwang2008criteria}
 Gwo-Jen Hwang, Tsai Chin-Chung, and Stephen~JH Yang.
 \newblock Criteria, strategies and research issues of context-aware ubiquitous

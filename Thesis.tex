@@ -213,6 +213,7 @@ Hier kommt der/die/das Abstract.\\
 	\acro{SSH}{Secure Shell}
 	\acro{SFTP}{Secure File Transfer Protocol}
 	\acro{VPN}{Virtual Private Network}
+	\acro{MVS}{Multiple Virtual Storage}
 \end{acronym}
 
 \newpage
@@ -530,7 +531,7 @@ After the functionality of the applications is clear, chapter \ref{learning-cont
 \newpage
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.6]{img/MVC-Express.jpg}
+	\includegraphics[scale=0.5]{img/MVC-Express.jpg}
 	\caption{Model-View-Controller Scheme}
 	\label{Model-View-Controller Scheme}
 \end{figure}
@@ -580,7 +581,7 @@ The first section simply welcomes the user to the self service.
 This is the view, the user sees, when entering the program.\\
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.4]{img/view_welcome.png}
+	\includegraphics[scale=0.35]{img/view_welcome.png}
 	\caption{Welcome View}
 	\label{welcomeview}
 \end{figure}
@@ -689,7 +690,7 @@ Through this, the jQuery GET request mentioned at the beginning gets a variable 
 \ \\
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.4]{img/view_jobtable.png}
+	\includegraphics[scale=0.35]{img/view_jobtable.png}
 	\caption{List of JES-Spool files}
 	\label{listview}
 \end{figure}
@@ -739,7 +740,8 @@ function createSpoolfile() {
   } else {
 
     filesuccess.style.color = "#00e676";
-    filesuccess.innerHTML = "Your Job is on its way to the mainframe. Scroll down to see the result.";
+    filesuccess.innerHTML = "Your Job is on its way to the mainframe. 
+    		Scroll down to see the result.";
 
   //Define value of textarea as json-object
   var json = {
@@ -830,16 +832,19 @@ The ssh2 client executes this by placing a readStream (get) to get the file that
                  // change Transfer Mode with ls /+mode=text
                  sftp.readdir(changeMod, function(err, list) {
                         if (err) throw err;
-                        // List the Changing in the console
+                        // List the Change in the console
                         console.log('mode -> text');
-                        // This time no connection closing, to get the output-action
                  });
 
                  var fs = require("fs"); // Use node filesystem
 
-                 //Read the textfile and send it to subdirectory, called "myjob"
-                 var readStream = fs.createReadStream( './Spool-files/' + req.session.user.user + '/JCL.txt' );
-                 var writeStream = sftp.createWriteStream( '//-JES.INTRDR/MYJOB' );
+                 //Read the textfile and send it to 
+                 //subdirectory, called "myjob"
+                 var readStream = 
+                 		fs.createReadStream( './Spool-files/' 
+										+ req.session.user.user + '/JCL.txt' );
+                 var writeStream = 
+                 		sftp.createWriteStream( '//-JES.INTRDR/MYJOB' );
 
                  writeStream.on('close',function () {
                  });
@@ -889,7 +894,7 @@ function createSpoolfile() {
 Depending on the job submit was successful or not, predefined div containers are shown instead of the usual resultinfo-div that advise the user to check the connection in case of an error or show him a success message like this one in case he or she succeeded.\\
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.4]{img/view_success.png}
+	\includegraphics[scale=0.37]{img/view_success.png}
 	\caption{Success Message}
 	\label{successview}
 \end{figure}
@@ -897,6 +902,280 @@ Depending on the job submit was successful or not, predefined div containers are
 By clicking the button \textit{Go to overview} the page refreshes, what triggers the functions of chapter \ref{yourjobs} again to get a list containing the new job.\\
 
 \section{Learning Effect}\label{learning-content}
+Since the application in first place is designed to give students and system operators in general the ability to learn submitting batch-jobs, the functionality itself is not enough. This chapter will describe three techniques to give the user a learning effect. \\
+The following functions will take place in a file called \textit{content-functions.js} that is running on the frontend and is written in jQuery. \\
+\subsection{Information on MVS Utilities}
+Before creating a job, the user shall have the option to know, which effect it will have after submitting. For this the user can choose between the different \ac{MVS} Utilities the mainframe offers and get an overview on what this utility is able to do. \\
+In this case, a select-field containing those nine utilities will on change reveal details regarding to this program. The informations on the utilities come from the essential mainframe guide by Mitra Gopaul \cite{gopaul1993ibm}.\\
+
+\begin{lstlisting}[language=HTML]
+//index.html
+
+<div class="select-wrapper" style="margin-bottom:20px;">
+<select id="mySelect" class="jobhint">
+  <option value="" selected disabled hidden>
+  	Choose MVS Utility to get some introductions.</option>
+  <option name="step1">IEBGENER</option>
+  <option name="step2">IEBPTPCH</option>
+  <option name="step3">IEBCOPY</option>
+  <option name="step4">IEBUPDTE</option>
+  <option name="step5">IEBCOMPR</option>
+  <option name="step6">IEHPROGM</option>
+  <option name="step7">SORT</option>
+  <option name="step8">IEWL</option>
+  <option name="step9">IGYCRCTL</option>
+</select>
+</div>
+\end{lstlisting}
+\ \\
+The \textit{index.html} contains a select-field where the user can choose the program he wants to use for his job.\\
+If he chooses to the program IEBGENER for example, the select field reveals the information that is written in the div with the ID IEBGENER that is shown below.
+\ \\
+\begin{lstlisting}[language=HTML]
+//index.html
+
+<div id="IEBGENER" class="infobox">
+  <h3>IEBGENER</h3>
+  <p>This utility has many functions. They are:</p>
+  <p><b>1. TRANSFER DATA</b></p>
+  <ul style="margin-left:20px;">
+    <li>From a sequential dataset to a member of a 
+    	partitioned dataset.</li>
+    <li>From a member of a partitioned dataset to a 
+    	sequential dataset.</li>
+    <li>From a tape file to a disk file.</li>
+    <li>From a disk file to a tape file.</li>
+  </ul>
+  <p><b>2. PRINT A FILE.</b> IEBGENER can send the contents of a 
+  	sequential or PDS file to a printer.</p>
+  <p><b>3. REORGANIZE A FILE.</b> IEBGENER can be used to expand a 
+  	partitioned dataset. Also, it can be used to produce an "edited" 
+		sequential dataset or PDS member. Some of the 
+			editing functions are:</p>
+  <ul style="margin-left:20px;">
+    <li>Rearrange or omit data fields in a record.</li>
+    <li>Replace data with literal values.</li>
+    <li>Convert data from packed decimal to unpacked decimal and</li>
+    <li>from unpacked decimal to packed decimal</li>
+  </ul>
+  <p><b>4. CHANGE FILE CHARACTERISTICS.</b> IEBGENER can be 
+  	used to "reblock" a file. For example a file with LRECL=80, 
+		BLKSIZE=800 can be copied to a file with LRECL=80, BLKSIZE=8000.</p>
+</div>
+\end{lstlisting}
+\ \\
+The revealing of this div is accomplished through the following jQuery-function.
+\ \\
+\begin{lstlisting}[language=Java]
+//conent-functions.js
+
+// Change infoboxes on select
+$(function() {
+      $('#mySelect').change(function(){
+          $('.infobox').hide();
+          $('.infosteps').hide();
+          $("#stepside").addClass('split');
+          $('#' + $(':selected',this).attr('name')).show();
+          $('#' + $(this).val()).show();
+      });
+  });
+\end{lstlisting}
+\ \\
+After checking which utility is selected this function first hides infoboxes if there were any selected before. Than it reveals the content of the div-container above.\\ \\
+As it can be seen here there are not only the infoboxes that are shown on change but also the additional steps that have to be done to get this job running.\\
+As these steps are slightly different for every program they are also changed by selecting another utility. For this the above function uses the attribute \textit{name} and searches for a div with the deposited value as ID.\\
+By adding the class \textit{split} to the container containing the textarea, those steps to implement the job are shown directly next to the textarea. Details to the steps become evident by hovering the specific step as you can see on Fig. \ref{jobstep}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.17]{img/view_step.jpg}
+	\caption{Reveal job-step by hovering}
+	\label{jobstep}
+\end{figure}
+\ \\
+\subsection{Return Codes}
+After a job was submitted, a few jobs provide a code that describes the status of the process. The user here again will have the ability to read those return codes by selecting the utility he chose based on the job he submitted before. With this he can find out whether his job was successful or not and if not, what went wrong. This option should give the possibility to make mistakes but learn from them immediately.\\
+\begin{lstlisting}[language=HTML]
+//index.html
+
+     <div id="codearea">
+       <h5>Return Codes</h5>
+       <h7>A few utilities provide a return code after you submitted the 
+       	job. Their meaning can be looked up here.</h7>
+       <select id="codeSelect">
+         <option value="" selected disabled hidden>Get the return codes 
+         	to a specific utility.</option>
+         <option value="code1">IEBGENER</option>
+         <option value="code2">IEBPTPCH</option>
+         <option value="code3">IEBCOPY</option>
+         <option value="code4">IEBUPDTE</option>
+         <option value="code5">IEBCOMPR</option>
+       </select>
+       
+       //for example the IEBGENER return codes:
+       <div class="codes" id="code1">
+          <ul>
+           <li><b>00</b> The processing is successfully completed.</li>
+           <li><b>04</b> The processing is completed but a 
+           	warning message is issued.</li>
+           <li><b>08</b> The processing is terminated. 
+           	Processing of header labels only is requested.</li>
+           <li><b>12</b> The program terminated; 
+           	a fatal error occurred.</li>
+           <li><b>16</b> The program terminated; 
+           	a user routine returned error code 16.</</li>
+         </ul>
+       </div>
+\end{lstlisting}
+Similar to the infoboxes, a jQuery function reveals the return codes requested by the user based on the job utility he has chosen. 
+\begin{lstlisting}[language=Java]
+//content-functions.js
+
+// Change return codes on select
+$(function() {
+      $('#codeSelect').change(function(){
+          $('.codes').hide();
+          $('#' + $(this).val()).show();
+      });
+  });
+\end{lstlisting}
+The content again originates from \cite{gopaul1993ibm}. The return codes for a IEBGENER for example are shown as followed:
+\ \\
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.6]{img/view_returncodes.png}
+	\caption{Return codes for IEBGENER}
+	\label{return}
+\end{figure}
+\ \\
+\subsection{Gamification}
+Last but not least the users progress shall be tracked throughout the whole time he or she uses this program. The fact that all the jobs that have been submitted are located in one subdirectory and are shown in this program gives the possibility to count those jobs and based on this classify the training progress into several levels. \\
+----- Describe gamification deeper --- with sources ------------\\
+To let the user know which level it currently is in or which level it can expect within the next few steps, an area right beneath the job list is implemented. Here a few sentences are written down in combination with an icon to each level to encourage the user to use the program more often and level up.\\
+\begin{lstlisting}[language=HTML]
+//index.html
+
+ <section>
+     <div class="content">
+       <div class="inner">
+         <h2 id="lvlprogress">Training progress</h2>
+         <p id="joblistout">Show me your jobs and I tell you 
+         	how good you are.</p>
+           <ul class="actions">
+           <li><a href="#two" class="button">Create a New Job</a></li>
+           </ul>
+       </div>
+     </div>
+     <a id="lvllink" class="image"><img id="lvlicon" 
+     	src="assets/css/images/apprentice.svg" alt="Level image data" 
+		data-position="center center" /></a>
+ </section>
+\end{lstlisting}
+\ \\
+To change this area based on the users progress the following function counts the jobs that are listed in the users' JES-Spool and changes the content of the area above.\\
+\ \\
+\begin{lstlisting}[language=Java]
+// Training progress
+$( document ).ready(function() {
+  var existCondition = setInterval(function() {
+    if ($('#jobtable').length) {
+    console.log('ready to count');
+    clearInterval(existCondition);
+
+      var i = $('#jobtable >tbody >tr').length;
+      var g = $('#joblistout'); //Change text
+      var l = $('#lvlprogress'); //Change level
+      var p = $('#lvlicon'); //Change icon
+      var u = $('#lvllink'); //Change link that contains icon
+
+
+      if (i == 0) {
+      g.text("Oh welcome rookie. You didn't submit any Jobs yet. 
+      		Go ahead and learn JCL by submitting your first Job.");
+      l.text("Traingslevel: Rookie")
+    } else if (i == 1) {
+      g.text("Congratiulations you created your first job.");
+      l.text("Traingslevel: Rookie")
+    } else if (i < 5) {
+      var n = 5-i;
+      g.text("Wow. You have submitted " + i + " Jobs so far. 
+      		Only " + n + " Jobs left to be an apprentice.");
+      l.text("Traingslevel: Rookie")
+    } else if (i == 5) {
+      g.text("Congratiulations. You have submitted " + i + " Jobs. 
+      		You are an apprentice now.");
+      l.text("Traingslevel: Apprentice")
+    } else if (i > 5, i < 10) {
+      var n = 10-i;
+      g.text("Wow. You have submitted " + i + " Jobs so far. 
+      		Only " + n + " Jobs left to be a journeyman.");
+      l.text("Traingslevel: Apprentice")
+    } else if (i == 10) {
+      g.text("Congratiulations. You have submitted " + i + " Jobs. 
+      		You can call yourself a journeyman now.");
+      l.text("Traingslevel: Journeyman")
+      u.attr('style', 'background-image: 
+      			url("assets/css/images/journeyman.svg")');
+      p.attr("src", "assets/css/images/journeyman.svg");
+    } else if (i > 10, i < 20) {
+      g.text("You have submitted " + i + " Jobs so far. 
+      		Go ahead journeyman. Become a master.");
+      l.text("Traingslevel: Journeyman")
+      u.attr('style', 'background-image: 
+      			url("assets/css/images/journeyman.svg")');
+      p.attr("src", "assets/css/images/journeyman.svg");
+    } else if (i == 20) {
+      g.text("Teach me master. 
+      		That is what people will say to you from now.");
+      l.text("Traingslevel: Master")
+      u.attr('style', 'background-image: 
+      			url("assets/css/images/master.svg")');
+      p.attr("src", "assets/css/images/master.svg");
+    } else if (i > 20, i < 30) {
+      var n = 30-i;
+      g.text("The Batch is yours, master. 
+      		You are on a good way to become a ninja. 
+      		For this you need to submit " + n + " more jobs.");
+      l.text("Traingslevel: Master")
+      u.attr('style', 'background-image: 
+      			url("assets/css/images/master.svg")');
+      p.attr("src", "assets/css/images/master.svg");
+    } else if (i == 30) {
+      g.text("Master Splinter would be proud of you. 
+      		You are a Batch-ninja now.");
+      l.text("Traingslevel: Ninja")
+      u.attr('style', 'background-image: 
+      			url("assets/css/images/ninja.svg")');
+      p.attr("src", "assets/css/images/ninja.svg");
+    } else if (i > 30, i < 50) {
+      g.text("Once a ninja - always a ninja. Keep submitting. 
+      		One day you will be a sensei.");
+      l.text("Traingslevel: Ninja")
+      u.attr('style', 'background-image: 
+      			url("assets/css/images/ninja.svg")');
+      p.attr("src", "assets/css/images/ninja.svg");
+    } else if (i >= 50) {
+      g.text("Konichiwa Sensei.");
+      l.text("Traingslevel: Sensei")
+      u.attr('style', 'background-image: 
+      				url("assets/css/images/sensei.svg")');
+      p.attr("src", "assets/css/images/sensei.svg");
+    }
+   }
+  }, 100); // check every 100ms
+});
+\end{lstlisting}
+As this function reveals, it first waits, till the table from chapter \ref{yourjobs} has loaded. For this an interval is set which is looking for the table every 100ms. When the table has loaded it changes the content in the training progress area in index.html based on how many jobs the user submitted so far.\\
+The user here can pass six different levels - Rookie, Apprentice, Journeyman, Master, Ninja and Sensei. \\
+A user that submitted 9 jobs for example is in the level Apprentice. If he submits one more job he will be a journeyman.\\
+\ \\
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.4]{img/view_training.png}
+	\caption{Training progress: Level Apprentice}
+	\label{training}
+\end{figure}
+\ \\
 
 \newpage
 \section{Proof of Concept}
