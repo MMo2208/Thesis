@@ -7,14 +7,14 @@
 \BOOKMARK [2][-]{subsection.5.2}{Batch Processing}{section.5}% 7
 \BOOKMARK [2][-]{subsection.5.3}{Separation of duties}{section.5}% 8
 \BOOKMARK [2][-]{subsection.5.4}{Mainframe Operation Systems}{section.5}% 9
-\BOOKMARK [2][-]{subsection.5.5}{Virtualisation with z/VM}{section.5}% 10
-\BOOKMARK [1][-]{section.6}{Research gap}{}% 11
-\BOOKMARK [1][-]{section.7}{Dive into JCL}{}% 12
-\BOOKMARK [2][-]{subsection.7.1}{Job Control Environment}{section.7}% 13
-\BOOKMARK [2][-]{subsection.7.2}{Job structure}{section.7}% 14
-\BOOKMARK [3][-]{subsubsection.7.2.1}{EXEC-Statements}{subsection.7.2}% 15
-\BOOKMARK [3][-]{subsubsection.7.2.2}{DD-Statements}{subsection.7.2}% 16
-\BOOKMARK [3][-]{subsubsection.7.2.3}{Background / Foreground jobs}{subsection.7.2}% 17
+\BOOKMARK [1][-]{section.6}{Research gap}{}% 10
+\BOOKMARK [1][-]{section.7}{Dive into JCL}{}% 11
+\BOOKMARK [2][-]{subsection.7.1}{Job Control Environment}{section.7}% 12
+\BOOKMARK [2][-]{subsection.7.2}{Job structure}{section.7}% 13
+\BOOKMARK [3][-]{subsubsection.7.2.1}{The Job-statement}{subsection.7.2}% 14
+\BOOKMARK [3][-]{subsubsection.7.2.2}{EXEC-Statements}{subsection.7.2}% 15
+\BOOKMARK [3][-]{subsubsection.7.2.3}{DD-Statements}{subsection.7.2}% 16
+\BOOKMARK [2][-]{subsection.7.3}{The Job Entry Subsystem}{section.7}% 17
 \BOOKMARK [1][-]{section.8}{Access possibilities}{}% 18
 \BOOKMARK [2][-]{subsection.8.1}{Access through Java with FTP}{section.8}% 19
 \BOOKMARK [2][-]{subsection.8.2}{Access via SSH/ SFTP}{section.8}% 20

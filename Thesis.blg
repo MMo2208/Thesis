@@ -10,45 +10,45 @@ Warning--empty booktitle in douglas2009enterprise
 Warning--empty journal in kiefer2017cobol
 Warning--empty journal in sharmaalive
 Warning--empty year in sharmaalive
-You've used 20 entries,
+You've used 21 entries,
             2118 wiz_defined-function locations,
-            600 strings with 7237 characters,
-and the built_in function-call counts, 5946 in all, are:
-= -- 567
-> -- 292
+            604 strings with 7387 characters,
+and the built_in function-call counts, 6248 in all, are:
+= -- 594
+> -- 315
 < -- 5
-+ -- 117
-- -- 96
-* -- 365
-:= -- 1028
-add.period$ -- 61
-call.type$ -- 20
-change.case$ -- 104
++ -- 126
+- -- 104
+* -- 386
+:= -- 1085
+add.period$ -- 64
+call.type$ -- 21
+change.case$ -- 111
 chr.to.int$ -- 0
-cite$ -- 27
-duplicate$ -- 251
-empty$ -- 458
-format.name$ -- 96
-if$ -- 1233
+cite$ -- 28
+duplicate$ -- 261
+empty$ -- 475
+format.name$ -- 104
+if$ -- 1291
 int.to.chr$ -- 0
-int.to.str$ -- 20
-missing$ -- 23
-newline$ -- 101
-num.names$ -- 40
-pop$ -- 133
+int.to.str$ -- 21
+missing$ -- 24
+newline$ -- 106
+num.names$ -- 42
+pop$ -- 140
 preamble$ -- 1
-purify$ -- 87
+purify$ -- 93
 quote$ -- 0
-skip$ -- 174
+skip$ -- 181
 stack$ -- 0
-substring$ -- 230
-swap$ -- 46
+substring$ -- 235
+swap$ -- 47
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 74
+type$ -- 78
 warning$ -- 7
-while$ -- 55
-width$ -- 22
-write$ -- 208
+while$ -- 57
+width$ -- 23
+write$ -- 218
 (There were 7 warnings)

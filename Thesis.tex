@@ -203,6 +203,7 @@ Hier kommt der/die/das Abstract.\\
  	 \acro{OS}{Operating System}
 	 \acro{ULE}{Ubiquitous Learning Environment}
 	 \acro{JCL}{Job Control Language}
+	 \acro{DD}{Data Definition}
  	 \acro{JES}{Job Entry Subsystem}
 	  \acro{TCP/IP}{Transmission Control Protocol / Internet Protocol}
   	 \acro{TSO}{Time Sharing Option}
@@ -215,6 +216,8 @@ Hier kommt der/die/das Abstract.\\
 	\acro{SFTP}{Secure File Transfer Protocol}
 	\acro{VPN}{Virtual Private Network}
 	\acro{MVS}{Multiple Virtual Storage}
+	\acro{CP}{Control Program}
+	\acro{CMS}{Content Management System}
 \end{acronym}
 
 \newpage
@@ -239,7 +242,7 @@ Big Data, Cloud, Blockchain, \ac{IoT}  - Digitalization is steadily proceeding a
 But since the IT improved considerably over the last decades, the Mainframe was presumed dead and many companies discontinued training their staff to maintain this technology. Contrary to their expectations they are dependent on it till today and they will presumably be in the remote future. What is left is a big gap in the division of skilled professionals that is hard to close.\\
 The Goethe-University in Frankfurt, Germany, attends to participate in closing this gap. Therefore the university procured one of the aforementioned IBM supercomputers to train their students dealing with it.\\
 \ \\
-This Bachelor Thesis approaches a Front-End-Application, which will be running on a Linux Virtual-Machine but executing tasks on the mainframe's \ac{OS} called z/OS. By building this bridge between the Linux VM and the z/OS, students will be able to get in touch with the Mainframe located in Frankfurt University through a web-browser and as a consequence experience how the system is working.\\
+This Bachelor Thesis approaches a web application, which will be running on a Linux Virtual-Machine but executing tasks on the mainframe's \ac{OS} called z/OS. By building this bridge between the Linux VM and the z/OS, students will be able to get in touch with the Mainframe located in Frankfurt University through a web-browser and as a consequence experience how the system is working.\\
 \ \\
 The resources for this activity are allocated by the \textit{Talentschmiede AG} - a Frankfurt located IT consultancy which is in close contact to the finance sector and knows and cares about the gap of skilled professionals. Further it is supported by the \textit{Academic Mainframe Consortium e.V.} - an association founded by Mainframe Experts which are also willing to acquire new educated staff in the division of Mainframe.
 \newpage
@@ -249,10 +252,10 @@ The resources for this activity are allocated by the \textit{Talentschmiede AG} 
 
 
 \section{Related Work}
-While a malicious tongue once suggested that " the last mainframe will be unplugged in 1996 " , it reconsidered when IBM introduced it's latest version of it in 2008 \cite{lohr2008old}. Till the present day the mainframe is the backbone of the financial markets worldwide and just as important for other big industries\cite{carayannisenterprise} \cite{lohr2006ibm}.
-The view on the mainframe technology as an IT-dinosaur has to change and the need of adding the mainframe technology to the IS Curriculum in a wide range was overdue already 10 years before \cite{wallis2007s} \cite{wong2009old} \cite{douglas2009enterprise}. Sharma et al. analysed the need of Large System Education regarding to mainframe education and they are investigating " the   academic response   to   the   need   for   large   systems specialists " \cite{sharma2011teach}. In \cite{corridori2009ways} A. Corridori addresses the concerns and the opportunities that come with adding mainframe content to universities curricula and also previews ways to do this. How the economy and with it, the labor market can benefit from it is stated in \cite{sharmaalive}. \\
+While a malicious tongue once suggested that "the last mainframe will be unplugged in 1996 " , it reconsidered when IBM introduced it's latest version of it in 2008 \cite{lohr2008old}. Till the present day the mainframe is the backbone of the financial markets worldwide and just as important for other big industries\cite{carayannisenterprise} \cite{lohr2006ibm}.
+The view on the mainframe technology as an IT-dinosaur has to change and the need of adding the mainframe technology to the IS Curriculum in a wide range was overdue already 10 years before \cite{wallis2007s} \cite{wong2009old} \cite{douglas2009enterprise}. Sharma et al. analysed the need of Large System Education regarding to mainframe education and they are investigating "the   academic response   to   the   need   for   large   systems specialists " \cite{sharma2011teach}. In \cite{corridori2009ways} A. Corridori addresses the concerns and the opportunities that come with adding mainframe content to universities curricula and also previews ways to do this. How the economy and with it, the labor market can benefit from it is stated in \cite{sharmaalive}. \\
 \ \\
-The potentials of present digital media used to educate in a wide range is discovered by Cope et al. \cite{cope2009ubiquitous}. It is described that "the learner's  relationship  to knowledge  and  the  processes  of  pedagogy  have  not  changed  in  any  significant  way" but through technology " the educational paradigm has changed ". Vicki Jones et al. also address the integration of modern information technology in everyday's life and the advantages of this change regarding education \cite{jones2004ubiquitous}. Here it is stated that " Adaptive learning can offer great advantages in providing students with specific and personalised knowledge as and when required ". While the term " Adaptive Learning " is responsive to the methods that are used to transfer knowledge \cite{midgley2014goals} , " \ac{ULE} " describes an environment with the possibility of learning everywhere and anytime\cite{hwang2008criteria}. Hwang et al. emphasize the fact, that ULEs are an innovative approach for teaching complex topics \cite{hwang2009context}. To establish a ULE there are many technologies needed \cite{sakamura2005ubiquitous}, this thesis is supposed to do a first step in this direction to learn on the Mainframe anywhere and anytime.\\
+The potentials of present digital media used to educate in a wide range is discovered by Cope et al. \cite{cope2009ubiquitous}. It is described that "the learner's  relationship  to knowledge  and  the  processes  of  pedagogy  have  not  changed  in  any  significant  way" but through technology "the educational paradigm has changed". Vicki Jones et al. also address the integration of modern information technology in everyday's life and the advantages of this change regarding education \cite{jones2004ubiquitous}. Here it is stated that" Adaptive learning can offer great advantages in providing students with specific and personalised knowledge as and when required". While the term "Adaptive Learning" is responsive to the methods that are used to transfer knowledge \cite{midgley2014goals} , " \ac{ULE} " describes an environment with the possibility of learning everywhere and anytime\cite{hwang2008criteria}. Hwang et al. emphasize the fact, that ULEs are an innovative approach for teaching complex topics \cite{hwang2009context}. To establish a ULE there are many technologies needed \cite{sakamura2005ubiquitous}, this thesis is supposed to do a first step in this direction to learn on the Mainframe anywhere and anytime.\\
 
 \ \\
 Kiefer, COBOL as a modern language \cite{kiefer2017cobol}\\
@@ -269,8 +272,8 @@ Vinaja, 50th anniversary of the mainframe computer: a reflective analysis \cite{
 \section{An overview on the IBM Mainframe}
 Prior to entering the main issue of implementing the web-application, this chapter introduces a few mainframe terminologies to assure a full understanding of the steps that take place in the following chapters. \\
 Because, while many people just take the easy way by calling almost every computer a \textit{server}, and the term \textit{mainframe} is often just used to point out that this is the largest server in use, in this thesis the term \textit{mainframe} describes the IBM Supercomputer which is capable of "supporting thousands of 
-applications and input/output devices to simultaneously serve thousands of users" \cite{ebbers2016introduction}.\\
-So the most common utilization of the mainframe is divided in two categories: 
+applications and input/output devices to simultaneously serve thousands of users" \cite{ebbers2016introduction}.\\ \\
+The most common utilization of the mainframe is divided into two categories: 
 \begin{itemize}
 \item \ac{OLTP}, incl. web-based applications
 \item Batch Processing
@@ -283,7 +286,7 @@ So the most common utilization of the mainframe is divided in two categories:
 	\label{Typical workloads}
 \end{figure}
 \subsection{Online Transaction Processing}
-One of the core functions of many businesses is OLTP. For this case the mainframe serves a large amount of applications to make it possible to execute thousands of transactions in short time while handling not only a huge amount of different transaction types, but also to do this with many different users at a glance.\\
+One of the core functions of many businesses is OLTP. For this case the mainframe serves a large amount of applications to make it possible to execute thousands of transactions in short time while handling not only a huge amount of different transaction types, but to also do this with many different users at a glance.\\
 For end-users those transaction processes are often commonly known, while they appear in everyday's life, such as:
 \begin{itemize}
 \item Credit card payments in supermarkets
@@ -301,42 +304,33 @@ A famous and easy understandable example for a classical batch-job is the payrol
 \ \\
 But of course there are also people included in this process that have to be reliable as well but in addition also have to govern this whole process what makes them exactly the target group of the application that will be developed in this thesis.\\
 
-\ \\
 \subsection{Separation of duties}
-To define the target grouper in more detail, this chapter will give a quick overview on people that have contact to the mainframe in daily work life.\\
-distinguish between:
+To define the target group of this thesis in more detail, this chapter will give a quick overview on the future users. For this, a few staff-roles will be explained, which are separated in their duties in large mainframe installations. \\
+Kettner et al. \cite{kettner2011introduction} distinguish between the "members of the system programming staff" and the "system programming department and other IT departments in the IT organisation" and describe this separation as an "audit requirement" that is to avoid having one person with too much power in the system.\\
+A few of the duties that are described by IBM \cite{ebbers2016introduction} are the following:
 \begin{itemize}
-\item System programmers 
-\item System administrators (for example, DBA, storage, network, security, and 
-performance)
-\item Application designers and programmers 
-\item \textbf{System operators (explain)}
-\item Production control analysts
+\item \textbf{System programmers} - install, customize, and maintain the operating system, and also install or upgrade products that run on the system
+\item \textbf{System administrators} - perform more of the day-to-day tasks related to maintaining the critical business data that resides on the mainframe (for example, DBA, storage, network, security, and performance)
+\item \textbf{Application designers and programmers} - design, build, test, and deliver mainframe applications for the company's end users and customers
+\item \textbf{System operators} - monitor and control the operation of the mainframe hardware and software
+\item \textbf{Production control analysts} - making sure that batch workloads run to completion - without error or delay
 \end{itemize}
 \ \\
+So the main focus here is on the the \textit{production control analysts} while the keywords are \textit{without error or delay}. The upcoming program will help future users to strengthen their abilities to write batch jobs till they are ready to work this out in a large mainframe installation without making any mistakes.
+\\
 \subsection{Mainframe Operation Systems}
-Another ambit where insights are required for further understanding of the application is the ambit of the different Operation Systems that can be run on the mainframe.\\
-
--- z = zero Downtime?! --\\
+Another ambit where insights are required for further understanding of the application is the ambit of the different Operation Systems that can be run on the \textit{z-Series}.\\
+IBM \textit{z-Series} describes a mainframe architecture for large scale systems where the \textit{z} stands for \textit{zero Downtime}.\\
+The following operating systems are designed for this kind of mainframe architecture: 
 \ \\
 \begin{itemize}
 \item \textbf{z/OS} is the IBM operating system that runs on most z-system mainframe installations and by that takes the leading role in the field of mainframes. It isn't set apart a lot from normal operating systems as it has the same structure of three layers, consisting of Hardware, Operating System and User Processes. Similar to modern windows-systems there are some kind of subsystems, which run between the OS and the user processes. The most important one in the case of z/OS are the \ac{JES} for the background operations (batch processing), the \ac{TSO} for the foreground operations (interactive) and the \ac{USS}, which represent a posix-compatible unix subsystem.
-\item \textbf{z/VSE}
-\item \textbf{z/TPF}
-\item \textbf{z/VM}
-\item \textbf{Linux for zSeries}
+\item \textbf{z/VSE} is the system that is used for \ac{OLTP}. It is based on web solutions to integrate OLTP in a heterogeneous environment.
+\item \textbf{z/TPF} works as a transaction processor and a database in one operating system. It is used as OS for high data-throughput as needed for example in airline IT-systems where it also has to be available 24/7.
+\item \textbf{Linux for zSeries} is a special Linux OS, compiled to be run on IBM mainframes, especially the IBM z-Series and the IBM LinuxONE servers.
+\item \textbf{z/VM} This system allows running thousands of distributed servers on one server at a time, which becomes possible through its huge virtualization capabilities. With its two components, a \ac{CP} and a single-user operating system (a \ac{CMS}) it can run any of the IBM operating systems mentioned above but also guest systems such as Ubuntu, which will be the operating system to be used as a server for this application.
 \end{itemize}
 \ \\
-
-
-\subsection{Virtualisation with z/VM}
-\textit{As an aid to consolidation, the mainframe offers software virtualization, through z/VM. z/VM?s extreme virtualization capabilities, which have been perfected since its introduction in 1967, make it possible to virtualize thousands of  distributed servers on a single server, resulting in the significant reduction in the use of space and energy. }
-\ \\
-\textit{z/Virtual Machine (z/VM) has two basic components: a control program (CP) and 
-a single-user operating system (CMS). As a control program, z/VM is a hypervisor because it runs other operating systems in the virtual machines it creates. Any of the IBM mainframe operating systems such as z/OS, Linux on System z, z/VSE, and z/TPF can be run as guest systemsin their own virtual machines, and z/VM can run any combination of guest systems.}\\
-\textbf{---- Explain and show z/VM Constellation, LPARs etc ---- }
-\ \\
-more in : \url{http://www.redbooks.ibm.com/redbooks/pdfs/sg247603.pdf}
 \newpage
 
 
@@ -344,26 +338,32 @@ more in : \url{http://www.redbooks.ibm.com/redbooks/pdfs/sg247603.pdf}
 
 
 \section{Research gap}
-While the web-access to z/OS for OLTP is very established because of the usage, that is often conducted by end-users or computers, that are not located in immediate proximity to the server, the access to the JES-spool through web-applications is less common, since the system-operators are usually working in ultimate contact to the mainframe.\\
+While the web-access to z/OS for OLTP is very established because of the usage, that is often conducted by end-users or computers, that are not located in immediate proximity to the server, the access to the JES-spool through web-applications is less common, since the production control analysts are usually working in ultimate contact to the mainframe.\\
+The future users therefore shell be able to access a front-end running on a server that is located in the mainframe and from here execute tasks that take place on this mainframes' z/OS.\\
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{img/userscheme.jpg}
+	\caption{Scheme of usage}
+	\label{userscheme}
+\end{figure}
+\\
 Certainly there are operators handling batch-processes through a web front-end due to flexibility and simplicity reasons. But while these applications are to simplify the process of managing the workload in daily-business, this thesis tries to establish an environment where the jobs have to be done in full amplitude, but on a test-system, implemented just for educational reasons.\\
-This setup will have the ambitions of getting people into JCL quite quickly on the one hand and give them the opportunity to train their abilities and, in this way reduce potential uncertainties towards working on large-scale systems, on the other hand. With this method a pertinent and long-lasting learning effect is to be achieved in short time.\\
+To gain added value on an educational basis there will be some features that help the users understand the functions of the Batch-jobs as well as writing the jobs.\\ \\
+This setup will have the ambitions of getting people into the \ac{JCL} quite quickly on the one hand and give them the opportunity to train their abilities and, in this way reduce potential uncertainties towards working on large-scale systems, on the other hand. With this method a pertinent and long-lasting learning effect is to be achieved in short time.\\
 \newpage
 
 
 %================== JCL ===========================%
 
 
-\section{Dive into \ac{JCL}}
+\section{Dive into JCL}
 \label{JCL}
-\textbf{---- Important to understand JCL for accessing JES Spool?! ---- }\\
-\ \\
-To get familiar with JCL, this chapter will give an introduction in how these Statements are working. There is talk about "Statements", because JCL is used to tell the OS what to do. Each Statement is an independent work unit, known as "Job" - therefore this language is called "Job Control Language". Each Job consists of instructions that are either typed in by an operator or they are stored and get transmitted to the computer. \\ 
-
+To get familiar with JCL, this chapter will give an introduction on how these Statements are working. There is talk about "Statements", because JCL is used to tell the OS what to do. Each Statement is an independent work unit, known as "Job" - therefore this language is called \textit{Job Control Language}. Each Job consists of instructions that are either typed in by an operator or they are stored and get transmitted to the computer. 
 \subsection{Job Control Environment}
 So to understand how a job is executed, it is important to know which components are needed for this process.\\
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.25]{img/JCL-1.jpg}
+	\includegraphics[scale=0.2]{img/JCL-1.jpg}
 	\caption{JCL Functionality, Source: IBM}
 	\label{JCL Functionality}
 \end{figure}
@@ -379,47 +379,59 @@ On figure \ref{JCL Functionality} you can see a job process described in 7 steps
 \item Output to gets transferred to printer as requested
 \end{enumerate}
 \ \\
-The z/OS has written (hard coded) application programs which are not associated with any physical resources. Those programs are just names, which include internal file-names. Through JCL those programs can be opened for reading and writing during execution.\\
-The \ac{JES} is there to evaluate and accept or not accept a job. If the syntax is right and the job is accepted the JES runs it on the OS and controls this process. The results get transferred to an output unit.\\
-
-
+The z/OS has written (hard coded) application programs which are not associated with any physical resources. Those programs are just names (e.g. IEBGENER), which include internal file-names. Through JCL those programs can be opened for reading and writing during execution.\\
+The \ac{JES} is there to evaluate and accept or not accept a job. If the syntax is right and the job is accepted the JES runs it on the OS and controls this process. The results get transferred to an output unit.
 \subsection{Job structure}
--each statement 80characters\\
--JCL is introduced with // \\
+The job creation is defined of its structure. In general a job consists of two major parts -the job card, also known as job statement and the job steps or also called job body. They are all introduced with a double slash.
+\subsubsection{The Job-statement}
+The job statement identifies the job as JCL and calls the unit of work for the operating system to perform.\\
+\begin{lstlisting}[language=PHP]
+e.g.
+//HELLO18 JOB 2
+//...
+\end{lstlisting}
 
 \subsubsection{EXEC-Statements}
-Within a job, there are working executions introduced through an "EXEC-statement". Every job needs at least one execution, but there can obviously be many more in addition. If a job has no execution it stops.
+Within a job, there are working executions introduced through an \textit{EXEC-statement}. Every job needs at least one execution, but there can obviously be many more in addition. If a job has no execution it stops.
 \ \\
 \begin{lstlisting}[language=PHP]
 //STEP0001 EXEC PGM=IEBGENER
 ...
-//STEP0002 EXEC PROC=PRDPROC1
-//STEP0003 EXEC PRDPROC2
+//STEP0006 EXEC PROC=PRDPROC1
+//STEP0007 EXEC PROC=PRDPROC2
 \end{lstlisting}
 
-
 \subsubsection{DD-Statements}
-\begin{itemize}
-\item{SYSUT1}
-\item{SYSUT2}
-\item{SYSIN}
-\item{SYSPRINT}
-\end{itemize}
--JCL links the program file names with physical resources (e.g. data set names or unix file names).\\
---JCL is used to process programs in the background ("batch")\\
-- And to process programs in the foreground("started task")\\
--JCL instruct z/OS -> Start / submit
-- JCL SUBMIT Statement will result in batch process of one or more programs (BACKGROUND)\\
-- JCL START will result in FOREGROUND processing of a processing program\\
+Through \ac{DD} statements the data-sets that are used while running the program are defined. There has to be a DD statement for every data set that is used or created within a job.
 \ \\
-\subsubsection{Background / Foreground jobs}
-Every Batch Job must contain JOB-statement \& EXEC statement\\
-->JOB statement highlight the beginning of a batch job \& assigns a name to the job\\
-JCL started tasks do not require a JOB Statement
-->both have at least one EXEC statement -> marks the beginning of a job step , assigns name to the step \& identifies the program or procedure to be executed in the step.
+\begin{lstlisting}[language=Java]
+//SYSIN DD DUMMY
+//SYSPRINT DD SYSOUT=X
+//SYSUT1 DD *?Hello world!
+/*
+//SYSUT2 DD DISP=(NEW,CATLG),DSN=<USERID>.HELLO.DATA
+\end{lstlisting}
 
+\begin{itemize}
+\item\textbf{SYSIN} Specifies the control dataset
+\item\textbf{SYSPRINT} Specifies a message output dataset
+\item\textbf{SYSUT1} Specifies the input dataset(s)
+\item\textbf{SYSUT2} Specifies the output dataset
+\end{itemize}
+\ \\
+As it can be seen here the control datasat is defined as a dummy. After that there is a message output dataset defined with the input \textit{Hello World!} that is displayed afterwards.
+
+\subsection{The Job Entry Subsystem}
+The purpose of the Job Entry Subsystem is to automate the batch jobs. It is a special system component provided by the z/OS which is responsible for controlling and processing all the jobs running on the system (incl. TSO).\\ \\
+The JES therefore handles the JCL in three steps as follows:
+\begin{itemize}
+\item \textbf{Preprocessing} Reading + interpreting the JCL-records and providing the required datasets
+\item \textbf{Processing} Performing the job steps
+\item \textbf{Postprocessing} The data created through the job gets printed or it gets supplied to the user for further processing
+\end{itemize}
+\ \\
+So while the JES is that part of z/OS which is responsible for reading and processing the JCL that shall be transmitted from the front-end it should work as a contact system to be addressed by the application. The next chapters will introduce the way how to contact the Job-Entry-Subsystem to be able to submit jobs directly to it.
 \newpage
-
 
 
 %================== Get Access to JES ===========================%
