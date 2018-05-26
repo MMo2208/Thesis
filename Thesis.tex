@@ -430,13 +430,11 @@ The JES therefore handles the JCL in three steps as follows:
 \item \textbf{Postprocessing} The data created through the job gets printed or it gets supplied to the user for further processing
 \end{itemize}
 \ \\
-So while the JES is that part of z/OS which is responsible for reading and processing the JCL that shall be transmitted from the front-end it should work as a contact system to be addressed by the application. The next chapters will introduce the way how to contact the Job-Entry-Subsystem to be able to submit jobs directly to it.
+So while the JES is that part of z/OS which is responsible for reading and processing the JCL that shall be transmitted from the front-end it should work as a contact system to be addressed by our application. The next chapters will introduce the way how to contact the Job-Entry-Subsystem to be able to submit jobs directly to it.
 \newpage
 
 
 %================== Get Access to JES ===========================%
-
-
 
 \section{Access possibilities}
 In order to execute JCL-Jobs on z/OS from the Linux host, an access point is required to submit the data. This chapter is to reveal how the z/VM connects the Linux-host and the z-OS Target-system in this case and how this connection can be used to transfer data among them.\\
@@ -444,44 +442,14 @@ To enable the communication between different applications, a protocol is needed
 You could imagine a HiperSockets-network like an internal \ac{LAN}, linking all partitions for internal communication.\\
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.5]{img/hipersockets.jpg}
+	\includegraphics[scale=0.6]{img/hipersockets.jpg}
 	\caption{Hipersockets}
 	\label{Hipersockets}
 \end{figure}
 \ \\
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.7]{img/Hiper.png}
-	\caption{TCP/IP Connection / Hipersockets}
-	\label{Hipersockets}
-\end{figure}
-\ \\
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.7]{img/workloads.png}
-	\caption{workloads}
-	\label{workloads}
-\end{figure}
-
-\textbf{---- Explain Hipersockets / TCP/IP Connection ---- }\\
-A way we can use this connection to transfer jcl-jobs is:
-\ \\
-\begin{myboxii}[Transmission Control Protocol]
-The Transmission Control Protocol (TCP) provides a reliable vehicle for delivering
-packets between hosts on an internet. TCP takes a stream of data, breaks it into
-datagrams, sends each one individually using IP, and reassembles the datagrams at
-the destination node. If any datagrams are lost or damaged during transmission,
-TCP detects this and resends the missing datagrams. The received data stream is a
-reliable copy of the transmitted data stream.
-
-\textbf{---- Explain TCP/IP Connection in own words ---- }\\
-
-\end{myboxii}
-\ \\
-\subsection{Access through Java with FTP}
+\subsection{Access via FTP-Server}
 What becomes possible through the TCP/IP in System Z is the \ac{FTP} Server, an IP-application used to transfer files between any kind of platform. The z/OS FTP-Server is a bit different from normal FTP-Servers as it provides not only the possibility to transfer files and get access to z/OS System Services, but it also provides access to the Job Entry Subsystem which is, as mentioned in  chapter \ref{JCL}, needed to submit JCL-Jobs.\\
-
-With the help of Java you can use the FTP server to get access to a number of JES functions, including the following:
+With the help of a Java program you can use the FTP server to get access to a number of JES functions, including the following:
 \begin{itemize}
 \item Submitting a job
 \item Displaying the status of jobs
@@ -490,45 +458,65 @@ With the help of Java you can use the FTP server to get access to a number of JE
 \item Submitting a job and automatically receiving output
 \end{itemize}
 \ \\
-\textbf{---- Importance of output for Learning environment ---- }\\
+But although some people and also some companies use this method to contact their mainframe from a Linux host or another type of server, it is not very sophisticated due to the handling and its connection to modern web technologies on the one hand but more important due to the lack of safety on the other hand as the FTP connection alone is not encrypted. \\
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.58]{img/unsecFTP.jpg}
+	\caption{Unsecure communication}
+	\label{unsecFTP}
+\end{figure}
+
+While this application is to be used by many different users it is not recommendable to establish an unencrypted connection to a universities supercomputer.
 
 \subsection{Access via \ac{SSH}/ \ac{SFTP}}
-While FTP gives us the opportunity to get access to the JES-Spool to run JCL-Jobs, this is not really a safe way to work this out.\\
-To get a safe communication, it needs encryption what can be established through the SSH-protocol - making the FTP a Secure File Transfer Protocol.\\
+To get a safe connection, it needs a way of encryption what in this case can be established through the SSH-protocol - making the FTP a Secure File Transfer Protocol.\\
+The SSH protocol which is also known as Secure Shell gives the opportunity of a remote login from any kind of a computer onto another. With it there are many options for a safe authentication and it encrypts the communication strongly. Combined with the transfer through the FTP Server it is known as SFTP - in this case the perfect way to have a strong authentication and transfer the job files in a safety manner.
 
-\begin{myboxii}[The Secure Shell Protocol]
-The SSH protocol (also referred to as Secure Shell) is a method for secure remote login from one computer to another. It provides several alternative options for strong authentication, and it protects the communications security and integrity with strong encryption. It is a secure alternative to the non-protected login protocols (such as telnet, rlogin) and insecure file transfer methods (such as FTP). 
-\textbf{---- Explain SSH in own words ---- }\\
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.58]{img/secFTP.jpg}
+	\caption{SSH encrypted communication}
+	\label{secFTP}
+\end{figure}
+What has to be done here as it can be seen on Fig. \ref{secFTP} is the implementation of an encrypted SSH-Tunnel. This can be achieved by an SSH/SFTP - Server / Client that runs on top of the FTP Server and from here handles the authentication and the security of the communication.\\
+The next chapter will introduce two possible solutions that are working on system Z.
 
-\end{myboxii}
+\subsection{Choosing an SFTP-Server}
+With the research of possible solutions for this case it became quickly clear, that this market is not really flooded. Basically there are only two companies dealing with this issue of getting a safe communication between a server and a mainframe on the backend side. These two are \textit{SSH Communications Security} and \textit{Dovetailed Technologies ,LLC}. \\ \\
+The \textit{SSH Communications Security} is a Finnish company founded by the inventor of the SSH protocol, Tatu Ylonen. With its subcompany \textit{Tectia} it provides several solutions for business cases to establish an SSH connection in large mainframe systems and here - of course - also has a solution for the IBM Mainframe. While holding the patents for the algorithms behind the SSH protocol you can imagine that their product is quite costly and therefore stays a "business case".\\ \\
+\textit{Dovetailed Technologies} on the other hand uses the openSSH protocol for their work and offers their software for "non-business-cases" for free. OpenSSH is an implementation of the SSH-protocol developed by openBSD as an openSource project and does basically the same as the SSH-protocol. You can imagine openSSH as a meal, cooked by the receipt of the SSH-protocol, that can now be used to implement an encrypted connection just as it is needed for this application. \\ \\
+Therefore the \textit{Co:Z SFTP-Server}, as the product of Dovetailed Technologies is called, will be our entry point to the JES-Spool in this application.
 
-\subsection{Co:Z SFTP-Server}
 
-\textbf{---- Describe Co:Z ---- }\\
-A tool named Co:Z SFTP, an open-source product developed by Dovetailed Technologies, will help to establish a safe connection with before mentioned techniques. It works as a port of OpenSSH SFTP for z/OS and therefore enables the access to z/OS datasets and spool files.\\
+\subsection{Co:Z construction}
+Along with some other products the \textit{Co:Z SFTP-Server} is a tool of the before mentioned company \textit{Dovetailed Technologies LLC}. They describe the function of their products based on the \textit{Co:Z Hybrid Batch} on their website. The hybrid batch is basically the same as the SFTP-Server but the other way around. With the hybrid batch you can control actions on a linux LPAR for example from the mainframe. Figure \ref{hybbatch} is just to show, that the construction of their products is exactly what is needed for the Mainframe Self-Service.
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.45]{img/hybrid_batch_website.png}
+	\caption{Hybrid Batch Construction, Source: dovetail.com}
+	\label{hybbatch}
+\end{figure}
+
+On the one hand there is pure data that can be the output or the input, which is transferred encrypted throughout the zEnterprise and other operation systems, that even don't have to be located in the mainframe here. The \textit{Co:Z Launcher} that can be seen here is also a part of the Co:Z SFTP-Server because its function is to work as a target system on the mainframe translate the incoming data so that it can be send to another operation system or in our case gets the input and forwards it to the Job Entry Subsystem. As Fig. \ref{hybbatch} also reveals, the technology for the communication inside the zEnerprise are the hypersockets that run the TCP/IP protocol. \\ \\
+With the Co:Z Launcher as a target system for accessing the JES and the Co:Z SFTP Server running to get an encrypted communication between the systems, it is now possible to submit spool files to the mainframe and with this create batch-jobs and get direct response.\\ \\
+But this is only possible through a terminal so far. The next chapters therefore will carry out how this tool can be used inside a website that gives the users the possibility to simply write JCL, have it submitted and get an overview on how they are doing with this without using a terminal.\\
 \newpage
 
 %================== Requirements and Development ===========================%
 
 
 \section{Requirements}
-To get access to z/OS, a system constellation as seen on Fig. \ref{constellation} will be implemented. A z/VM running Linux (LPAR 1) will serve as a web-server. Here the application is hosted and can be accessed through the user's web-browser. Due to the hipersockets network, that links LPAR 1 to the z/OS (LPAR 2), whereupon an SFTP-Server can be running, a stable and safe connection can be established. As before mentioned, the Co:Z SFTP-Server is deployed here, to get direct access to the JES-Spool. Through this constellation, students will be able to submit jobs directly on the mainframe, from any given device that they are using to access the internet.\\
-
+Now that the technologies for the application are set, it is time to get them together. To get access to z/OS, a system constellation as seen on Fig. \ref{constellation} will be implemented. \\
+A z/VM running Linux (LPAR 1) will serve as a web-server. Here the application is hosted and can be accessed through the user's web-browser. Due to the hipersockets network, that links LPAR 1 to the z/OS (LPAR 2), whereupon an SFTP-Server can be run, a stable and safe connection can be established. As before mentioned, the Co:Z SFTP-Server is deployed here, to get direct access to the JES-Spool. Through this constellation, the users will be able to submit jobs directly on the mainframe, from any given device that they are using to access the internet.\\
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.4]{img/Schemahosting.jpg}
 	\caption{constellation}
 	\label{constellation}
-\end{figure}
-
-\url{http://www.redbooks.ibm.com/redbooks/pdfs/sg247603.pdf}
-from p.137
-\newpage
-
-\textbf{---- Ubuntu / Apache Server etc.?! Implementation part ---- }\\
-\textbf{---- Node.js website / hosting / Electron ---- }\\
-
+\end{figure} \\
+To be independent from the users platform this application is developed as a website that can simply be accessed by any modern browser as already said. Since the application here is accessed through the front-end but operates on the back-end where the mainframe is contacted, a programming language is needed, that can run on the front-end but on the back-end as well. The choice for this is javascript. More precisely the \textit{node.js} platform will be used. Node.js is a serverside platform to run web applications written in javascript. Due to its huge variety of predefine packages, that can be used here to realize many different kind of tasks it is perfect for developing this application.
 
 \newpage
 
@@ -560,8 +548,8 @@ To be able to work on the IBM Machine, the students have to be added as authenti
 An open-source login template, implemented by Stephen Braitsch ( \hyperlink{https://github.com/braitsch/node-login}{https://github.com/braitsch/node-login} ) will help to get started with the user registration and log-in. This template is built on the MongoDB database, which is a simple non-relational database also known as NoSQL-database. By registration this template saves the username and the password along with some other userdata into this database. There should not be too much detail about the login template here, as it is not part of the thesis. The documentation on its function can be read on the before mentioned github project of Stephen Braitsch.\\ \\
 The favor of this node-login is that when the user logs in its userdata is not only accessible from the database but also from an array called \textit{session}. This session just exists as long as the user is logged in and gets destroyed when he logs out. From this session we take our userdata to access the mainframe. \\
 \ \\
-For the next sections, an SFTP-Client is implemented to get a connection to Co:Z-SFTP. The node package \textit{ssh2.js} by Brian White makes it possible to use the openSSH protocol as it is also used by Co:Z-SFTP.
-To access z/OS via SFTP we use the ssh2-package by requiring it on line 1. Then we establish a variable \textit{connSettings} which contains all the requirements to access the mainframes' z/OS through SFTP and get access to the JES-Spool to read and write data. The host called here is the IP-Address of the Co:Z Server, port 22 is the port that is usually used for guest-access via SFTP. The guest-access is required due to the web-server running not in the same LPAR as the z/OS. In line 5 and 6 in the following code you can see that a request (req) is made to the session array to read the username and the password stored here as long as the user is logged in. How this data is passed to the functions can be seen in the chapters \ref{yourjobs} and \ref{submitjob}. \\
+For the next sections, an SFTP-Client is implemented to get a connection to Co:Z-SFTP. The node package \textit{ssh2.js} by Brian White makes it possible to use the openSSH protocol as it is also used by Co:Z-SFTP. \\
+To access z/OS via SFTP we use the ssh2-package by requiring it on line 1. Then we establish a variable \textit{connSettings} which contains all the requirements to access the mainframes' z/OS through SFTP and get access to the JES-Spool to read and write data.\\
 \begin{lstlisting}[language=Java]
 var Client = require('ssh2').Client;
 var connSettings = {
@@ -572,6 +560,7 @@ var connSettings = {
 };
 \end{lstlisting}
 \ \\
+ The host called here is the IP-Address of the Co:Z Server, port 22 is the port that is usually used for guest-access via SFTP. The guest-access is required due to the web-server running not in the same LPAR as the z/OS. In line 5 and 6 in the following code you can see that a request (req) is made to the session array to read the username and the password stored here as long as the user is logged in. How this data is passed to the functions can be seen in the chapters \ref{yourjobs} and \ref{submitjob}. \\
 \subsection{Welcome}
 When a user is logged in it gets provided a one-page-layout program, which is devided into four sections. These sections and their functions are explained in the following.\\ 
 As before mentioned the entry point is the \textit{routes.js}-file. Here the home.jade file is called after login to render the index.html. This is done by the following code.\\
@@ -921,7 +910,7 @@ Depending on the job submit was successful or not, predefined div containers are
 By clicking the button \textit{Go to overview} the page refreshes, what triggers the functions of chapter \ref{yourjobs} again to get a list containing the new job.\\
 
 \section{Learning Effect}\label{learning-content}
-Since the application in first place is designed to give students and system operators in general the ability to learn submitting batch-jobs, the functionality itself is not enough. This chapter will describe three techniques to give the user a learning effect. \\
+Since the application in first place is designed to give students and production control analysts in general the ability to learn submitting batch-jobs, the functionality itself is not enough. This chapter will describe three techniques to give the user a learning effect. \\
 The following functions will take place in a file called \textit{content-functions.js} that is running on the frontend and is written in jQuery. \\
 \subsection{Information on MVS Utilities}
 Before creating a job, the user shall have the option to know, which effect it will have after submitting. For this the user can choose between the different \ac{MVS} Utilities the mainframe offers and get an overview on what this utility is able to do. \\

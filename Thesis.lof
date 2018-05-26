@@ -3,14 +3,15 @@
 \contentsline {figure}{\numberline {2}{\ignorespaces Scheme of usage\relax }}{9}{figure.caption.18}
 \contentsline {figure}{\numberline {3}{\ignorespaces JCL Functionality, Source: IBM\relax }}{10}{figure.caption.20}
 \contentsline {figure}{\numberline {4}{\ignorespaces Hipersockets\relax }}{13}{figure.caption.25}
-\contentsline {figure}{\numberline {5}{\ignorespaces TCP/IP Connection / Hipersockets\relax }}{14}{figure.caption.26}
-\contentsline {figure}{\numberline {6}{\ignorespaces workloads\relax }}{15}{figure.caption.27}
-\contentsline {figure}{\numberline {7}{\ignorespaces constellation\relax }}{17}{figure.caption.29}
-\contentsline {figure}{\numberline {8}{\ignorespaces Model-View-Controller Scheme\relax }}{20}{figure.caption.31}
-\contentsline {figure}{\numberline {9}{\ignorespaces Welcome View\relax }}{22}{figure.caption.32}
-\contentsline {figure}{\numberline {10}{\ignorespaces List of JES-Spool files\relax }}{25}{figure.caption.33}
-\contentsline {figure}{\numberline {11}{\ignorespaces Textarea for typing JCL-Jobs\relax }}{26}{figure.caption.34}
-\contentsline {figure}{\numberline {12}{\ignorespaces Success Message\relax }}{30}{figure.caption.35}
-\contentsline {figure}{\numberline {13}{\ignorespaces Reveal job-step by hovering\relax }}{33}{figure.caption.37}
-\contentsline {figure}{\numberline {14}{\ignorespaces Return codes for IEBGENER\relax }}{35}{figure.caption.38}
-\contentsline {figure}{\numberline {15}{\ignorespaces Training progress: Level Apprentice\relax }}{38}{figure.caption.39}
+\contentsline {figure}{\numberline {5}{\ignorespaces Unsecure communication\relax }}{14}{figure.caption.27}
+\contentsline {figure}{\numberline {6}{\ignorespaces SSH encrypted communication\relax }}{15}{figure.caption.28}
+\contentsline {figure}{\numberline {7}{\ignorespaces Hybrid Batch Construction, Source: dovetail.com\relax }}{16}{figure.caption.29}
+\contentsline {figure}{\numberline {8}{\ignorespaces constellation\relax }}{18}{figure.caption.30}
+\contentsline {figure}{\numberline {9}{\ignorespaces Model-View-Controller Scheme\relax }}{20}{figure.caption.32}
+\contentsline {figure}{\numberline {10}{\ignorespaces Welcome View\relax }}{22}{figure.caption.33}
+\contentsline {figure}{\numberline {11}{\ignorespaces List of JES-Spool files\relax }}{25}{figure.caption.34}
+\contentsline {figure}{\numberline {12}{\ignorespaces Textarea for typing JCL-Jobs\relax }}{26}{figure.caption.35}
+\contentsline {figure}{\numberline {13}{\ignorespaces Success Message\relax }}{30}{figure.caption.36}
+\contentsline {figure}{\numberline {14}{\ignorespaces Reveal job-step by hovering\relax }}{33}{figure.caption.38}
+\contentsline {figure}{\numberline {15}{\ignorespaces Return codes for IEBGENER\relax }}{35}{figure.caption.39}
+\contentsline {figure}{\numberline {16}{\ignorespaces Training progress: Level Apprentice\relax }}{38}{figure.caption.40}

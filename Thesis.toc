@@ -17,10 +17,11 @@
 \contentsline {subsubsection}{\numberline {7.2.3}DD-Statements}{12}{subsubsection.7.2.3}
 \contentsline {subsection}{\numberline {7.3}The Job Entry Subsystem}{12}{subsection.7.3}
 \contentsline {section}{\numberline {8}Access possibilities}{13}{section.8}
-\contentsline {subsection}{\numberline {8.1}Access through Java with FTP}{14}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Access via \ac {SSH}/ \ac {SFTP}}{15}{subsection.8.2}
-\contentsline {subsection}{\numberline {8.3}Co:Z SFTP-Server}{16}{subsection.8.3}
-\contentsline {section}{\numberline {9}Requirements}{17}{section.9}
+\contentsline {subsection}{\numberline {8.1}Access via FTP-Server}{13}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Access via \ac {SSH}/ \ac {SFTP}}{14}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}Choosing an SFTP-Server}{15}{subsection.8.3}
+\contentsline {subsection}{\numberline {8.4}Co:Z construction}{16}{subsection.8.4}
+\contentsline {section}{\numberline {9}Requirements}{18}{section.9}
 \contentsline {section}{\numberline {10}Design}{19}{section.10}
 \contentsline {subsection}{\numberline {10.1}Registration / Login}{20}{subsection.10.1}
 \contentsline {subsection}{\numberline {10.2}Welcome}{21}{subsection.10.2}

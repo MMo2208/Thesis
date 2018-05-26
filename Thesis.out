@@ -16,20 +16,21 @@
 \BOOKMARK [3][-]{subsubsection.7.2.3}{DD-Statements}{subsection.7.2}% 16
 \BOOKMARK [2][-]{subsection.7.3}{The Job Entry Subsystem}{section.7}% 17
 \BOOKMARK [1][-]{section.8}{Access possibilities}{}% 18
-\BOOKMARK [2][-]{subsection.8.1}{Access through Java with FTP}{section.8}% 19
+\BOOKMARK [2][-]{subsection.8.1}{Access via FTP-Server}{section.8}% 19
 \BOOKMARK [2][-]{subsection.8.2}{Access via SSH/ SFTP}{section.8}% 20
-\BOOKMARK [2][-]{subsection.8.3}{Co:Z SFTP-Server}{section.8}% 21
-\BOOKMARK [1][-]{section.9}{Requirements}{}% 22
-\BOOKMARK [1][-]{section.10}{Design}{}% 23
-\BOOKMARK [2][-]{subsection.10.1}{Registration / Login}{section.10}% 24
-\BOOKMARK [2][-]{subsection.10.2}{Welcome}{section.10}% 25
-\BOOKMARK [2][-]{subsection.10.3}{Your Jobs}{section.10}% 26
-\BOOKMARK [2][-]{subsection.10.4}{Submit a new Job}{section.10}% 27
-\BOOKMARK [2][-]{subsection.10.5}{Result}{section.10}% 28
-\BOOKMARK [1][-]{section.11}{Learning Effect}{}% 29
-\BOOKMARK [2][-]{subsection.11.1}{Information on MVS Utilities}{section.11}% 30
-\BOOKMARK [2][-]{subsection.11.2}{Return Codes}{section.11}% 31
-\BOOKMARK [2][-]{subsection.11.3}{Gamification}{section.11}% 32
-\BOOKMARK [1][-]{section.12}{Proof of Concept}{}% 33
-\BOOKMARK [1][-]{section.13}{Evaluation}{}% 34
-\BOOKMARK [1][-]{section.14}{Appendices}{}% 35
+\BOOKMARK [2][-]{subsection.8.3}{Choosing an SFTP-Server}{section.8}% 21
+\BOOKMARK [2][-]{subsection.8.4}{Co:Z construction}{section.8}% 22
+\BOOKMARK [1][-]{section.9}{Requirements}{}% 23
+\BOOKMARK [1][-]{section.10}{Design}{}% 24
+\BOOKMARK [2][-]{subsection.10.1}{Registration / Login}{section.10}% 25
+\BOOKMARK [2][-]{subsection.10.2}{Welcome}{section.10}% 26
+\BOOKMARK [2][-]{subsection.10.3}{Your Jobs}{section.10}% 27
+\BOOKMARK [2][-]{subsection.10.4}{Submit a new Job}{section.10}% 28
+\BOOKMARK [2][-]{subsection.10.5}{Result}{section.10}% 29
+\BOOKMARK [1][-]{section.11}{Learning Effect}{}% 30
+\BOOKMARK [2][-]{subsection.11.1}{Information on MVS Utilities}{section.11}% 31
+\BOOKMARK [2][-]{subsection.11.2}{Return Codes}{section.11}% 32
+\BOOKMARK [2][-]{subsection.11.3}{Gamification}{section.11}% 33
+\BOOKMARK [1][-]{section.12}{Proof of Concept}{}% 34
+\BOOKMARK [1][-]{section.13}{Evaluation}{}% 35
+\BOOKMARK [1][-]{section.14}{Appendices}{}% 36
